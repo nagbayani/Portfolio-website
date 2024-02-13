@@ -8,6 +8,9 @@ import Experience from "./components/Experience";
 const App = () => {
   return (
     <BrowserRouter>
+      <header className='text-6xl font-bold my-4 text-indigo-500'>
+        Nathan Agbayani
+      </header>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
