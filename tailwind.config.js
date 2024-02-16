@@ -5,7 +5,6 @@ export default {
     extend: {
       colors: {
         indigo: "#523ccf",
-        "white-red-orange": "#fef3ef",
       },
     },
   },

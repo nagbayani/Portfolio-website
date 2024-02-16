@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
-      <div className='w-screen h-screen flex flex-col items-center justify-center my-10'>
+      <div className='w-screen flex flex-col items-center justify-center my-10'>
         <div className='text-6xl font-bold my-4 text-indigo-500'>
           <div className='text-2xl my-4 text-indigo-500'>
             Aloha! I'm Nathan Agbayani
