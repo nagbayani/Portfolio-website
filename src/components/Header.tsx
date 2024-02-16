@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Squares2X2Icon } from "@heroicons/react";
+import { animate, motion } from "framer-motion";
 
 const Header = () => {
   const gridButton =
@@ -41,15 +42,23 @@ const Header = () => {
     setGrid(false);
     navigate(path);
   };
+
   return (
     <header className='flex justify-between mt-12 text-6xl font-bold my-4 text-indigo-500'>
       <div className='left'>
         <button onClick={handleHomeClick}>Home</button>
       </div>
       <div className='right'>
-        <button
+        {/* <button
           onClick={toggleButtonPaths}
           style={{ background: "none", border: "none", cursor: "pointer" }}
+        > */}
+        <motion.button
+          onClick={toggleButtonPaths}
+          style={{ background: "none", border: "none", cursor: "pointer" }}
+          animate={{
+            y: isGrid ? -10 : 0, // Adjust the value to control the bounce height
+          }}
         >
           <svg
             ref={svgRef}
@@ -70,7 +79,8 @@ const Header = () => {
               d={buttonPath}
             />
           </svg>
-        </button>
+          {/* </button> */}
+        </motion.button>
       </div>
     </header>
   );
