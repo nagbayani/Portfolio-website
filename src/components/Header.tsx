@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Header = () => {
-  const initialPath = "M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3";
-  const finalPath = "M12 2.25 2.25 7.5 12 12.75l9.75-5.25L12 2.25z";
+  const initialPath = "M12 2.25 2.25 7.5 12 12.75l9.75-5.25L12 2.25z";
+  const finalPath = "M12 2.25 L 2.25 12 M 21.75 12 L 12 21.75";
 
   const navigate = useNavigate();
   const [isTransformed, setIsTransformed] = useState(false);
@@ -40,10 +40,31 @@ const Header = () => {
             xmlns='http://www.w3.org/2000/svg'
             aria-hidden='true'
           >
+            {/* Animation for the top edge */}
+
+            {/* //  Left d="M2.25 7.5 L 12 12.75" 
+                //  right d="M21.75 7.5 L 12 2.25"  */}
+            <motion.path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d={isTransformed ? "M2.25 7.5 L 12 12.75" : "M6 18 L 18 6"}
+              animate={{ rotate: isTransformed ? 45 : 0 }} // Rotate the edge to form an X
+              transition={{ duration: 0.5 }}
+            />
+            {/* Animation for the bottom edge */}
+            <motion.path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d={isTransformed ? "M21.75 7.5 L 12 2.25" : "M6 6 L 18 18"}
+              animate={{ rotate: isTransformed ? -45 : 0 }} // Rotate the edge to form an X
+              transition={{ duration: 0.5 }}
+            />
+            {/* Animation for the entire SVG */}
             <motion.path
               strokeLinecap='round'
               strokeLinejoin='round'
               d={isTransformed ? finalPath : initialPath}
+              animate={{ opacity: isTransformed ? 0 : 1 }} // Fade out the SVG
               transition={{ duration: 0.5 }}
             />
           </motion.svg>
@@ -102,16 +123,17 @@ EDGES:
   <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25 L 2.25 7.5" />
 </svg>
 
+
+<svg dataSlot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 12.75 L 21.75 7.5" />
+</svg>
 <svg dataSlot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 7.5 L 12 12.75" />
 </svg>
 
 <svg dataSlot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M12 12.75 L 21.75 7.5" />
-</svg>
-
-<svg dataSlot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 7.5 L 12 2.25" />
 </svg>
+
 
 */
