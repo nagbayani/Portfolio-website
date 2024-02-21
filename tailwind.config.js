@@ -7,6 +7,11 @@ export default {
         indigo: "#523ccf",
       },
     },
+    fontFamily: {
+      aileronSemiBold: ["aileronSemiBold", "sans-serif"],
+      aileronSemiBoldItalic: ["aileronSemiBoldItalic", "sans-serif"],
+      aileronHeavyItalic: ["aileronHeavyItalic", "sans-serif"],
+    },
   },
   plugins: [],
 };

@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Header = () => {
-  const initialPath = "M12 2.25 2.25 7.5 12 12.75l9.75-5.25L12 2.25z";
-  const finalPath = "M12 2.25 L 2.25 12 M 21.75 12 L 12 21.75";
-
   const navigate = useNavigate();
   const [isTransformed, setIsTransformed] = useState(false);
 
@@ -14,8 +11,11 @@ const Header = () => {
     navigate(path);
   };
 
-  const handleTransform = () => {
+  const handleMenuTransform = () => {
     setIsTransformed(!isTransformed);
+    let path;
+    isTransformed ? (path = "/menu") : (path = "/");
+    navigate(path);
   };
 
   return (
@@ -25,49 +25,22 @@ const Header = () => {
       </div>
       <div className='right'>
         <motion.button
-          style={{ background: "none", border: "none", cursor: "pointer" }}
-          whileHover={{ scale: 1.1 }} // Example animation for the entire button
-          onClick={handleTransform}
+          className={`menu ${isTransformed ? "menu" : "opened"}`}
+          onClick={handleMenuTransform}
+          aria-label='Main Menu'
+          whileHover={{ scale: 1.1 }}
         >
-          <motion.svg
-            data-slot='icon'
-            fill='none'
-            width='1em'
-            height='1em'
-            strokeWidth={1.5}
-            stroke='currentColor'
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'
-            aria-hidden='true'
-          >
-            {/* Animation for the top edge */}
-
-            {/* //  Left d="M2.25 7.5 L 12 12.75" 
-                //  right d="M21.75 7.5 L 12 2.25"  */}
-            <motion.path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d={isTransformed ? "M2.25 7.5 L 12 12.75" : "M6 18 L 18 6"}
-              animate={{ rotate: isTransformed ? 45 : 0 }} // Rotate the edge to form an X
-              transition={{ duration: 0.5 }}
+          <svg width='100' height='100' viewBox='0 0 100 100'>
+            <path
+              className='line line1'
+              d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
             />
-            {/* Animation for the bottom edge */}
-            <motion.path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d={isTransformed ? "M21.75 7.5 L 12 2.25" : "M6 6 L 18 18"}
-              animate={{ rotate: isTransformed ? -45 : 0 }} // Rotate the edge to form an X
-              transition={{ duration: 0.5 }}
+            <path className='line line2' d='M 20,50 H 80' />
+            <path
+              className='line line3'
+              d='M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942'
             />
-            {/* Animation for the entire SVG */}
-            <motion.path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d={isTransformed ? finalPath : initialPath}
-              animate={{ opacity: isTransformed ? 0 : 1 }} // Fade out the SVG
-              transition={{ duration: 0.5 }}
-            />
-          </motion.svg>
+          </svg>
         </motion.button>
       </div>
     </header>
