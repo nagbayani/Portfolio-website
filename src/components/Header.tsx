@@ -19,9 +19,28 @@ const Header = () => {
   };
 
   return (
-    <header className='flex justify-between mt-12 text-6xl font-bold my-4 text-indigo-500'>
-      <div className='left'>
-        <button onClick={handleHomeClick}>Home</button>
+    <header className='flex  justify-around my-4 text-indigo-500 w-full'>
+      <div className='flex left'>
+        <button
+          className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'
+          onClick={handleHomeClick}
+        >
+          Home
+        </button>
+      </div>
+      <div className='header-treadmill-container'>
+        <div className='treadmill-text sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
+          <ul>
+            <li>Full Stack Developer</li>
+            <li>Frontend Focused</li>
+            <li>Creative</li>
+          </ul>
+          <ul>
+            <li>Full Stack Developer</li>
+            <li>Frontend Focused</li>
+            <li>Creative</li>
+          </ul>
+        </div>
       </div>
       <div className='right'>
         <motion.button

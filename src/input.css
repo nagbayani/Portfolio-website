@@ -16,7 +16,7 @@
   font-family: "aileronSemiBoldItalic";
   src: url("./fonts/Aileron-SemiBoldItalic.otf") format("opentype");
 }
-
+/* 
 ul li {
   padding: 0 0.5em 0.25em;
   cursor: pointer;
@@ -32,7 +32,6 @@ ul li:before {
   content: "";
   position: absolute;
   background: #523ccf;
-  /* inset: calc(100% - 0.1em) 0 0 0; */
   scale: 0 1;
   transition: 0.3s, translate 0s 0.3s;
 }
@@ -54,10 +53,10 @@ ul:hover li:has(~ li:hover):before {
 ul:hover li:hover ~ li:before {
   translate: -100% 0;
   transition: 0.2s 0.2s, scale 0s 0.4s;
-}
+} */
 
 .right {
-  margin-right: 2em;
+  justify-self: center;
 }
 
 canvas {
@@ -65,10 +64,9 @@ canvas {
   background: hsl(222, 25%, 20%);
 }
 canvas {
-  position: absolute;
+  position: relative;
   z-index: -1;
 }
-
 
 .center {
   top: 50%;
@@ -120,4 +118,55 @@ canvas {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: 6;
+}
+.header-treadmill-container {
+  justify-items: center;
+  align-items: start;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 60%;
+}
+.header-treadmill-container ul {
+  display: flex; /* Make list items display horizontally */
+  flex-direction: row; /* Ensure list items are in a row */
+  white-space: nowrap;
+  animation: treadmill-animation 10s linear infinite;
+}
+.header-treadmill-container li {
+  margin-right: 5rem;
+}
+
+.treadmill-container {
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 2em;
+  width: 40%;
+}
+.treadmill-container ul {
+  display: flex; /* Make list items display horizontally */
+  flex-direction: row; /* Ensure list items are in a row */
+  white-space: nowrap;
+  animation: treadmill-animation 10s linear infinite;
+}
+.treadmill-container li {
+  margin-right: 5rem;
+}
+
+.treadmill-text {
+  display: flex; /* Make list items display horizontally */
+  /* animation: treadmill-animation 5s linear infinite; */
+  flex-direction: row; /* Ensure list items are in a row */
+  justify-content: space-between;
+  height: 1em;
+}
+
+@keyframes treadmill-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

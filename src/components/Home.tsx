@@ -4,17 +4,28 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
-      <div className='w-screen flex flex-col items-center justify-center my-10'>
-        <div className='text-6xl font-bold my-4 text-indigo-500 border-indigo border-4 h-screen'>
-          <div className='text-6xl my-4 font-aileron text-indigo-500'>
+    <div className='flex justify-center align-baseline'>
+      <div className='w-[75%] my-10'>
+        <div className='my-4 text-indigo-500 border-indigo border-4 h-screen'>
+          <div className='text-4xl my-4 font-aileronHeavyItalic text-indigo-500'>
             WELCOME
-            <div className='text-3xl my-4 font-aileron  text-indigo-500'>
+            <div className='text-3xl my-4 font-aileronSemiBold  text-indigo-500'>
               I'M NATHAN AGBAYANI
             </div>
-            <div>
-              <hr className='w-full h-1 bg-indigo rounded'></hr>
-              <p>Full Stack web developer, Front-end focused</p>
+            <hr className='h-1 bg-indigo rounded'></hr>
+            <div className='treadmill-container'>
+              <div className='treadmill-text'>
+                <ul>
+                  <li>Full Stack Developer</li>
+                  <li>Frontend Focused</li>
+                  <li>Creative</li>
+                </ul>
+                <ul>
+                  <li>Full Stack Developer</li>
+                  <li>Frontend Focused</li>
+                  <li>Creative</li>
+                </ul>
+              </div>
             </div>
             <ul className='text-3xl flex justify-center'>
               <li>
