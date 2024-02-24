@@ -11,6 +11,8 @@ export default {
       aileronSemiBold: ["aileronSemiBold", "sans-serif"],
       aileronSemiBoldItalic: ["aileronSemiBoldItalic", "sans-serif"],
       aileronHeavyItalic: ["aileronHeavyItalic", "sans-serif"],
+      aileronHeavy: ["aileronHeavy", "sans-serif"],
+      aileronThin: ["aileronThin", "sans-serif"],
     },
   },
   plugins: [],

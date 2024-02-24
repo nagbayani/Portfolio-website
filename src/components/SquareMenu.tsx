@@ -7,9 +7,9 @@ import {
 } from "react-router-dom";
 const SquareMenu = () => {
   return (
-    <div className=' justify-center w-screen h-screen '>
-      <div className='flex justify-center text-4xl w-full '>
-        <ol className='flex flex-col items-start justify-center font-aileronHeavyItalic border-indigo border-4 p-24 h-screen space-y-16'>
+    <div className='justify-center'>
+      <div className='flex justify-center text-4xl'>
+        <ol className='flex flex-col items-start justify-center font-aileronHeavyItalic border-indigo p-24 border-4  space-y-16'>
           <li className='mb-4'>
             <Link to='/'>
               <div className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
@@ -46,7 +46,7 @@ const SquareMenu = () => {
                 <span className='text-2xl mr-8 w-8 font-aileronHeavyItalic'>
                   04
                 </span>
-                Experience
+                Contact
               </div>
             </Link>
           </li>
