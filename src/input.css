@@ -27,6 +27,14 @@
   src: url("./fonts/Aileron-Thin.otf") format("truetype");
 }
 
+.name {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-fill-color: white;
+  overflow: visible;
+  /* transform: translate(0%, 100%); */
+  z-index: 5;
+}
+
 :root {
   --bg: #f0dba5;
   --yellow: #edb74d;
@@ -41,18 +49,134 @@ body {
   /* overflow: auto; */
 }
 
+.links {
+  position: relative;
+  /* margin-top: auto; Push the links to the bottom */
+  flex-shrink: 1;
+}
+
+.home-page {
+  overflow: visible;
+  position: relative;
+  flex-shrink: 1;
+  transform: scale(0.75);
+  z-index: 4;
+  /* transform: skewY(-9deg) skewX(20deg); */
+}
+
 .album-cover {
-  background: url(svg/noisynoisy.svg) no-repeat;
-  background-size: cover;
+  display: inline-flex;
   min-height: 30em;
   min-width: 50em;
-  margin: 0 auto;
   position: relative;
+  /* object-position: 90% 50%; */
+  z-index: 3;
+  overflow: visible;
 }
+.inner-album {
+  background: url(svg/noisynoisy.svg) no-repeat;
+  background-size: cover;
+  position: relative;
+  object-fit: contain;
+  z-index: 4;
+  overflow: visible;
+}
+
+.inner-album > * {
+  flex-shrink: 1;
+  width: 100%;
+}
+
+.album-cover > * {
+  flex-shrink: 1;
+  width: 100%;
+  overflow: visible;
+}
+
+.vinyl-cover > * {
+  flex-shrink: 1;
+  width: 100%;
+  /* margin: 2px; */
+  /* transform: scale(4); */
+}
+
+.vinyl {
+  /* display: block; */
+  background: url(svg/vinyl.svg) no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 20%;
+  left: -200px;
+  overflow: visible;
+  margin: auto;
+  z-index: 2;
+
+  /* transform: translate(-40%, 120%) scale(4); */
+  background-color: red;
+  /* top: 200%; */
+  flex-shrink: 1;
+  /* -webkit-transition: -webkit-transfrom 1s; */
+  /* animation: record-spin 5s linear infinite; */
+  /* -webkit-transform: rotate(360deg) translateZ(0); */
+  /* transform-origin: center; */
+  transform: scale(1.65);
+  /* transform: translate(-40%, 120%); */
+  animation: record-spin 4s infinite;
+}
+
+@keyframes record-spin {
+  0% {
+    transform: rotate(90deg) scale(1.65);
+  }
+  25% {
+    transform: rotate(180deg) scale(1.65);
+  }
+  50% {
+    transform: rotate(270deg) scale(1.65);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.65);
+  }
+}
+
+/* @-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+} */
+
+/* .album-cover .vinyl-cover::before {
+  content: "";
+  overflow: hidden;
+  position: relative;
+  left: 2em;
+  z-index: 9;
+} */
+
+.vinyl-cover {
+  content: "";
+  overflow: visible;
+  position: relative;
+  background-color: blue;
+  /* margin-right: 200px; */
+
+  /* z-index: 12; */
+}
+
+/* .vinyl-cover .vinyl:before {
+  background: url(svg/vinyl.svg) no-repeat;
+  background-size: contain;
+  overflow: visible;
+  position: sticky;
+  content: "";
+  z-index: -1;
+  transform: scale(1);
+} */
 
 .album-cover .shadow1::before {
   content: "";
   position: absolute;
+  object-position: left bottom;
   align-self: end;
   bottom: 10px;
   height: 20%;
@@ -60,11 +184,12 @@ body {
   min-width: 20%;
   width: 10%;
   /* left: -2px; */
-  box-shadow: -5em 1em 50px rgb(0, 0, 0, 0.3);
+  box-shadow: -30px -50px 20px rgb(0, 0, 0, 0.3);
   transform: skewY(9deg);
-  border-radius: 75%;
+  border-radius: 60%;
   z-index: -1;
   filter: blur(2px);
+  transform: translateX(90%) translateY(30%) rotate(-20deg);
   will-change: unset !important;
 }
 
