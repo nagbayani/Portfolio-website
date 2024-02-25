@@ -51,16 +51,16 @@ body {
 
 .links {
   position: relative;
-  /* margin-top: auto; Push the links to the bottom */
   flex-shrink: 1;
 }
 
 .home-page {
   overflow: visible;
-  position: relative;
+  position: sticky;
   flex-shrink: 1;
   transform: scale(0.75);
   z-index: 4;
+
   /* transform: skewY(-9deg) skewX(20deg); */
 }
 
@@ -69,6 +69,7 @@ body {
   min-height: 30em;
   min-width: 50em;
   position: relative;
+  max-height: 100%;
   /* object-position: 90% 50%; */
   z-index: 3;
   overflow: visible;
@@ -81,97 +82,6 @@ body {
   z-index: 4;
   overflow: visible;
 }
-
-.inner-album > * {
-  flex-shrink: 1;
-  width: 100%;
-}
-
-.album-cover > * {
-  flex-shrink: 1;
-  width: 100%;
-  overflow: visible;
-}
-
-.vinyl-cover > * {
-  flex-shrink: 1;
-  width: 100%;
-  /* margin: 2px; */
-  /* transform: scale(4); */
-}
-
-.vinyl {
-  /* display: block; */
-  background: url(svg/vinyl.svg) no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 20%;
-  left: -200px;
-  overflow: visible;
-  margin: auto;
-  z-index: 2;
-
-  /* transform: translate(-40%, 120%) scale(4); */
-  background-color: red;
-  /* top: 200%; */
-  flex-shrink: 1;
-  /* -webkit-transition: -webkit-transfrom 1s; */
-  /* animation: record-spin 5s linear infinite; */
-  /* -webkit-transform: rotate(360deg) translateZ(0); */
-  /* transform-origin: center; */
-  transform: scale(1.65);
-  /* transform: translate(-40%, 120%); */
-  animation: record-spin 4s infinite;
-}
-
-@keyframes record-spin {
-  0% {
-    transform: rotate(90deg) scale(1.65);
-  }
-  25% {
-    transform: rotate(180deg) scale(1.65);
-  }
-  50% {
-    transform: rotate(270deg) scale(1.65);
-  }
-  100% {
-    transform: rotate(360deg) scale(1.65);
-  }
-}
-
-/* @-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-} */
-
-/* .album-cover .vinyl-cover::before {
-  content: "";
-  overflow: hidden;
-  position: relative;
-  left: 2em;
-  z-index: 9;
-} */
-
-.vinyl-cover {
-  content: "";
-  overflow: visible;
-  position: relative;
-  background-color: blue;
-  /* margin-right: 200px; */
-
-  /* z-index: 12; */
-}
-
-/* .vinyl-cover .vinyl:before {
-  background: url(svg/vinyl.svg) no-repeat;
-  background-size: contain;
-  overflow: visible;
-  position: sticky;
-  content: "";
-  z-index: -1;
-  transform: scale(1);
-} */
 
 .album-cover .shadow1::before {
   content: "";
@@ -193,16 +103,55 @@ body {
   will-change: unset !important;
 }
 
-/* .album-cover .shadow1::before {
-  content: "";
+.inner-album > * {
+  flex-shrink: 1;
+  width: 100%;
+}
+
+.album-cover > * {
+  flex-shrink: 1;
+  width: 100%;
+  overflow: visible;
+}
+
+.vinyl-cover > * {
+  flex-shrink: 1;
+  width: 100%;
+  /* margin: 2px; */
+  /* transform: scale(4); */
+}
+
+.vinyl {
+  display: inline-block;
+  background: url(svg/vinyl.svg) no-repeat;
+  background-size: contain;
   position: absolute;
-  bottom: 10px;
-  left: 10%;
-  box-shadow: -60px -2.5em 20px rgb(0, 0, 0, 0.3);
-  transform: skewY(5deg);
-  z-index: -1;
-  filter: blur(5px);
-} */
+  top: 20%;
+  left: -200px;
+  overflow: visible;
+  margin: auto;
+  z-index: 2;
+  flex-shrink: 1;
+  transform: scale(1.65);
+  animation: record-spin 4s linear infinite;
+  min-height: 50%;
+  min-width: 50%;
+}
+
+@keyframes record-spin {
+  0% {
+    transform: rotate(0deg) scale(1.65);
+  }
+  100% {
+    transform: rotate(359deg) scale(1.65);
+  }
+}
+
+.vinyl-cover {
+  content: "";
+  overflow: visible;
+  position: sticky;
+}
 
 .project-ul {
   overflow-x: scroll;
@@ -210,6 +159,7 @@ body {
 .project-li:last-of-type {
   margin: 0;
 }
+
 .record {
   display: inline-block;
   position: relative;
@@ -219,18 +169,6 @@ body {
   transform: translateY(50%) translateX(-50%) rotate(90deg);
   white-space: nowrap;
 }
-/* .home-record {
-  top: 5%;
-}
-.about-record {
-  top: 12%;
-}
-.projects-record {
-  top: 19%;
-}
-.contact-record {
-  top: 26%;
-} */
 
 ::-webkit-scrollbar {
   height: 5px;
