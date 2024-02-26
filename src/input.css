@@ -6,7 +6,6 @@
   font-family: "aileronHeavyItalic";
   src: url("./fonts/Aileron-HeavyItalic.otf") format("truetype");
 }
-
 @font-face {
   font-family: "aileronSemiBold";
   src: url("./fonts/Aileron-SemiBold.otf") format("truetype");
@@ -59,9 +58,13 @@ body {
   position: sticky;
   flex-shrink: 1;
   transform: scale(0.75);
+  /* base  337.5 x 464*/
   z-index: 4;
-
-  /* transform: skewY(-9deg) skewX(20deg); */
+  max-width: 450px; /* base  337.5 / 0.75 */
+  max-height: 650px; /* base  464 / 0.75 */
+  min-width: 337px;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
 }
 
 .album-cover {
@@ -125,17 +128,26 @@ body {
   display: inline-block;
   background: url(svg/vinyl.svg) no-repeat;
   background-size: contain;
+  background-color: red;
   position: absolute;
   top: 20%;
-  left: -200px;
+  /* left: -180px; */
+  left: -50%;
+
   overflow: visible;
   margin: auto;
-  z-index: 2;
-  flex-shrink: 1;
+  z-index: -1;
+  flex-shrink: 0;
   transform: scale(1.65);
   animation: record-spin 4s linear infinite;
-  min-height: 50%;
-  min-width: 50%;
+  /* min-height: 50%; */
+  /* min-width: 50%; */
+  /* min-width: 40px; */
+  min-width: 100%;
+  min-height: 60%;
+  /* max-width: 360px; */
+  max-width: 100%;
+  max-height: 60%;
 }
 
 @keyframes record-spin {
@@ -150,7 +162,11 @@ body {
 .vinyl-cover {
   content: "";
   overflow: visible;
-  position: sticky;
+  position: relative;
+  max-height: 770px;
+  min-height: 458px;
+  min-width: 30px;
+  margin: 0px;
 }
 
 .project-ul {

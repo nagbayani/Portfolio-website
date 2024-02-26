@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const RecordHome = () => {
   return (
-    <div className='home-page flex flex-row justify-center h-[75vh]'>
+    <div className='home-page grid grid-row justify-center h-[75vh]'>
       <div className='album-cover w-[50%] h-[100%]'>
         <div className='shadow1'></div>
         <div className='inner-album flex justify-center flex-col items-center text-white border-indigo border-4 w-[100%] h-[100%]'>
@@ -37,7 +37,7 @@ const RecordHome = () => {
           </div>
         </div>
         <div className='static overflow-visible w-[100%] h-[100%]'>
-          <div className='vinyl-cover w-[280%] h-[99%] align-bottom mr-8'>
+          <div className='vinyl-cover w-[280%] h-[99%]'>
             <div className='vinyl w-[100%] h-[60%]'></div>
           </div>
         </div>
