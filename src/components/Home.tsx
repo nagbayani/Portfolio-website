@@ -5,9 +5,11 @@ import RecordHome from "./RecordHome";
 
 const Home = () => {
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center w-[100%]'>
       <div className='name font-aileronSemiBold text-8xl'>NATHAN AGBAYANI</div>
-      <RecordHome />
+      <div>
+        <RecordHome />
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 const SquareMenu = () => {
   return (
-    <div className='justify-center'>
+    <div className='justify-center w-[100%]'>
       <div className='flex justify-center text-4xl'>
         <ol className='flex flex-col items-start justify-center font-aileronHeavyItalic border-indigo p-24 border-4  space-y-16'>
           <li className='mb-4'>

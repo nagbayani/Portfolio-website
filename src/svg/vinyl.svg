@@ -1,5 +1,5 @@
-<svg id='vinyl-svg' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="392" height="395" viewBox="0 0 392 395" fill="none">
-<rect width="392" height="395" fill="url(#pattern0)"/>
+<svg id='vinyl-svg' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 100% 100%" fill="none" transform='scale(4)'>
+<rect width="100%" height="100%" fill="url(#pattern0)"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_19_66" transform="matrix(0.00243394 0 0 0.00241546 -0.00382653 0)"/>

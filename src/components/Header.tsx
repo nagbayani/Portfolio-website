@@ -19,8 +19,8 @@ const Header = () => {
   };
 
   return (
-    <header className='flex justify-around my-4 text-indigo-500 w-full '>
-      <div className='flex left'>
+    <header className='flex relative justify-around text-indigo-500 w-100% '>
+      <div className='flex left ml-10'>
         <button
           className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'
           onClick={handleHomeClick}
