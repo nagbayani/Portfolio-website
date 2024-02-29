@@ -66,11 +66,11 @@ body {
   /* overflow: auto; */
 }
 
-/*============ HEADER =============*/
+/*======================== HEADER ===================================*/
 header {
   top: 0;
   left: 0;
-  /* min-width: 100vw; */
+  /* overflow: hidden; */
 }
 
 hr {
@@ -79,7 +79,7 @@ hr {
   /* border-top: 3px double #333; */
   color: #333;
   border: none;
-  height: 12px;
+  height: 5px;
   background: #333;
   overflow: visible;
   text-align: center;
@@ -111,13 +111,81 @@ hr::after {
   margin-right: 5rem;
 }
 
+.right {
+  justify-self: center;
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 50px;
+  color: #523ccf;
+}
+
+/* Menu to X button */
+.menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+.line {
+  fill: none;
+  stroke: #523ccf;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+/* ===================== Home Component ============================*/
+.name {
+  /* -webkit-text-stroke-width: 1px; */
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: none;
+  overflow: visible;
+  /* transform: translate(0%, 50%); */
+  z-index: 5;
+  font-size: var(--step-7);
+}
+
 .treadmill-container {
   /* justify-items: center; */
   /* align-items: center; */
   margin: 0 auto;
   overflow: hidden;
   /* height: 2em; */
-  width: 66%;
+  z-index: 4;
+  transform: translate(-23%, 0%);
 }
 .treadmill-container ul {
   display: flex; /* Make list items display horizontally */
@@ -125,9 +193,10 @@ hr::after {
   white-space: nowrap;
   animation: treadmill-animation 10s linear infinite;
   transform: translate(0%, 50%);
+  /* overflow: hidden; */
 }
 .treadmill-container li {
-  margin-right: 5rem;
+  margin-right: 2rem;
   font-size: var(--step-0);
 }
 
@@ -136,7 +205,7 @@ hr::after {
   /* animation: treadmill-animation 5s linear infinite; */
   flex-direction: row; /* Ensure list items are in a row */
   justify-content: space-between;
-  /* height: 1em; */
+  width: 25%;
 }
 
 @keyframes treadmill-animation {
@@ -146,17 +215,6 @@ hr::after {
   100% {
     transform: translateX(-100%);
   }
-}
-
-/* Home Component Styling*/
-.name {
-  /* -webkit-text-stroke-width: 1px; */
-  -webkit-text-fill-color: black;
-  -webkit-text-stroke-color: none;
-  overflow: visible;
-  /* transform: translate(0%, 50%); */
-  z-index: 5;
-  font-size: var(--step-7);
 }
 
 .links {
@@ -462,61 +520,6 @@ hr::after {
     right: 0px;
     transform: scale(1);
   }
-}
-.right {
-  justify-self: center;
-}
-
-.center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  width: 50px;
-  color: #523ccf;
-}
-
-/* Menu to X button */
-.menu {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  padding: 0;
-}
-.line {
-  fill: none;
-  stroke: #523ccf;
-  stroke-width: 6;
-  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
-    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.line1 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
-.line2 {
-  stroke-dasharray: 60 60;
-  stroke-width: 6;
-}
-.line3 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
-}
-.opened .line1 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
-}
-.opened .line2 {
-  stroke-dasharray: 1 60;
-  stroke-dashoffset: -30;
-  stroke-width: 6;
-}
-.opened .line3 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
 }
 
 /*

@@ -13,6 +13,7 @@ const Header = () => {
 
   const handleMenuTransform = () => {
     setIsTransformed(!isTransformed);
+    console.log("CLICKED");
     let path;
     isTransformed ? (path = "/menu") : (path = "/");
     navigate(path);
@@ -22,7 +23,7 @@ const Header = () => {
     <header className='flex relative justify-around text-indigo-500 w-[100%] '>
       <div className='flex left ml-10'>
         <button
-          className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'
+          className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic w-[100%]'
           onClick={handleHomeClick}
         >
           Home
@@ -30,7 +31,7 @@ const Header = () => {
       </div>
       <div className='w-[60%] inline-block justify-items-center items-center align-baseline'>
         {/* <div className='header-treadmill-container'> */}
-        <hr className='translate-y-[70%] justify-items-center align-baseline'></hr>
+        <hr className='translate-y-[300%] justify-items-center align-baseline'></hr>
         {/* <div className='treadmill-text sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronThin'>
           <ul>
             <li>Full Stack Developer</li>
@@ -49,9 +50,9 @@ const Header = () => {
           className={`menu ${isTransformed ? "menu" : "opened"}`}
           onClick={handleMenuTransform}
           aria-label='Main Menu'
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1 }}
         >
-          <svg width='100' height='100' viewBox='0 0 100 100'>
+          <svg width={"50%"} height={"50%"} viewBox='0 0 100 100'>
             <path
               className='line line1'
               d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
