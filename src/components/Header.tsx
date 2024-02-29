@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className='flex relative justify-around text-indigo-500 w-100% '>
+    <header className='flex relative justify-around text-indigo-500 w-[100%] '>
       <div className='flex left ml-10'>
         <button
           className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'
@@ -28,8 +28,10 @@ const Header = () => {
           Home
         </button>
       </div>
-      <div className='header-treadmill-container'>
-        <div className='treadmill-text sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
+      <div className='w-[60%] inline-block justify-items-center items-center align-baseline'>
+        {/* <div className='header-treadmill-container'> */}
+        <hr className='translate-y-[70%] justify-items-center align-baseline'></hr>
+        {/* <div className='treadmill-text sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronThin'>
           <ul>
             <li>Full Stack Developer</li>
             <li>Frontend Focused</li>
@@ -40,7 +42,7 @@ const Header = () => {
             <li>Frontend Focused</li>
             <li>Creative</li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className='right'>
         <motion.button

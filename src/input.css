@@ -2,29 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #f0dba5;
-  --yellow: #edb74d;
-  --red: #eb6666;
-  --green: #6fb18a;
-  min-width: 100%;
-}
-
-body {
-  /* position: absolute; */
-  /* background: url(svg/noisynoisy.svg) no-repeat; */
-  background-color: #fef3ef;
-  margin: 0px 0px 0px 0px;
-  min-width: 100%;
-  /* overflow: auto; */
-}
-
-header {
-  top: 0;
-  left: 0;
-  min-width: 100vw;
-}
-
 @font-face {
   font-family: "aileronHeavyItalic";
   src: url("./fonts/Aileron-HeavyItalic.otf") format("truetype");
@@ -49,13 +26,137 @@ header {
   src: url("./fonts/Aileron-Thin.otf") format("truetype");
 }
 
+@font-face {
+  font-family: "aileronRegular";
+  src: url("./fonts/Aileron-Regular.otf") format("truetype");
+}
+
+:root {
+  --bg: #f0dba5;
+  --yellow: #edb74d;
+  --red: #eb6666;
+  --green: #6fb18a;
+  --step--3: clamp(0.7513rem, 0.5903rem + 0.805vi, 1.3148rem);
+  --step--2: clamp(0.8264rem, 0.6494rem + 0.8855vi, 1.4463rem);
+  --step--1: clamp(0.9091rem, 0.7143rem + 0.974vi, 1.5909rem);
+  --step-0: clamp(1rem, 0.7857rem + 1.0714vi, 1.75rem);
+  --step-1: clamp(1.1rem, 0.8643rem + 1.1786vi, 1.925rem);
+  --step-2: clamp(1.21rem, 0.9507rem + 1.2964vi, 2.1175rem);
+  --step-3: clamp(1.331rem, 1.0458rem + 1.4261vi, 2.3293rem);
+  --step-4: clamp(1.4641rem, 1.1504rem + 1.5687vi, 2.5622rem);
+  --step-5: clamp(1.6105rem, 1.2654rem + 1.7255vi, 2.8184rem);
+  --step-6: clamp(1.7716rem, 1.3919rem + 1.8981vi, 3.1002rem);
+  --step-7: clamp(1.9487rem, 1.5311rem + 2.0879vi, 3.4103rem);
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+h2 {
+  font-size: var(--step-2);
+}
+
+body {
+  /* position: absolute; */
+  /* background: url(svg/noisynoisy.svg) no-repeat; */
+  background-color: #fef3ef;
+  margin: 0px 0px 0px 0px;
+  min-width: 100%;
+  font-size: var(--step--1);
+  /* overflow: auto; */
+}
+
+/*============ HEADER =============*/
+header {
+  top: 0;
+  left: 0;
+  /* min-width: 100vw; */
+}
+
+hr {
+  top: 50%;
+  /* border: 10px double #333; */
+  /* border-top: 3px double #333; */
+  color: #333;
+  border: none;
+  height: 12px;
+  background: #333;
+  overflow: visible;
+  text-align: center;
+  align-items: center;
+}
+
+/*
+hr::after {
+  background: #fff;
+  content: "§";
+  position: relative;
+}
+*/
+
+.header-treadmill-container {
+  justify-items: center;
+  align-items: start;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 60%;
+}
+.header-treadmill-container ul {
+  display: flex; /* Make list items display horizontally */
+  flex-direction: row; /* Ensure list items are in a row */
+  white-space: nowrap;
+  animation: treadmill-animation 10s linear infinite;
+}
+.header-treadmill-container li {
+  margin-right: 5rem;
+}
+
+.treadmill-container {
+  /* justify-items: center; */
+  /* align-items: center; */
+  margin: 0 auto;
+  overflow: hidden;
+  /* height: 2em; */
+  width: 66%;
+}
+.treadmill-container ul {
+  display: flex; /* Make list items display horizontally */
+  flex-direction: row; /* Ensure list items are in a row */
+  white-space: nowrap;
+  animation: treadmill-animation 10s linear infinite;
+  transform: translate(0%, 50%);
+}
+.treadmill-container li {
+  margin-right: 5rem;
+  font-size: var(--step-0);
+}
+
+.treadmill-text {
+  display: flex; /* Make list items display horizontally */
+  /* animation: treadmill-animation 5s linear infinite; */
+  flex-direction: row; /* Ensure list items are in a row */
+  justify-content: space-between;
+  /* height: 1em; */
+}
+
+@keyframes treadmill-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* Home Component Styling*/
 .name {
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-fill-color: white;
+  /* -webkit-text-stroke-width: 1px; */
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: none;
   overflow: visible;
-  /* transform: translate(0%, 100%); */
+  /* transform: translate(0%, 50%); */
   z-index: 5;
+  font-size: var(--step-7);
 }
 
 .links {
@@ -75,6 +176,7 @@ header {
   min-height: 800px;
   margin: auto;
   transition: transform 0.3s ease-in-out;
+  transform: scale(0.55);
 }
 
 /* Home - RecordHome Component Styling */
@@ -117,12 +219,12 @@ header {
   min-width: 20%;
   width: 10%;
   /* left: -2px; */
-  box-shadow: -30px -50px 20px rgb(0, 0, 0, 0.3);
-  transform: skewY(9deg);
-  border-radius: 60%;
+  box-shadow: -30px -60px 30px rgb(0, 0, 0, 0.3);
+  /* transform: skewY(9deg); */
+  border-radius: 45%;
   z-index: -1;
   filter: blur(2px);
-  transform: translate(40%, 0%) rotate(-20deg);
+  transform: translate(45%, -5%) rotate(-50deg) skewY(9deg);
   will-change: unset !important;
   grid-column-start: 1;
 }
@@ -416,68 +518,128 @@ header {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
-.header-treadmill-container {
-  justify-items: center;
-  align-items: start;
-  margin: 0 auto;
-  overflow: hidden;
-  width: 60%;
-}
-.header-treadmill-container ul {
-  display: flex; /* Make list items display horizontally */
-  flex-direction: row; /* Ensure list items are in a row */
-  white-space: nowrap;
-  animation: treadmill-animation 10s linear infinite;
-}
-.header-treadmill-container li {
-  margin-right: 5rem;
-}
 
-.treadmill-container {
-  justify-items: center;
-  align-items: center;
-  margin: 0 auto;
-  overflow: hidden;
-  height: 2em;
-  width: 40%;
-}
-.treadmill-container ul {
-  display: flex; /* Make list items display horizontally */
-  flex-direction: row; /* Ensure list items are in a row */
-  white-space: nowrap;
-  animation: treadmill-animation 10s linear infinite;
-}
-.treadmill-container li {
-  margin-right: 5rem;
-}
+/*
+  @1440
+  1440/1000 = 1.44
+  1440/800 = 1.8
+  1440/ 695 = 2.071
+  1440/ 200 = 7.2
+    Header
+    Home Page (1000 x 800)
+      Album Cover (1000 x 800)
+      Inner Album (800 x 800)
+      Vinyl Cover (695 x 800)
+      Vinyl (200 x 800)
+    SquareMenu
 
-.treadmill-text {
-  display: flex; /* Make list items display horizontally */
-  /* animation: treadmill-animation 5s linear infinite; */
-  flex-direction: row; /* Ensure list items are in a row */
-  justify-content: space-between;
-  height: 1em;
-}
+  */
 
-@keyframes treadmill-animation {
-  0% {
-    transform: translateX(0%);
+@media screen and (max-width: 376px) {
+  .home-page {
+    min-width: 222.22px;
+    min-height: 177.77px;
+    /* transform: scale(1.5); */
   }
-  100% {
-    transform: translateX(-100%);
+  .album-cover {
+    min-height: 177px;
+    min-width: 177px;
+    grid-template-columns: 10% 177px 22%;
+  }
+
+  .album-cover .shadow1::before {
+  }
+
+  .vinyl-cover {
+    max-width: 177px;
+    min-width: 154.51px;
+    height: 177px;
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  .vinyl {
+    max-width: 44.44px;
+    max-height: 177px;
+  }
+
+  #vinyl-svg {
+    width: 44.44px;
+    height: 44.44px;
   }
 }
-
-@media screen and (max-width: 320px) {
-}
-
+/* 
 @media screen and (max-width: 480px) {
-}
+} */
 
 @media screen and (max-width: 600px) {
+  .home-page {
+    min-width: 416px;
+    min-height: 333px;
+  }
+  .album-cover {
+    min-height: 333px;
+    min-width: 333px;
+    grid-template-columns: 10% 333px 22%;
+  }
+
+  .album-cover .shadow1::before {
+  }
+
+  .vinyl-cover {
+    max-width: 333px;
+    min-width: 289.7px;
+    height: 333px;
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  .vinyl {
+    max-width: 83.33px;
+    max-height: 333px;
+  }
+
+  #vinyl-svg {
+    width: 83.33px;
+    height: 83.33px;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (601px < width < 768px) {
+  /* Home Page (1000 x 800) */
+  .home-page {
+    min-width: 533.33px;
+    min-height: 426px;
+  }
+
+  /* Album Cover (1000 x 800) */
+  .album-cover {
+    min-height: 426px;
+    min-width: 426px;
+    grid-template-columns: 10% 426px 22%;
+  }
+
+  .album-cover .shadow1::before {
+  }
+
+  /* Vinyl Cover (695 x 800) */
+  .vinyl-cover {
+    max-width: 426px;
+    min-width: 370.8px;
+    height: 426px;
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+  /* Vinyl (200 x 800) */
+  .vinyl {
+    max-width: 106.66px;
+    max-height: 426px;
+  }
+  /* Vinyl (200 x 200) */
+  #vinyl-svg {
+    width: 106.66px;
+    height: 106.66px;
+  }
 }
 
 @media screen and (max-width: 900px) {
