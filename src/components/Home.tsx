@@ -25,9 +25,17 @@ const Home = () => {
         </div>
       </div>
       <hr className='w-[100%] justify-items-center align-baseline'></hr>
-      <div className='translate-y-[-20%] translate-x-[-20%]'>
-        <RecordHome />
+      <div className='flex flex-row h-[100%]'>
+        <div className='w-[50%] translate-x-[-25%] shrink'>
+          <RecordHome />
+        </div>
+        <div className='w-[50%] justify-center shrink'>
+          <p className='w-[50%] text-align-center translate-x-[50%] translate-y-[50%]'>
+            Hi my name is nathan Agbayani
+          </p>
+        </div>
       </div>
+      {/* <div className='profile w-[25%] h-[300px]'></div> */}
     </div>
   );
 };

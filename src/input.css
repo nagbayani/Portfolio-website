@@ -255,7 +255,30 @@ hr::after {
   flex-shrink: 0;
 }
 .inner-album {
-  background: url(svg/noisynoisy.svg) no-repeat;
+  /* background: url(svg/noisynoisy.svg) no-repeat; */
+
+  filter: contrast(970%) brightness(150%);
+  background: radial-gradient(
+      circle at 70% -3%,
+      rgba(127, 18, 208, 0.41),
+      rgba(0, 0, 0, 0.19)
+    ),
+    radial-gradient(
+      circle at 37% 51%,
+      rgba(220, 169, 18, 0.32),
+      rgba(255, 0, 255, 0)
+    ),
+    radial-gradient(
+      circle at 48% -50%,
+      rgba(183, 4, 4, 0.13),
+      rgba(124, 154, 232, 0.46)
+    ),
+    radial-gradient(
+      circle at 56% -46%,
+      rgba(240, 255, 198, 1),
+      rgba(181, 136, 34, 1)
+    ),
+    url(/👆/that/noise.svg);
   background-size: cover;
   position: absolute;
   height: 100%;
@@ -298,21 +321,27 @@ hr::after {
   /* background-color: blue; */
   grid-column-start: 3;
   grid-row-start: 1;
-  z-index: -2;
+  z-index: -4;
 }
 
-.vinyl {
-  background-color: red;
+.vinyl-holder {
   position: absolute;
-  /* @100% left: -180px; */
+  max-width: 37px;
+  max-height: 37px;
+  overflow: visible;
+  top: 46%;
+  left: -2%;
+  z-index: -2;
+  transform: scale(4);
+}
+.vinyl {
+  position: absolute;
   max-width: 200px;
   max-height: 800px;
   top: 37.5%;
   left: -15%;
   overflow: visible;
-  /* margin: auto; */
-  z-index: -1;
-  /* max-height: 20%; */
+  z-index: -3;
   animation: record-spin 4s linear infinite;
 }
 
@@ -324,11 +353,6 @@ hr::after {
     transform: rotate(359deg);
   }
 }
-
-/* .inner-album > * {
-  flex-shrink: 1;
-  width: 100%;
-} */
 
 .album-cover > * {
   /* flex-shrink: 1; */
@@ -528,11 +552,13 @@ hr::after {
   1440/800 = 1.8
   1440/ 695 = 2.071
   1440/ 200 = 7.2
+  1440/50 = 28.8
     Header
     Home Page (1000 x 800)
       Album Cover (1000 x 800)
       Inner Album (800 x 800)
       Vinyl Cover (695 x 800)
+      Vinyl Holder (50 x 50)
       Vinyl (200 x 800)
     SquareMenu
 
@@ -587,6 +613,11 @@ hr::after {
   }
 
   .album-cover .shadow1::before {
+  }
+
+  .vinyl-holder {
+    width: 21px;
+    height: 21px;
   }
 
   .vinyl-cover {

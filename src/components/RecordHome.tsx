@@ -1,13 +1,14 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import VinylSvg from "../svg/vinyl.svg";
+import ProfilePicSvg from "../svg/profilepic.svg";
 
 const RecordHome = () => {
   return (
     <div className='home-page flex'>
       <div className='album-cover grid grid-cols-3   h-[100%]'>
         <div className='shadow1'></div>
-        <div className='inner-album flex flex-col justify-center items-center text-white border-indigo border-4'>
+        <div className='inner-album flex flex-col justify-center items-center text-white'>
           <h1 className='font-aileronThin text-indigo-500'>WELCOME</h1>
           <h2 className='font-aileronSemiBold text-indigo-500'>
             NATHAN AGBAYANI
@@ -33,6 +34,9 @@ const RecordHome = () => {
           </div>
         </div>
         <div className='vinyl-cover'>
+          <div className='vinyl-holder'>
+            <ProfilePicSvg />
+          </div>
           <div className='vinyl'>
             <VinylSvg />
           </div>
