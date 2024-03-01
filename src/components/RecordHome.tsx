@@ -8,14 +8,10 @@ const RecordHome = () => {
     <div className='home-page flex'>
       <div className='album-cover grid grid-cols-3   h-[100%]'>
         <div className='shadow1'></div>
-        <div className='inner-album flex flex-col justify-center items-center text-white'>
-          <h1 className='font-aileronThin text-indigo-500'>WELCOME</h1>
-          <h2 className='font-aileronSemiBold text-indigo-500'>
-            NATHAN AGBAYANI
-          </h2>
-          <div className='font-aileronSemiBold  border-indigo border-4 rounded'>
-            <h2 className='text-center'>See My Work</h2>
-          </div>
+        <div className='inner-album flex flex-col justify-center items-center font-aileronThin'>
+          <h1 className='font-aileronThin'>DRIVEN</h1>
+          <h1 className='font-aileronThin'>ADAPTABLE</h1>
+          <h1 className='font-aileronThin'>SEXY</h1>
           <div className='links flex justify-between'>
             <ul className='flex'>
               <li className='mx-2 p-2'>

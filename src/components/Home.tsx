@@ -26,16 +26,19 @@ const Home = () => {
       </div>
       <hr className='w-[100%] justify-items-center align-baseline'></hr>
       <div className='flex flex-row h-[100%]'>
-        <div className='w-[50%] translate-x-[-25%] shrink'>
+        <div className='w-[50%] translate-x-[-25%] tshrink'>
           <RecordHome />
         </div>
         <div className='w-[50%] justify-center shrink'>
-          <p className='w-[50%] text-align-center translate-x-[50%] translate-y-[50%]'>
-            Hi my name is nathan Agbayani
-          </p>
+          <div className='w-[50%] text-align-center translate-x-[50%] translate-y-[15%] h-[50%] border-black border-2 p-4 font-aileronHeavy'>
+            <h1>WELCOME</h1>
+            <p className='font-aileronThin'>
+              Building awesome, responsive, and optimized web applications is my
+              passion.
+            </p>
+          </div>
         </div>
       </div>
-      {/* <div className='profile w-[25%] h-[300px]'></div> */}
     </div>
   );
 };
