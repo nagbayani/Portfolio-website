@@ -289,7 +289,7 @@ hr::after {
   grid-column-start: 2;
   grid-column-end: 3;
 }
-
+/* 
 .album-cover .shadow1::before {
   content: "";
   position: absolute;
@@ -299,16 +299,77 @@ hr::after {
   height: 20%;
   min-height: 10%;
   min-width: 20%;
-  width: 10%;
-  /* left: -2px; */
-  box-shadow: -50px -80px 30px rgb(0, 0, 0, 0.3);
+  width: 40%;
+
+  box-shadow: -120px 40px 20px rgb(0, 0, 0, 0.3);
   transform: skewY(9deg);
-  border-radius: 40%;
-  z-index: -1;
+  border-radius: 20%;
+  z-index: 2;
   filter: blur(2px);
-  transform: translate(53%, 10%) rotate(-50deg) skewY(9deg);
+  transform: translate(30%, -17%) rotate(0deg);
   will-change: unset !important;
   grid-column-start: 1;
+}
+
+.album-cover .shadow2::before {
+  content: "";
+  position: absolute;
+  object-position: right bottom;
+  overflow: visible;
+  align-self: end;
+  bottom: 10px;
+  height: 35%;
+  min-height: 10%;
+  min-width: 20%;
+  width: 65%;
+  box-shadow: 50px 100px 20px rgb(0, 0, 0, 0.3);
+  border-radius: 85%;
+  z-index: -4;
+  filter: blur(2px);
+  transform: translate(-30%, -5%) rotate(-25deg);
+  will-change: unset !important;
+  grid-column-start: 1;
+} */
+
+.bottom-shadow-1 {
+  position: absolute;
+  object-position: center bottom;
+  content: "";
+  background-color: rgb(0, 0, 0, 0.25);
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0, 0.55) 5%,
+    rgb(0, 0, 0, 0.55) 5%,
+    #eee 100%,
+    rgb(0, 0, 0, 0.55) 5%
+  );
+  width: 108%;
+  filter: blur(10px);
+  transform: translate(5.5%, 15.5%) rotate(0deg);
+  border-radius: 55% 55% 45% 25%;
+  height: 25%;
+  z-index: -5;
+}
+
+.bottom-shadow-2 {
+  position: absolute;
+  object-position: center bottom;
+  content: "";
+  /* background-color: red; */
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0, 0.2) 2%,
+    rgb(0, 0, 0, 0.2) 2%,
+    #eee 100%,
+    rgb(0, 0, 0, 0.2) 2.5%
+  );
+  background-color: rgb(0, 0, 0, 0.2);
+  width: 125.5%;
+  filter: blur(10px);
+  transform: translate(-1%, 3%) rotate(0deg);
+  border-radius: 15% 15% 40% 30%;
+  height: 30%;
+  z-index: -6;
 }
 
 .vinyl-cover {

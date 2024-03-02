@@ -33,7 +33,7 @@ const Home = () => {
           <div className='w-[50%] text-align-center translate-x-[50%] translate-y-[15%] h-[50%] border-black border-2 p-4 font-aileronHeavy'>
             <h1>WELCOME</h1>
             <p className='font-aileronThin'>
-              Building awesome, responsive, and optimized web applications is my
+              Building awesome, responsive, and optimized web products is my
               passion.
             </p>
           </div>

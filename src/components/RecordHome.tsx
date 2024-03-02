@@ -11,7 +11,6 @@ const RecordHome = () => {
         <div className='inner-album flex flex-col justify-center items-center font-aileronThin'>
           <h1 className='font-aileronThin'>DRIVEN</h1>
           <h1 className='font-aileronThin'>ADAPTABLE</h1>
-          <h1 className='font-aileronThin'>SEXY</h1>
           <div className='links flex justify-between'>
             <ul className='flex'>
               <li className='mx-2 p-2'>
@@ -36,8 +35,11 @@ const RecordHome = () => {
           <div className='vinyl'>
             <VinylSvg />
           </div>
+          <div className='shadow2'></div>
         </div>
       </div>
+      <div className='bottom-shadow-1 self-end'></div>
+      <div className='bottom-shadow-2 self-end'></div>
     </div>
   );
 };
