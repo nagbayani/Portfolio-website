@@ -47,6 +47,10 @@
   --step-5: clamp(1.6105rem, 1.2654rem + 1.7255vi, 2.8184rem);
   --step-6: clamp(1.7716rem, 1.3919rem + 1.8981vi, 3.1002rem);
   --step-7: clamp(1.9487rem, 1.5311rem + 2.0879vi, 3.4103rem);
+  --step-8: clamp(2.1436rem, 1.6842rem + 2.2967vi, 3.7513rem);
+  --step-9: clamp(2.3579rem, 1.8527rem + 2.5264vi, 4.1264rem);
+  --step-10: clamp(2.5937rem, 2.0379rem + 2.779vi, 4.539rem);
+  height: 100vh;
 }
 
 h1 {
@@ -60,19 +64,33 @@ body {
   /* position: absolute; */
   /* background: url(svg/noisynoisy.svg) no-repeat; */
   background-color: #fef3ef;
-  margin: 0px 0px 0px 0px;
-  min-width: 100%;
+  position: absolute;
+  padding: 0px 100px 0px 100px;
+  /* background: rgb(211, 229, 244);
+  background: radial-gradient(
+    circle,
+    rgba(211, 229, 244, 1) 12%,
+    rgba(164, 164, 246, 1) 100%
+  ); */
+  min-width: 1200px;
+  height: 100%;
+  object-position: center;
+  margin: auto;
+  /* min-width: 100%; */
   font-size: var(--step--1);
   -webkit-text-fill-color: #333;
-
-  /* overflow: auto; */
+  /*overflow: auto; */
 }
 
 /*======================== HEADER ===================================*/
 header {
-  top: 0;
-  left: 0;
-  /* overflow: hidden; */
+}
+
+.welcome {
+  -webkit-text-fill-color: #523ccf;
+  position: absolute;
+  z-index: 10;
+  font-size: var(--step-10);
 }
 
 hr {
@@ -114,7 +132,11 @@ hr::after {
 }
 
 .right {
-  justify-self: center;
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  margin: 5px;
+  border-radius: 100%;
 }
 
 .center {
@@ -123,20 +145,22 @@ hr::after {
   transform: translate(-50%, -50%);
   position: absolute;
   width: 50px;
-  color: #523ccf;
 }
 
 /* Menu to X button */
 .menu {
   background-color: transparent;
+  /* position: fixed; */
   border: none;
   cursor: pointer;
   display: flex;
   padding: 0;
+  max-height: 75px;
+  max-width: 75px;
 }
 .line {
   fill: none;
-  stroke: #523ccf;
+  stroke: #f0dba5;
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -224,13 +248,14 @@ hr::after {
   flex-shrink: 1;
 }
 
-.home-page {
+.record-home-page {
   overflow: visible;
-  position: relative;
+  position: absolute;
   flex-shrink: 1;
   /* base  337.5 x 464*/
   z-index: 4;
-  top: -20%;
+  top: 0%;
+  left: 0%;
   min-width: 1000px;
   min-height: 800px;
   margin: auto;
@@ -242,7 +267,7 @@ hr::after {
 .album-cover {
   /* min-height: 30em;
   min-width: 50em; */
-  position: absolute;
+  position: relative;
   max-height: 100%;
   min-height: 800px;
   width: 100%;
@@ -258,8 +283,8 @@ hr::after {
 .inner-album {
   /* background: url(svg/noisynoisy.svg) no-repeat; */
 
-  filter: contrast(970%) brightness(150%);
-  background: radial-gradient(
+  /* filter: contrast(970%) brightness(150%); */
+  /* background: radial-gradient(
       circle at 70% -3%,
       rgba(127, 18, 208, 0.41),
       rgba(0, 0, 0, 0.19)
@@ -279,7 +304,8 @@ hr::after {
       rgba(240, 255, 198, 1),
       rgba(181, 136, 34, 1)
     ),
-    url(/👆/that/noise.svg);
+    url(/👆/that/noise.svg); */
+  background: url(./svg/profilealbum.svg);
   background-size: cover;
   position: absolute;
   height: 100%;
@@ -338,16 +364,16 @@ hr::after {
   background-color: rgb(0, 0, 0, 0.25);
   background: linear-gradient(
     to top,
-    rgb(0, 0, 0, 0.55) 5%,
-    rgb(0, 0, 0, 0.55) 5%,
+    rgb(0, 0, 0, 0.35) 5%,
+    rgb(0, 0, 0, 0.25) 5%,
     #eee 100%,
     rgb(0, 0, 0, 0.55) 5%
   );
-  width: 108%;
+  width: 115%;
   filter: blur(10px);
-  transform: translate(5.5%, 15.5%) rotate(0deg);
-  border-radius: 55% 55% 45% 25%;
-  height: 25%;
+  transform: translate(3.5%, 12.5%) rotate(0deg);
+  border-radius: 45% 55% 55% 25%;
+  height: 30%;
   z-index: -5;
 }
 
@@ -364,10 +390,10 @@ hr::after {
     rgb(0, 0, 0, 0.2) 2.5%
   );
   background-color: rgb(0, 0, 0, 0.2);
-  width: 125.5%;
+  width: 135.5%;
   filter: blur(10px);
-  transform: translate(-1%, 3%) rotate(0deg);
-  border-radius: 15% 15% 40% 30%;
+  transform: translate(-3.5%, 3%) rotate(0deg);
+  border-radius: 15% 25% 55% 35%;
   height: 30%;
   z-index: -6;
 }
@@ -387,7 +413,7 @@ hr::after {
 }
 
 .vinyl-holder {
-  position: absolute;
+  position: relative;
   max-width: 37px;
   max-height: 37px;
   overflow: visible;
@@ -404,7 +430,7 @@ hr::after {
   left: -15%;
   overflow: visible;
   z-index: -3;
-  animation: record-spin 4s linear infinite;
+  animation: record-spin 8s linear infinite;
 }
 
 @keyframes record-spin {
@@ -626,116 +652,14 @@ hr::after {
 
   */
 
-@media screen and (max-width: 376px) {
-  .home-page {
-    min-width: 222.22px;
-    min-height: 177.77px;
-    /* transform: scale(1.5); */
-  }
-  .album-cover {
-    min-height: 177px;
-    min-width: 177px;
-    grid-template-columns: 10% 177px 22%;
-  }
-
-  .album-cover .shadow1::before {
-  }
-
-  .vinyl-cover {
-    max-width: 177px;
-    min-width: 154.51px;
-    height: 177px;
-    grid-column-start: 3;
-    grid-row-start: 1;
-  }
-
-  .vinyl {
-    max-width: 44.44px;
-    max-height: 177px;
-  }
-
-  #vinyl-svg {
-    width: 44.44px;
-    height: 44.44px;
-  }
+@media screen and (min-width: 320px) and (max-width: 376px) {
 }
+
 /* 
 @media screen and (max-width: 480px) {
 } */
 
 @media screen and (max-width: 600px) {
-  .home-page {
-    min-width: 416px;
-    min-height: 333px;
-  }
-  .album-cover {
-    min-height: 333px;
-    min-width: 333px;
-    grid-template-columns: 10% 333px 22%;
-  }
-
-  .album-cover .shadow1::before {
-  }
-
-  .vinyl-holder {
-    width: 21px;
-    height: 21px;
-  }
-
-  .vinyl-cover {
-    max-width: 333px;
-    min-width: 289.7px;
-    height: 333px;
-    grid-column-start: 3;
-    grid-row-start: 1;
-  }
-
-  .vinyl {
-    max-width: 83.33px;
-    max-height: 333px;
-  }
-
-  #vinyl-svg {
-    width: 83.33px;
-    height: 83.33px;
-  }
-}
-
-@media screen and (601px < width < 768px) {
-  /* Home Page (1000 x 800) */
-  .home-page {
-    min-width: 533.33px;
-    min-height: 426px;
-  }
-
-  /* Album Cover (1000 x 800) */
-  .album-cover {
-    min-height: 426px;
-    min-width: 426px;
-    grid-template-columns: 10% 426px 22%;
-  }
-
-  .album-cover .shadow1::before {
-  }
-
-  /* Vinyl Cover (695 x 800) */
-  .vinyl-cover {
-    max-width: 426px;
-    min-width: 370.8px;
-    height: 426px;
-    grid-column-start: 3;
-    grid-row-start: 1;
-  }
-  /* Vinyl (200 x 800) */
-  .vinyl {
-    max-width: 106.66px;
-    max-height: 426px;
-  }
-  /* Vinyl (200 x 200) */
-  #vinyl-svg {
-    width: 106.66px;
-    height: 106.66px;
-  }
 }
 
 @media screen and (max-width: 900px) {

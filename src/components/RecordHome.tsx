@@ -2,15 +2,15 @@ import * as React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import VinylSvg from "../svg/vinyl.svg";
 import ProfilePicSvg from "../svg/profilepic.svg";
+import ProfileAlbumSvg from "../svg/profilealbum.svg";
 
 const RecordHome = () => {
   return (
-    <div className='home-page flex'>
-      <div className='album-cover grid grid-cols-3   h-[100%]'>
-        <div className='shadow1'></div>
+    <div className='record-home-page flex'>
+      <div className='album-cover grid grid-cols-3  h-[100%]'>
         <div className='inner-album flex flex-col justify-center items-center font-aileronThin'>
-          <h1 className='font-aileronThin'>DRIVEN</h1>
-          <h1 className='font-aileronThin'>ADAPTABLE</h1>
+          {/* <h1 className='font-aileronThin'>DRIVEN</h1>
+          <h1 className='font-aileronThin'>ADAPTABLE</h1> */}
           <div className='links flex justify-between'>
             <ul className='flex'>
               <li className='mx-2 p-2'>
@@ -29,9 +29,7 @@ const RecordHome = () => {
           </div>
         </div>
         <div className='vinyl-cover'>
-          <div className='vinyl-holder'>
-            <ProfilePicSvg />
-          </div>
+          <div className='vinyl-holder'>{/* <ProfilePicSvg /> */}</div>
           <div className='vinyl'>
             <VinylSvg />
           </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,9 +13,26 @@ import SquareMenu from "./components/SquareMenu";
 import Header from "./components/Header";
 
 const App = () => {
+  const [isTransformed, setIsTransformed] = useState(false);
+
+  const handleHomeClick = () => {
+    let path = "/";
+  };
+
+  const handleMenuTransform = () => {
+    setIsTransformed(!isTransformed);
+    console.log("CLICKED");
+    let path;
+    isTransformed ? (path = "/menu") : (path = "/");
+  };
   return (
     <Router>
-      <Header />
+      <header className='flex justify-self-center items-center'>
+        <Header
+          isTransformed={isTransformed}
+          handleMenuTransform={handleMenuTransform}
+        />
+      </header>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
