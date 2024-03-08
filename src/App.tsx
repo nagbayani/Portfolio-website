@@ -27,12 +27,12 @@ const App = () => {
   };
   return (
     <Router>
-      <header className='flex justify-self-center items-center'>
+      <div id='header-root'>
         <Header
           isTransformed={isTransformed}
           handleMenuTransform={handleMenuTransform}
         />
-      </header>
+      </div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />

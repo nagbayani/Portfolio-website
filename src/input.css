@@ -51,6 +51,8 @@
   --step-9: clamp(2.3579rem, 1.8527rem + 2.5264vi, 4.1264rem);
   --step-10: clamp(2.5937rem, 2.0379rem + 2.779vi, 4.539rem);
   height: 100vh;
+  /* padding: 0px 100px 0px 100px; */
+  width: 100vw;
 }
 
 h1 {
@@ -60,19 +62,36 @@ h2 {
   font-size: var(--step-2);
 }
 
+/* html {
+  display: table;
+  margin: auto;
+} */
+
+/* html,
 body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+} */
+
+body {
+  /* display: table-cell; */
+  vertical-align: top;
   /* position: absolute; */
   /* background: url(svg/noisynoisy.svg) no-repeat; */
   background-color: #fef3ef;
-  position: absolute;
-  padding: 0px 100px 0px 100px;
+  /* position: absolute; */
+  /* padding: 0px 100px 0px 100px; */
   /* background: rgb(211, 229, 244);
   background: radial-gradient(
     circle,
     rgba(211, 229, 244, 1) 12%,
     rgba(164, 164, 246, 1) 100%
   ); */
-  min-width: 1200px;
+  /* max-width: 1400px;
+  min-width: 1200px; */
+  width: 100%;
   height: 100%;
   object-position: center;
   margin: auto;
@@ -83,12 +102,35 @@ body {
 }
 
 /*======================== HEADER ===================================*/
-header {
+
+.header-root {
+  min-width: 100vw;
+  overflow: visible;
+  position: absolute;
+  background: #333;
+}
+
+.header-container {
+  background: #333;
+  -webkit-text-fill-color: #f0dba5;
+  border: #333;
+}
+.header {
+  justify-content: center;
+}
+.header button {
+  justify-content: center;
+}
+
+.header-name {
+  font-size: var(--step--3);
+  width: 22.5%;
+  align-self: center;
+  /* padding-right: 0rem; */
 }
 
 .welcome {
   -webkit-text-fill-color: #523ccf;
-  position: absolute;
   z-index: 10;
   font-size: var(--step-10);
 }
@@ -106,37 +148,42 @@ hr {
   align-items: center;
 }
 
-/*
-hr::after {
-  background: #fff;
-  content: "§";
-  position: relative;
-}
-*/
-
 .header-treadmill-container {
-  justify-items: center;
-  align-items: start;
-  margin: 0 auto;
+  /* justify-items: center; */
+  /* align-items: start; */
   overflow: hidden;
-  width: 60%;
+  width: 100%;
 }
 .header-treadmill-container ul {
-  display: flex; /* Make list items display horizontally */
-  flex-direction: row; /* Ensure list items are in a row */
+  display: flex;
+  flex-direction: row;
   white-space: nowrap;
   animation: treadmill-animation 10s linear infinite;
 }
 .header-treadmill-container li {
-  margin-right: 5rem;
+  margin-right: 2rem;
+  font-size: var(--step--3);
 }
 
+.header-treadmill-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 25%;
+}
+
+.left {
+  grid-column-start: 1;
+}
 .right {
   display: flex;
-  justify-content: center;
-  background-color: #333;
+  /* background-color: #333; */
+  justify-self: flex-end;
+  justify-items: center;
   margin: 5px;
   border-radius: 100%;
+  max-width: 70px;
+  max-height: 70px;
 }
 
 .center {
@@ -144,7 +191,7 @@ hr::after {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  width: 50px;
+  width: 10px;
 }
 
 /* Menu to X button */
@@ -161,39 +208,56 @@ hr::after {
 .line {
   fill: none;
   stroke: #f0dba5;
-  stroke-width: 6;
+  /* stroke: #333; */
+  stroke-width: 1;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .line1 {
   stroke-dasharray: 60 207;
-  stroke-width: 6;
+  stroke-width: 4;
 }
 .line2 {
-  stroke-dasharray: 60 60;
-  stroke-width: 6;
+  stroke-dasharray: 30 60;
+  stroke-width: 4;
 }
 .line3 {
-  stroke-dasharray: 60 207;
-  stroke-width: 6;
+  stroke-dasharray: 45 207;
+  stroke-width: 4;
 }
 .opened .line1 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
+  /* stroke-dasharray: 90 207;
+  stroke-dashoffset: -134; */
+  stroke-dasharray: 55 207;
+  stroke-dashoffset: -145;
+  stroke-width: 3;
 }
 .opened .line2 {
-  stroke-dasharray: 1 60;
+  stroke-dasharray: 0 60;
   stroke-dashoffset: -30;
-  stroke-width: 6;
+  stroke-width: 3;
 }
 .opened .line3 {
-  stroke-dasharray: 90 207;
-  stroke-dashoffset: -134;
-  stroke-width: 6;
+  stroke-dasharray: 55 207;
+  stroke-dashoffset: -145;
+  stroke-width: 3;
 }
 
 /* ===================== Home Component ============================*/
+.home {
+  margin: 0px;
+  align-items: center;
+}
+
+.home-grid {
+  display: grid;
+}
+
+.welcome h1 {
+  font-size: var(--step-10);
+  -webkit-text-fill-color: #fd0400;
+}
+
 .name {
   /* -webkit-text-stroke-width: 1px; */
   -webkit-text-fill-color: black;
@@ -227,9 +291,9 @@ hr::after {
 }
 
 .treadmill-text {
-  display: flex; /* Make list items display horizontally */
+  display: flex;
   /* animation: treadmill-animation 5s linear infinite; */
-  flex-direction: row; /* Ensure list items are in a row */
+  flex-direction: row;
   justify-content: space-between;
   width: 25%;
 }
@@ -250,30 +314,29 @@ hr::after {
 
 .record-home-page {
   overflow: visible;
-  position: absolute;
   flex-shrink: 1;
   /* base  337.5 x 464*/
   z-index: 4;
-  top: 0%;
-  left: 0%;
-  min-width: 1000px;
-  min-height: 800px;
-  margin: auto;
+  object-position: top;
+  max-width: 600px;
+  max-height: 600px;
+  /* left: -200px; */
+  margin: 0;
   transition: transform 0.3s ease-in-out;
-  transform: scale(0.55);
+  /* transform: scale(0.55); */
 }
 
-/* Home - RecordHome Component Styling */
+/*========================== Home - RecordHome Component Styling ============================*/
 .album-cover {
   /* min-height: 30em;
   min-width: 50em; */
   position: relative;
   max-height: 100%;
-  min-height: 800px;
+  min-height: 600px;
   width: 100%;
-  min-width: 800px;
+  min-width: 600px;
   overflow: visible;
-  grid-template-columns: 10% 800px 22%;
+  grid-template-columns: 10% 600px 22%;
   grid-template-rows: 33% 33% 33%;
   object-position: 50% 50%;
   /* transform: translate(12.5%, 0%); */
@@ -315,50 +378,8 @@ hr::after {
   grid-column-start: 2;
   grid-column-end: 3;
 }
-/* 
-.album-cover .shadow1::before {
-  content: "";
-  position: absolute;
-  object-position: left bottom;
-  align-self: end;
-  bottom: 10px;
-  height: 20%;
-  min-height: 10%;
-  min-width: 20%;
-  width: 40%;
-
-  box-shadow: -120px 40px 20px rgb(0, 0, 0, 0.3);
-  transform: skewY(9deg);
-  border-radius: 20%;
-  z-index: 2;
-  filter: blur(2px);
-  transform: translate(30%, -17%) rotate(0deg);
-  will-change: unset !important;
-  grid-column-start: 1;
-}
-
-.album-cover .shadow2::before {
-  content: "";
-  position: absolute;
-  object-position: right bottom;
-  overflow: visible;
-  align-self: end;
-  bottom: 10px;
-  height: 35%;
-  min-height: 10%;
-  min-width: 20%;
-  width: 65%;
-  box-shadow: 50px 100px 20px rgb(0, 0, 0, 0.3);
-  border-radius: 85%;
-  z-index: -4;
-  filter: blur(2px);
-  transform: translate(-30%, -5%) rotate(-25deg);
-  will-change: unset !important;
-  grid-column-start: 1;
-} */
 
 .bottom-shadow-1 {
-  position: absolute;
   object-position: center bottom;
   content: "";
   background-color: rgb(0, 0, 0, 0.25);
@@ -369,16 +390,15 @@ hr::after {
     #eee 100%,
     rgb(0, 0, 0, 0.55) 5%
   );
-  width: 115%;
+  width: 100%;
   filter: blur(10px);
-  transform: translate(3.5%, 12.5%) rotate(0deg);
+  transform: translate(50%, 12.5%);
   border-radius: 45% 55% 55% 25%;
   height: 30%;
   z-index: -5;
 }
 
 .bottom-shadow-2 {
-  position: absolute;
   object-position: center bottom;
   content: "";
   /* background-color: red; */
@@ -390,11 +410,11 @@ hr::after {
     rgb(0, 0, 0, 0.2) 2.5%
   );
   background-color: rgb(0, 0, 0, 0.2);
-  width: 135.5%;
+  width: 100%;
   filter: blur(10px);
-  transform: translate(-3.5%, 3%) rotate(0deg);
+  transform: translate(25%, 12.5%);
   border-radius: 15% 25% 55% 35%;
-  height: 30%;
+  height: 20%;
   z-index: -6;
 }
 
@@ -403,9 +423,10 @@ hr::after {
   display: flex;
   overflow: visible;
   position: absolute;
-  height: 800px;
+  height: 600px;
   max-width: 800px;
-  min-width: 695px;
+  min-width: 300px;
+  /* min-width: 695px; */
   /* background-color: blue; */
   grid-column-start: 3;
   grid-row-start: 1;
@@ -417,17 +438,17 @@ hr::after {
   max-width: 37px;
   max-height: 37px;
   overflow: visible;
-  top: 46%;
-  left: -2%;
+  /* top: 46%; */
+  left: -25%;
   z-index: -2;
   transform: scale(4);
 }
 .vinyl {
   position: absolute;
   max-width: 200px;
-  max-height: 800px;
-  top: 37.5%;
-  left: -15%;
+  max-height: 600px;
+  top: 33%;
+  left: -33%;
   overflow: visible;
   z-index: -3;
   animation: record-spin 8s linear infinite;

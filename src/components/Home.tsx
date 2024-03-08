@@ -5,9 +5,36 @@ import RecordHome from "./RecordHome";
 
 const Home = () => {
   return (
-    <div className='flex flex-col absolute max-w-[1200px] h-[90vh]'>
-      {/* <hr className='justify-items-center align-baseline'></hr> */}
-      {/* <div className='name inline-flex flex-row font-aileronRegular'>
+    <div className='home flex flex-col relative min-w-[100vw] h-[60vh]'>
+      <div className='home-grid relative'>
+        <div className='w-[100%] translate-x-[6%] h-[40% ]translate-y-[35%] relative shrink m-0'>
+          <div className='welcome w-[100%] text-align-center h-[100%] translate-y-[54%] font-aileronThin'>
+            <h1>ALOHA I'M NATHAN</h1>
+          </div>
+        </div>
+        <div className='flex w-[60%] translate-y-[5%]'>
+          <RecordHome />
+        </div>
+        <div className='w-[100%] text-align-center h-[100%] font-aileronThin'>
+          <h1>HEY I'M NATHAN</h1>
+          <hr className='w-[75%] justify-items-center align-baseline'></hr>
+          <p className='font-aileronThin'>
+            BUILDING AWESOME, RESPONSIVE, & OPTIMIZED WEB PRODUCTS IS MY
+            PASSION.
+          </p>
+        </div>
+      </div>
+      {/* <div className='welcome relative text-center font-aileronHeavy w-[100%]'>
+        <h1 className='w-[100%] relative'>NATHAN AGBAYANI</h1>
+      </div> */}
+    </div>
+  );
+};
+
+export default Home;
+
+/* <hr className='justify-items-center align-baseline'></hr> */
+/* <div className='name inline-flex flex-row font-aileronRegular'>
         <div className='w-[50%] justify-items-center'>NATHAN A. </div>
         <div className='treadmill-container w-[48%]'>
           <div className='treadmill-text font-aileronThin'>
@@ -24,26 +51,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <hr className='w-[100%] justify-items-center align-baseline'></hr> */}
-      <div className='welcome font-aileronHeavy w-[50%] h-[108px]'>WELCOME</div>
-      <div className='shrink h-[500px] top-[-100px] relative'>
-        <RecordHome />
-      </div>
-      <div className='w-[75%] translate-x-[35%] relative shrink object-bottom'>
-        <div className='w-[100%] text-align-center h-[100%]  m-2 p-4 font-aileronHeavy'>
-          <h1>I'm NATHAN.PA</h1>
-          <hr className='w-[100%] justify-items-center align-baseline'></hr>
-          <p className='font-aileronThin'>
-            Building awesome, responsive, and optimized web products is my
-            passion.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+      <hr className='w-[100%] justify-items-center align-baseline'></hr> */
 
 /* <div className='treadmill-container text-6xl'>
             <div className='treadmill-text'>

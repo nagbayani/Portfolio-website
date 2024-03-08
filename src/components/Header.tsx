@@ -21,49 +21,52 @@ const Header = ({ isTransformed, handleMenuTransform }) => {
   // };
 
   return (
-    <header className='flex relative justify-around text-indigo-500 w-[100%] '>
-      <div className='flex left ml-10'>
-        <button
-          className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronRegular w-[100%]'
-          onClick={handleHomeClick}
-        >
-          N.P.A.
-        </button>
-      </div>
-      <div className='w-[60%] inline-block justify-items-center items-center align-baseline'>
-        {/* <div className='header-treadmill-container'> */}
-        <hr className='translate-y-[300%] justify-items-center align-baseline'></hr>
-        {/* <div className='treadmill-text sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronThin'>
-          <ul>
-            <li>Full Stack Developer</li>
-            <li>Frontend Focused</li>
-            <li>Creative</li>
-          </ul>
-          <ul>
-            <li>Full Stack Developer</li>
-            <li>Frontend Focused</li>
-            <li>Creative</li>
-          </ul>
-        </div> */}
-      </div>
-      <div className='right'>
-        <motion.button
-          className={`menu ${isTransformed ? "menu" : "opened"}`}
-          onClick={handleMenuTransform}
-          aria-label='Main Menu'
-        >
-          <svg width={"75"} height={"70"} viewBox='0 0 100 100'>
-            <path
-              className='line line1'
-              d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
-            />
-            <path className='line line2' d='M 20,50 H 80' />
-            <path
-              className='line line3'
-              d='M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942'
-            />
-          </svg>
-        </motion.button>
+    <header className='header-container flex relative justify-around text-indigo-500 w-[100%] border-black border-4'>
+      <div className='header flex items-center w-[80%] max-w-[1000px]'>
+        <div className='header-name flex left w-[25%]'>
+          <button
+            className='flex font-aileronThin w-[100%]'
+            onClick={handleHomeClick}
+          >
+            NATHAN AGBAYANI
+          </button>
+        </div>
+        <div className='w-[50%] inline-block'>
+          {/* <hr className='translate-y-[400%] justify-items-center align-baseline'></hr> */}
+          <div className='header-treadmill-container'>
+            <div className='header-treadmill-text font-aileronThin'>
+              <ul>
+                <li>Full Stack Developer</li>
+                <li>Frontend Focused</li>
+                <li>Creative</li>
+              </ul>
+              <ul>
+                <li>Full Stack Developer</li>
+                <li>Frontend Focused</li>
+                <li>Creative</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className='right w-[25%]'>
+          <motion.button
+            className={`menu ${isTransformed ? "menu" : "opened"}`}
+            onClick={handleMenuTransform}
+            aria-label='Main Menu'
+          >
+            <svg width={"75"} height={"70"} viewBox='0 0 100 100'>
+              <path
+                className='line line1'
+                d='M 20,39.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058'
+              />
+              <path className='line line2' d='M 20,50 H 80' />
+              <path
+                className='line line3'
+                d='M 20,60.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942'
+              />
+            </svg>
+          </motion.button>
+        </div>
       </div>
     </header>
   );
