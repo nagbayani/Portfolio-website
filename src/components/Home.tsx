@@ -5,33 +5,35 @@ import RecordHome from "./RecordHome";
 
 const Home = () => {
   return (
-    <div className='home flex flex-col relative min-w-[100vw] h-[60vh]'>
-      <div className='home-grid relative'>
-        <div className='w-[100%] translate-x-[6%] h-[40% ]translate-y-[35%] relative shrink m-0'>
-          <div className='welcome w-[100%] text-align-center h-[100%] translate-y-[54%] font-aileronThin'>
-            <h1>ALOHA I'M NATHAN</h1>
-          </div>
-        </div>
-        <div className='flex w-[60%] translate-y-[5%]'>
-          <RecordHome />
-        </div>
-        <div className='w-[100%] text-align-center h-[100%] font-aileronThin'>
-          <h1>HEY I'M NATHAN</h1>
-          <hr className='w-[75%] justify-items-center align-baseline'></hr>
-          <p className='font-aileronThin'>
-            BUILDING AWESOME, RESPONSIVE, & OPTIMIZED WEB PRODUCTS IS MY
-            PASSION.
-          </p>
-        </div>
+    <div className='home flex relative min-w-[100vw] h-[100vh] '>
+      <div className='absolute shrink'>
+        <RecordHome />
       </div>
-      {/* <div className='welcome relative text-center font-aileronHeavy w-[100%]'>
-        <h1 className='w-[100%] relative'>NATHAN AGBAYANI</h1>
-      </div> */}
+      <div className='relative shrink'></div>
     </div>
   );
 };
 
 export default Home;
+
+/* <div className='w-[100%] translate-x-[0%] h-[40%] translate-y-[40%] relative shrink m-0 shrink'>
+  <div className='welcome w-[100%] text-align-center h-[100%] translate-y-[54%] font-aileronThin'>
+    <h1>ALOHA I'M NATHAN</h1>
+  </div>
+</div> */
+
+/* <div className='w-[100%] text-align-center h-[100%] font-aileronThin'>
+<h1>HEY I'M NATHAN</h1>
+<hr className='w-[75%] justify-items-center align-baseline'></hr>
+<p className='font-aileronThin'>
+  BUILDING AWESOME, RESPONSIVE, & OPTIMIZED WEB PRODUCTS IS MY
+  PASSION.
+</p>
+</div> */
+
+/* <div className='welcome relative text-center font-aileronHeavy w-[100%]'>
+        <h1 className='w-[100%] relative'>NATHAN AGBAYANI</h1>
+      </div> */
 
 /* <hr className='justify-items-center align-baseline'></hr> */
 /* <div className='name inline-flex flex-row font-aileronRegular'>

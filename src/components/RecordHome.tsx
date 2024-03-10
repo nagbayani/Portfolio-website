@@ -6,13 +6,17 @@ import ProfileAlbumSvg from "../svg/profilealbum.svg";
 
 const RecordHome = () => {
   return (
-    <div className='record-home-page relative flex h-[100%%]'>
-      <div className='album-cover grid grid-cols-3  h-[100%]'>
+    <div className='record-home-page relative flex flex-col h-[100%%]'>
+      <div className='record-welcome w-[100%] translate-y-[10%] font-aileronHeavy'>
+        <h1 className='translate-y-[48%]'>ALOHA</h1>
+        <h1 className='translate-x-[0%]'>I'M NATHAN A.</h1>
+      </div>
+      <div className='album-cover grid grid-cols-3'>
         <div className='inner-album flex flex-col justify-center items-center font-aileronThin'>
           {/* <h1 className='font-aileronThin'>DRIVEN</h1>
           <h1 className='font-aileronThin'>ADAPTABLE</h1> */}
-          <div className='w-[50%] translate-y-[15%] translate-x-[-25%] text-align-center h-[100%] font-aileronThin'>
-            <p className='font-aileronThin'>
+          <div className='w-[60%] translate-y-[15%] translate-x-[-15%] ml-2 text-align-center h-[100%] font-aileronThin'>
+            <p className='font-aileronRegular'>
               BUILDING AWESOME, RESPONSIVE, & OPTIMIZED WEB PRODUCTS IS MY
               PASSION.
             </p>
@@ -25,8 +29,8 @@ const RecordHome = () => {
           </div>
         </div>
       </div>
-      <div className='bottom-shadow-1 self-end absolute'></div>
-      <div className='bottom-shadow-2 self-end absolute'></div>
+      <div className='bottom-shadow-1 self-end absolute bottom-0 right-0'></div>
+      <div className='bottom-shadow-2 self-end absolute bottom-0 right-0'></div>
     </div>
   );
 };
