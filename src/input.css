@@ -35,6 +35,7 @@
   --bg: #f0dba5;
   --yellow: #edb74d;
   --red: #eb6666;
+  --orange: #fd0400;
   --green: #6fb18a;
   --step--3: clamp(0.7513rem, 0.5903rem + 0.805vi, 1.3148rem);
   --step--2: clamp(0.8264rem, 0.6494rem + 0.8855vi, 1.4463rem);
@@ -145,16 +146,16 @@ body {
 }
 
 hr {
-  top: 50%;
   /* border: 10px double #333; */
   /* border-top: 3px double #333; */
-  color: #333;
+  /* color: #333; */
+  /* color: #f0dba5; */
   border: none;
-  height: 5px;
-  background: #333;
+  height: 20px;
+  background: var(--orange);
+  /* border-radius: 15px; */
   overflow: visible;
-  text-align: center;
-  align-items: center;
+  align-self: center;
 }
 
 .header-treadmill-container {
@@ -184,15 +185,31 @@ hr {
 .left {
   grid-column-start: 1;
 }
-.right {
+.right-btn {
   display: flex;
   /* background-color: #333; */
   justify-self: flex-end;
   justify-items: center;
+  text-align: justify;
   margin: 5px;
   border-radius: 100%;
   max-width: 70px;
   max-height: 70px;
+}
+.right-btn ::before,
+.right-btn ::after {
+  content: "[";
+  display: inline-block;
+  margin-right: 5px; /* Adjust spacing between bracket and button text */
+  margin-top: 5px;
+  transform: translate(0%, 20%);
+  -webkit-text-stroke-color: var(--orange);
+}
+
+.right-btn ::after {
+  content: "]";
+  margin-left: 5px; /* Adjust spacing between bracket and button text */
+  -webkit-text-stroke-color: var(--orange);
 }
 
 .center {
@@ -203,20 +220,36 @@ hr {
   width: 10px;
 }
 
-/* Menu to X button */
 .menu {
+  position: fixed;
+  top: 0%;
+  left: 25%;
+  bottom: 0;
+  width: 690px;
+  background: var(--bg);
+  padding-top: 100px;
+  transform: translateX(100%);
+  will-change: transform;
+  z-index: 1;
+  -webkit-text-stroke-color: var(--green);
+}
+
+
+/* Menu to X button */
+.menu-btn {
   background-color: transparent;
-  /* position: fixed; */
+  position: absolute;
   border: none;
   cursor: pointer;
   display: flex;
   padding: 0;
   max-height: 75px;
   max-width: 75px;
+  z-index: 2;
 }
 .line {
   fill: none;
-  stroke: #f0dba5;
+  stroke: var(--orange);
   /* stroke: #333; */
   stroke-width: 1;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -253,8 +286,12 @@ hr {
 }
 
 /* ===================== Home Component ============================*/
-.home {
+.home-container {
   justify-content: center;
+  overflow: visible;
+
+  -webkit-text-fill-color: var(--orange);
+
   /* background: rgb(107, 111, 204);
   background: radial-gradient(
     circle,
@@ -274,18 +311,35 @@ hr {
   /* background: #caab96;
   background: linear-gradient(to bottom, #caab96 0%, #d8d2cd 100%); */
 
-  background: #333333;
-  background: linear-gradient(to top, #333333 0%, #caab96 56%, #d8d2cd 87%);
+  /* background: #333333; */
+  background: black;
+
+  /* background: linear-gradient(to top, #333333 0%, #caab96 56%, #d8d2cd 87%); */
 
   /* background: #464cc0;
   background: linear-gradient(to top, #464cc0 0%, #6b6fcc 27%, #141836 73%); */
 }
 
-.welcome h1 {
-  font-size: var(--step-10);
-  -webkit-text-fill-color: #fd0400;
+.home {
+  max-width: 1200px;
 }
 
+.home-profile {
+  overflow: hidden;
+}
+.home-middle {
+  -webkit-text-fill-color: var(--orange);
+  /* background-color: var(--bg); */
+  padding: 2px;
+}
+.inner-home-middle {
+  border-top: 2px solid #fd0400;
+  border-bottom: 2px solid #fd0400;
+}
+
+.inner-home-middle p {
+  margin-left: 20px;
+}
 .name {
   /* -webkit-text-stroke-width: 1px; */
   -webkit-text-fill-color: black;
@@ -295,32 +349,37 @@ hr {
   z-index: 5;
   font-size: var(--step-7);
 }
+.treadmill {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 2px solid #fd0400;
+  border-bottom: 2px solid #fd0400;
+  z-index: 2;
+}
 
 .treadmill-container {
-  /* justify-items: center; */
-  /* align-items: center; */
-  margin: 0 auto;
   overflow: hidden;
-  /* height: 2em; */
-  z-index: 4;
-  transform: translate(-23%, 0%);
+  z-index: 2;
+  justify-items: center;
+  align-items: start;
+  width: 100%;
+  border: red;
+  border-width: 10px;
 }
 .treadmill-container ul {
-  display: flex; /* Make list items display horizontally */
-  flex-direction: row; /* Ensure list items are in a row */
+  display: flex;
+  flex-direction: row;
   white-space: nowrap;
   animation: treadmill-animation 10s linear infinite;
-  transform: translate(0%, 50%);
-  /* overflow: hidden; */
+  -webkit-text-fill-color: #fd0400;
 }
 .treadmill-container li {
-  margin-right: 2rem;
-  font-size: var(--step-0);
+  margin-right: 1.5rem;
+  font-size: var(--step-4);
 }
 
 .treadmill-text {
   display: flex;
-  /* animation: treadmill-animation 5s linear infinite; */
   flex-direction: row;
   justify-content: space-between;
   width: 25%;
@@ -353,139 +412,29 @@ hr {
   transition: transform 0.3s ease-in-out;
   /* transform: scale(0.55); */
 }
-
+.record-welcome {
+  /* border-color: #f0dba5;
+  border-width: 2px; */
+  max-width: 1400px;
+  overflow: visible;
+}
 .record-welcome h1 {
-  font-size: var(--step-9);
-  /* -webkit-text-fill-color: #fd0400; */
+  font-size: var(--step-10);
+  -webkit-text-fill-color: #fd0400;
   /* -webkit-text-fill-color: #141836; */
-  -webkit-text-fill-color: #333;
+  /* -webkit-text-fill-color: #333; */
+  /* -webkit-text-fill-color: #f0dba5; */
 }
 
-/*========================== Home - RecordHome Component Styling ============================*/
-.album-cover {
-  /* min-height: 30em;
-  min-width: 50em; */
-  position: relative;
-  max-height: 100%;
-  min-height: 600px;
-  width: 100%;
-  min-width: 600px;
-  overflow: visible;
-  grid-template-columns: 0% 600px 22%;
-  grid-template-rows: 33% 33% 33%;
-  object-position: 50% 50%;
-  /* transform: translate(12.5%, 0%); */
-  /* transform-origin: center center; */
-  flex-shrink: 0;
-}
-.inner-album {
-  /* background: url(svg/noisynoisy.svg) no-repeat; */
+/*========================== Home - RecordHome Component Styling */
 
-  /* filter: contrast(970%) brightness(150%); */
-  /* background: radial-gradient(
-      circle at 70% -3%,
-      rgba(127, 18, 208, 0.41),
-      rgba(0, 0, 0, 0.19)
-    ),
-    radial-gradient(
-      circle at 37% 51%,
-      rgba(220, 169, 18, 0.32),
-      rgba(255, 0, 255, 0)
-    ),
-    radial-gradient(
-      circle at 48% -50%,
-      rgba(183, 4, 4, 0.13),
-      rgba(124, 154, 232, 0.46)
-    ),
-    radial-gradient(
-      circle at 56% -46%,
-      rgba(240, 255, 198, 1),
-      rgba(181, 136, 34, 1)
-    ),
-    url(/👆/that/noise.svg); */
-  background: url(./svg/profilealbum.svg);
-  background-size: cover;
-  position: absolute;
-  height: 100%;
-  min-width: 100%;
-  z-index: 4;
-  overflow: visible;
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.bottom-shadow-1 {
-  object-position: center bottom;
-  content: "";
-  background-color: rgb(0, 0, 0, 0.25);
-  background: linear-gradient(
-    to top,
-    rgb(0, 0, 0, 0.35) 5%,
-    rgb(0, 0, 0, 0.25) 5%,
-    #eee 100%,
-    rgb(0, 0, 0, 0.55) 5%
-  );
-  width: 100%;
-  filter: blur(10px);
-  transform: translate(50%, 12.5%);
-  border-radius: 45% 55% 55% 25%;
-  height: 30%;
-  z-index: -5;
-}
-
-.bottom-shadow-2 {
-  object-position: center bottom;
-  content: "";
-  /* background-color: red; */
-  background: linear-gradient(
-    to top,
-    rgb(0, 0, 0, 0.2) 2%,
-    rgb(0, 0, 0, 0.2) 2%,
-    #eee 100%,
-    rgb(0, 0, 0, 0.2) 2.5%
-  );
-  background-color: rgb(0, 0, 0, 0.2);
-  width: 100%;
-  filter: blur(10px);
-  transform: translate(25%, 12.5%);
-  border-radius: 15% 25% 55% 35%;
-  height: 20%;
-  z-index: -6;
-}
-
-.vinyl-cover {
-  content: "";
-  display: flex;
-  overflow: visible;
-  position: absolute;
-  height: 600px;
-  max-width: 800px;
-  min-width: 300px;
-  /* min-width: 695px; */
-  /* background-color: blue; */
-  grid-column-start: 3;
-  grid-row-start: 1;
-  z-index: -4;
-}
-
-.vinyl-holder {
-  position: relative;
-  max-width: 37px;
-  max-height: 37px;
-  overflow: visible;
-  /* top: 46%; */
-  left: -25%;
-  z-index: -2;
-  transform: scale(4);
-}
 .vinyl {
-  position: absolute;
-  max-width: 200px;
-  max-height: 600px;
-  top: 33%;
-  left: -33%;
-  overflow: visible;
-  z-index: -3;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+#vinyl-svg {
   animation: record-spin 8s linear infinite;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,28 +11,11 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import SquareMenu from "./components/SquareMenu";
 import Header from "./components/Header";
+import { useAnimate, stagger } from "framer-motion";
 
 const App = () => {
-  const [isTransformed, setIsTransformed] = useState(false);
-
-  const handleHomeClick = () => {
-    let path = "/";
-  };
-
-  const handleMenuTransform = () => {
-    setIsTransformed(!isTransformed);
-    console.log("CLICKED");
-    let path;
-    isTransformed ? (path = "/menu") : (path = "/");
-  };
   return (
     <Router>
-      <div id='header-root'>
-        <Header
-          isTransformed={isTransformed}
-          handleMenuTransform={handleMenuTransform}
-        />
-      </div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
