@@ -1,10 +1,32 @@
 // Home.js
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useInView } from "framer-motion";
+import { sendCustomEmail } from "../Email";
+// import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const [details, setDetails] = useState({
+    from_name: "",
+    message: "",
+    reply_to: "",
+  });
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const handleDetailsChange = (e) => {
+    const { name, value } = e.target;
+    setDetails((prevDetails) => {
+      return {
+        ...prevDetails,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleSendEmail = (e) => {
+    e.preventDefault();
+    sendCustomEmail(details);
+  };
 
   useEffect(() => {
     console.log("Contact ref", ref);
@@ -21,9 +43,13 @@ const Contact = () => {
               Email
             </label>
             <input
+              required
+              name='reply_to'
               type='email'
+              value={details.reply_to}
+              onChange={handleDetailsChange}
               id='email'
-              className='border-black border-2'
+              className='border-black border-2 text-black'
             ></input>
           </div>
           <div>
@@ -31,9 +57,13 @@ const Contact = () => {
               Name
             </label>
             <input
+              required
+              value={details.from_name}
+              onChange={handleDetailsChange}
+              name='from_name'
               type='name'
               id='name'
-              className='border-black border-2'
+              className='border-black border-2 text-black'
             ></input>
           </div>
           <div>
@@ -41,13 +71,18 @@ const Contact = () => {
               Message
             </label>
             <input
+              required
+              value={details.message}
+              onChange={handleDetailsChange}
+              name='message'
               type='message'
               id='message'
-              className='border-black border-2'
+              className='border-black border-2 text-black'
             ></input>
           </div>
           <button
             type='submit'
+            onClick={handleSendEmail}
             className='py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 border-black border-2'
           >
             Send message

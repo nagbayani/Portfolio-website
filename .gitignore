@@ -25,3 +25,6 @@ dist-ssr
 
 # misc
 .DS_Store
+
+# Environment variables
+.env
