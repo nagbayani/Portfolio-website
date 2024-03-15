@@ -5,25 +5,52 @@ import {
   Link,
   useNavigate,
 } from "react-router-dom";
-
 const SquareMenu = () => {
   return (
-    <div className='text-6xl font-bold my-4 text-indigo-500'>
-      <div className='text-6xl font-bold my-4 text-indigo-500'>
-        <ul className='flex flex-col'>
-          <li>
-            <Link to='/'>Home</Link>
+    <div className='justify-center w-[100%]'>
+      <div className='flex justify-center text-4xl'>
+        <ol className='flex flex-col items-start justify-center font-aileronHeavyItalic border-indigo p-24 border-4  space-y-16'>
+          <li className='mb-4'>
+            <Link to='/'>
+              <div className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
+                <span className='text-2xl mr-8 w-8 font-aileronHeavyItalic'>
+                  01
+                </span>
+                HOME
+              </div>
+            </Link>
           </li>
-          <li>
-            <Link to='/about'>About</Link>
+          <li className='mb-4'>
+            <Link to='/about'>
+              <div className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
+                <span className='text-2xl mr-8 w-8 font-aileronHeavyItalic'>
+                  02
+                </span>
+                About
+              </div>
+            </Link>
           </li>
-          <li>
-            <Link to='/projects'>Projects</Link>
+          <li className='mb-4'>
+            <Link to='/projects'>
+              <div className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
+                <span className='text-2xl mr-8 w-8 font-aileronHeavyItalic'>
+                  03
+                </span>
+                Projects / Experience
+              </div>
+            </Link>
           </li>
-          <li>
-            <Link to='/experience'>Experience</Link>
+          <li className='mb-4'>
+            <Link to='/experience'>
+              <div className='flex sm:text-[2em] md:text-[2em] lg:text-[2em] xl:text-[2em] 2xl:text-[2.5em] font-aileronSemiBoldItalic'>
+                <span className='text-2xl mr-8 w-8 font-aileronHeavyItalic'>
+                  04
+                </span>
+                Contact
+              </div>
+            </Link>
           </li>
-        </ul>
+        </ol>
       </div>
     </div>
   );
