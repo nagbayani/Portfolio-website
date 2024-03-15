@@ -1,9 +1,15 @@
 // Home.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, forwardRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import RecordHome from "./RecordHome";
 import { useNavigate } from "react-router-dom";
-import { useAnimate, stagger } from "framer-motion";
+import {
+  useAnimate,
+  stagger,
+  useInView,
+  motion,
+  AnimatePresence,
+} from "framer-motion";
 import VinylSvg from "../svg/vinyl.svg";
 import HomePicSvg from "../svg/homepic.svg";
 import Menu from "./Menu";
@@ -11,6 +17,7 @@ import MenuToggle from "./MenuToggle";
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
 
   useEffect(() => {
     const menuAnimations = isOpen
@@ -34,8 +41,10 @@ function useMenuAnimation(isOpen: boolean) {
           ],
           [".menu", { transform: "translateX(300%)" }, { at: "-0.1" }],
         ];
-    animate([...menuAnimations]);
-  }, [isOpen]);
+    if (isInView) {
+      animate([...menuAnimations]);
+    }
+  }, [isOpen, isInView]);
 
   return scope;
 }
@@ -43,57 +52,84 @@ function useMenuAnimation(isOpen: boolean) {
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const scope = useMenuAnimation(isOpen);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen, "APP");
+    console.log(ref, "ref");
+    console.log(scope, "scope Home");
   };
 
+  // useEffect(() => {
+  //   if (!isInView) {
+  //     console.log("HOME NOT IN VIEW", isInView);
+  //     setIsOpen(false);
+  //   }
+  // }, [isInView]);
+
+  useEffect(() => {
+    console.log("Home ref", ref);
+    console.log("Home in View", isInView);
+  }, [isInView, ref]);
+
   return (
-    <div className='home-container relative flex w-[100vw]  h-[100vh]'>
-      <div className='home flex flex-col relative  h-[100%]'>
-        <div className='record-welcome flex flex-row w-[100%]  font-aileronHeavy'>
-          <div className='vinyl'>
-            <VinylSvg />
-          </div>
-          <h1 className='ml-8 w-[100%]'>NATHAN AGBAYANI</h1>
-          <div ref={scope}>
-            <MenuToggle isOpen={isOpen} toggle={toggleMenu} />
-            <Menu />
-          </div>
-        </div>
-        <hr className='w-[100%]'></hr>
-        <div className='flex flex-row relative justify-center shrink w-[100%]'>
-          <div className='flex flex-col w-[100%]'>
-            <div className='home-profile'>
-              <HomePicSvg />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <div
+        ref={ref}
+        className='home-container relative flex w-[100vw]  h-[100vh]'
+      >
+        <div className='home flex flex-col relative  h-[100%]'>
+          <div className='record-welcome flex flex-row w-[100%]  font-aileronHeavy'>
+            <div className='vinyl'>
+              <VinylSvg />
             </div>
-            <div className='treadmill w-[600px] translate-y-[7.5%] absolute'>
-              <div className='treadmill-container'>
-                <div className='treadmill-text font-aileronThin'>
-                  <ul>
-                    <li>Frontend Focused.</li>
-                    <li>Full Stack Developer.</li>
-                  </ul>
-                  <ul>
-                    <li>Frontend Focused.</li>
-                    <li>Full Stack Developer.</li>
-                  </ul>
+            <h1 className='ml-8 w-[100%]'>I'M NATHAN AGBAYANI</h1>
+            <div ref={scope}>
+              <div className='right-btn w-[25%]'>
+                <MenuToggle isOpen={isOpen} toggle={toggleMenu} />
+              </div>
+              <Menu />
+            </div>
+          </div>
+          <hr className='w-[100%]'></hr>
+          <div className='flex flex-row relative justify-center shrink w-[100%]'>
+            <div className='flex flex-col w-[100%]'>
+              <div className='home-profile'>
+                <HomePicSvg />
+              </div>
+              <div className='treadmill w-[600px] translate-y-[7.5%] absolute'>
+                <div className='treadmill-container'>
+                  <div className='treadmill-text font-aileronThin'>
+                    <ul>
+                      <li>Frontend Focused.</li>
+                      <li>Full Stack Developer.</li>
+                    </ul>
+                    <ul>
+                      <li>Frontend Focused.</li>
+                      <li>Full Stack Developer.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className='home-middle w-[100%] h-[50%] text-align-center font-aileronRegular'>
-            <div className='inner-home-middle w-[100%] translate-y-[5%]'>
-              <p className='font-aileronHeavy'>BUILDING</p>
-              <p className='font-aileronThin w-[150%]'>
-                RESPONSIVE + INTUITIVE + CREATIVE
-              </p>
-              <p className='w-[150%]'>WEB PRODUCTS IS MY PASSION.</p>
+            <div className='home-middle w-[100%] h-[50%] text-align-center font-aileronRegular'>
+              <div className='inner-home-middle w-[100%] translate-y-[5%]'>
+                <p className='font-aileronHeavy'>BUILDING</p>
+                <p className='font-aileronThin w-[150%]'>
+                  CREATIVE + RESPONSIVE + INTUITIVE
+                </p>
+                <p className='w-[150%]'>WEB PRODUCTS IS MY PASSION.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

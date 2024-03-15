@@ -1,29 +1,51 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useNavigate,
-} from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AnimatePresence, useAnimation, useInView } from "framer-motion";
 import Home from "./components/Home";
 import About from "./components/About";
-import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import SquareMenu from "./components/SquareMenu";
-import Header from "./components/Header";
-import { useAnimate, stagger } from "framer-motion";
+import Projects from "./components/Projects";
 
 const App = () => {
+  // const homeRef = useRef(null);
+  // const aboutRef = useRef(null);
+  // const contactRef = useRef(null);
+  // const projectsRef = useRef(null);
+  // const controls = useAnimation();
+
+  // const scrollToComponent = async (ref) => {
+  //   await controls.start({
+  //     y: ref.current.offsetTop,
+  //     transition: { duration: 0.5 },
+  //   });
+  //   window.scrollTo(0, ref.current.offsetTop);
+  // };
+  // console.log(homeRef, "App homeref");
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    console.log(ref, "App ref");
+    console.log("App Ref in View", isInView);
+  }, [isInView, ref]);
+
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/projects' element={<Projects />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/menu' element={<SquareMenu />} />
-      </Routes>
-    </Router>
+    <div>
+      {/* <button onClick={() => scrollToComponent(aboutRef)}>About</button>
+      <button onClick={() => scrollToComponent(contactRef)}>Contact</button> */}
+      <div>
+        <Home />
+      </div>
+      <div>
+        <Projects />
+      </div>
+      <div>
+        <Contact />
+      </div>
+      <div>
+        <About />
+      </div>
+    </div>
   );
 };
 
