@@ -12,8 +12,10 @@ import {
 } from "framer-motion";
 import VinylSvg from "../svg/vinyl.svg";
 import HomePicSvg from "../svg/homepic.svg";
+import ProfileTopSvg from "../svg/profiletop.svg";
 import Menu from "./Menu";
 import MenuToggle from "./MenuToggle";
+import HomeGrid from "./HomeGrid";
 
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();
@@ -83,12 +85,15 @@ const Home = () => {
         ref={ref}
         className='home-container relative flex w-[100vw]  h-[100vh]'
       >
-        <div className='home flex flex-col relative  h-[100%]'>
-          <div className='record-welcome flex flex-row w-[100%]  font-aileronHeavy'>
-            <div className='vinyl'>
+        <div className='home flex flex-col relative h-[100vh]'>
+          <div className='record-welcome flex justify-around flex-row w-[100%]  font-aileronHeavy h-[15%] relative'>
+            <div className='vinyl align-center'>
               <VinylSvg />
             </div>
-            <h1 className='ml-8 w-[100%]'>I'M NATHAN AGBAYANI</h1>
+            <div className='flex flex-col relative h-[50%] items-center'>
+              <h1 className='w-[100%] h-[60%] text-center'>NATHAN</h1>
+              <h1 className='w-[100%] h-[50%] text-center'> AGBAYANI</h1>
+            </div>
             <div ref={scope}>
               <div className='right-btn w-[25%]'>
                 <MenuToggle isOpen={isOpen} toggle={toggleMenu} />
@@ -96,35 +101,9 @@ const Home = () => {
               <Menu />
             </div>
           </div>
-          <hr className='w-[100%]'></hr>
-          <div className='flex flex-row relative justify-center shrink w-[100%]'>
-            <div className='flex flex-col w-[100%]'>
-              <div className='home-profile'>
-                <HomePicSvg />
-              </div>
-              <div className='treadmill w-[600px] translate-y-[7.5%] absolute'>
-                <div className='treadmill-container'>
-                  <div className='treadmill-text font-aileronThin'>
-                    <ul>
-                      <li>Frontend Focused.</li>
-                      <li>Full Stack Developer.</li>
-                    </ul>
-                    <ul>
-                      <li>Frontend Focused.</li>
-                      <li>Full Stack Developer.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='home-middle w-[100%] h-[50%] text-align-center font-aileronRegular'>
-              <div className='inner-home-middle w-[100%] translate-y-[5%]'>
-                <p className='font-aileronHeavy'>BUILDING</p>
-                <p className='font-aileronThin w-[150%]'>
-                  CREATIVE + RESPONSIVE + INTUITIVE
-                </p>
-                <p className='w-[150%]'>WEB PRODUCTS IS MY PASSION.</p>
-              </div>
+          <div className='flex relative grow w-[100%] h-[80%]'>
+            <div className='relative justify-center h-[100%]'>
+              <HomeGrid />
             </div>
           </div>
         </div>
@@ -134,6 +113,16 @@ const Home = () => {
 };
 
 export default Home;
+
+/* <div className='home-middle w-[100%] h-[50%] text-align-center font-aileronRegular'>
+              <div className='inner-home-middle w-[100%] translate-y-[5%]'>
+                <p className='font-aileronHeavy'>BUILDING</p>
+                <p className='font-aileronThin w-[150%]'>
+                  CREATIVE + RESPONSIVE + INTUITIVE
+                </p>
+                <p className='w-[150%]'>WEB PRODUCTS IS MY PASSION.</p>
+              </div>
+            </div> */
 
 /* <hr className='w-[75%] justify-items-center align-baseline'></hr> */
 /* <div className='absolute shrink'>
