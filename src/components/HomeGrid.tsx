@@ -17,7 +17,7 @@ const HomeGrid = () => {
   return (
     // grid grid-rows-4 grid-cols-3
     <div className='home-grid w-[100%] h-[100%] relative'>
-      <div className='home-profile relative row-start-1 col-start-6  z-7'>
+      <div className='home-profile relative row-start-1 col-start-4  z-7'>
         {/* <div className='translate-y-[200%]'>
         </div> */}
         <div className='z-7 overflow-hidden relative'>
@@ -29,56 +29,39 @@ const HomeGrid = () => {
         </div>
       </div>
 
-      {/* <h1 className='font-aileronRegular row-start-1 col-start-1 relative self-end translate-x-[11%] translate-y-[35%]'> */}
       <h2 className='relative font-aileronRegular row-start-2 col-start-1 translate-y-[-10%]'>
         BUILDING
       </h2>
-      <h2 className='relative font-aileronThin row-start-2 col-start-2 translate-y-[40%]'>
+      <h2 className='relative font-aileronThin row-start-3 col-start-2 col-span-2 translate-x-[-85%] translate-y-[5%]'>
         RESPONSIVE
       </h2>
-      <h2 className='relative font-aileronThin row-start-3 col-start-2 translate-y-[-5%]'>
-        CREATIVE
+      <h2 className='relative font-aileronThin row-start-4 col-start-2 col-span-3 translate-x-[-42%] translate-y-[-35%]'>
+        + CREATIVE
       </h2>
-      <h2 className='relative font-aileronThin row-start-3 col-start-2 translate-y-[45%]'>
-        INTUITIVE
-      </h2>
-      <h2 className='relative font-aileronThin row-start-4 col-start-2 translate-y-[0%]'>
+      <h2 className='relative font-aileronThin row-start-4 col-start-9 col-span-3 translate-y-[-10%]'>
         IMPACTFUL
       </h2>
-      <h2 className='relative row-start-4 col-start-1 col-span-6 translate-y-[55%]'>
-        WEB PRODUCTS
+      <h2 className='relative font-aileronThin row-start-4 col-start-9 col-span-3 translate-x-[1%] translate-y-[45%]'>
+        + INTUITIVE
       </h2>
-      <h2 className='relative row-start-5 col-start-2 col-span-6 translate-y-[0%]'>
-        IS MY PASSION.
+      <h2 className='relative row-start-6 col-start-2 col-span-2 translate-y-[35%]'>
+        WEB
+      </h2>
+      <h2 className='relative row-start-7 col-start-2 col-span-2 translate-x-[-85%] translate-y-[-20%]'>
+        PRODUCTS
+      </h2>
+      <h2 className='relative row-start-6 col-start-9 col-span-3 translate-y-[35%]'>
+        IS MY
+      </h2>
+      <h2 className='relative row-start-7 col-start-9 col-span-2 translate-y-[-20%]'>
+        PASSION.
       </h2>
 
-      <div className='relative font-aileronRegular row-start-6 col-start-2 col-span-2 row-span-1'>
-        <motion.button
-          id='see-work-btn'
-          initial={{ y: 0 }}
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 3, repeat: Infinity }}
-          whileHover={{ scale: 1.1 }}
-        >
+      {/* <div className='relative font-aileronRegular self-center translate-x-[10%] row-start-6 col-start-2 col-span-1 row-span-1'>
+        <button id='see-work-btn'>
           <span className='btn-text'>SEE MY WORK</span>
-          <svg
-            id='see-work-svg'
-            fill='none'
-            strokeWidth={1.5}
-            viewBox='0 0 24 24'
-            xmlns='http://www.w3.org/2000/svg'
-            aria-hidden='true'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3'
-            />
-          </svg>
-        </motion.button>
-      </div>
-
-      {/* <Treadmill /> */}
+        </button>
+      </div> */}
     </div>
   );
 };

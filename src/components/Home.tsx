@@ -86,13 +86,13 @@ const Home = () => {
         className='home-container relative flex w-[100vw]  h-[100vh]'
       >
         <div className='home flex flex-col relative h-[100vh]'>
-          <div className='record-welcome flex justify-around flex-row w-[100%]  font-aileronHeavy h-[15%] relative'>
+          <div className='record-welcome flex justify-around flex-row w-[100%]  font-aileronHeavy h-[10%] relative'>
             <div className='vinyl align-center'>
               <VinylSvg />
             </div>
-            <div className='flex flex-col relative h-[50%] items-center'>
-              <h1 className='w-[100%] h-[60%] text-center'>NATHAN</h1>
-              <h1 className='w-[100%] h-[50%] text-center'> AGBAYANI</h1>
+            <div className='flex flex-row relative h-[100%]'>
+              <h1 className='w-[50%] h-[50%] text-center'>NATHAN</h1>
+              <h1 className='w-[50%] h-[50%] text-center'> AGBAYANI</h1>
             </div>
             <div ref={scope}>
               <div className='right-btn w-[25%]'>
