@@ -12,8 +12,8 @@ const About = () => {
   }, [isInView, ref]);
 
   return (
-    <div ref={ref} className='w-[100vw] h-[100vh]'>
-      <h2>About</h2>;
+    <div ref={ref} className='about w-[100%] h-[100vh] overflow-hidden'>
+      <h2>About</h2>
     </div>
   );
 };

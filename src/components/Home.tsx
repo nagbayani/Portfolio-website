@@ -85,8 +85,9 @@ const Home = () => {
         ref={ref}
         className='home-container relative flex w-[100vw]  h-[100vh]'
       >
-        <div className='home flex flex-col relative h-[100vh]'>
-          <div className='record-welcome flex justify-around flex-row w-[100%]  font-aileronHeavy h-[10%] relative'>
+        <div className='bg'></div>
+        <div className='home flex flex-col w-[100vw] relative h-[100vh]'>
+          <div className='flex record-welcome absolute justify-between flex-row w-[100%] font-aileronHeavy h-[10%] relative'>
             <div className='vinyl align-center'>
               <VinylSvg />
             </div>
@@ -101,8 +102,8 @@ const Home = () => {
               <Menu />
             </div>
           </div>
-          <div className='flex relative grow w-[100%] h-[80%]'>
-            <div className='relative justify-center h-[100%]'>
+          <div className='absolute left-[0%] top-[7%]'>
+            <div className='relative justify-center max-w-[1200px] h-[100%] scale-[.75]'>
               <HomeGrid />
             </div>
           </div>

@@ -30,21 +30,23 @@ const App = () => {
   }, [isInView, ref]);
 
   return (
-    <div>
+    <div className=''>
+      {/* <div className='bg h-[100vh]'></div> */}
       {/* <button onClick={() => scrollToComponent(aboutRef)}>About</button>
       <button onClick={() => scrollToComponent(contactRef)}>Contact</button> */}
-      <div>
+      <div className='relative'>
         <Home />
       </div>
-      <div>
+      <div className='relative'>
         <Projects />
       </div>
-      <div>
+      <div className='relative'>
         <Contact />
       </div>
-      <div>
+      <div className='relative'>
         <About />
       </div>
+      <div></div>
     </div>
   );
 };
