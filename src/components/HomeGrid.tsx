@@ -22,26 +22,26 @@ const HomeGrid = () => {
           <ProfileTopSvg />
         </div>
       </div>
-      <h1 className='relative justify-self-end self-end row-start-2 col-start-2 mb-[-.5em] z-50'>
+      <h2 className='relative justify-self-end self-end row-start-2 col-start-2 mb-[-.5em] z-50'>
         Building
-      </h1>
-      <div className='rcii relative row-start-3 col-start-2 z-0 justify-self-end self-start'>
-        <h2 className='relative z-[1] opacity'>responsive</h2>
-        <h2 className='relative z-[-1] mt-[-2rem]'>+ creative</h2>
+      </h2>
+      <div className='flex flex-col relative row-start-3 col-start-2 z-0 justify-self-end self-start'>
+        <h2 className='relative rcii'>responsive</h2>
+        <h2 className='relative rcii-2 mt-[-1rem]'>& creative</h2>
       </div>
-      <div className='rcii-2 relative row-start-4 self-start col-start-4 z-0'>
-        <h2 className='relative z-[1]'>impactful</h2>
-        <h2 className='relative z-[-1] mt-[-1.5rem]'>+ intuitive</h2>
+      <div className='relative row-start-4 justify-self-start col-start-4 z-0'>
+        <h2 className='relative rcii-3 z-[1]'>impactful</h2>
+        <h2 className='relative rcii-4 mt-[-1rem]'>& intuitive</h2>
       </div>
       <div className='relative row-start-5 col-start-2 mr-[.5rem]'>
-        <h1 className='text-end'>web</h1>
-        <h1 className='text-end mt-[-.75em]'>products</h1>
+        <h2 className='text-end'>web</h2>
+        <h2 className='text-end mt-[-.75em]'>products</h2>
       </div>
       <div className='relative row-start-6 col-start-4'>
-        <h1>is my</h1>
-        <h1 className='mt-[-.75em]'>passion.</h1>
+        <h2>is my</h2>
+        <h2 className='mt-[-.75em]'>passion.</h2>
       </div>
-      <div className='relative font-aileronThin justify-self-center translate-x-[0%] row-start-8 col-start-3'>
+      <div className='relative font-aileronRegular justify-self-center translate-x-[0%] row-start-8 col-start-3'>
         <button id='see-work-btn'>
           <span className='btn-text'>SEE MY WORK </span>
         </button>
