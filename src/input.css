@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "garamond";
+  src: url("./fonts/Itc-Garamond-Book-Narrow.otf") format("truetype");
+}
+
+@font-face {
   font-family: "aileronHeavyItalic";
   src: url("./fonts/Aileron-HeavyItalic.otf") format("truetype");
 }
@@ -37,6 +42,8 @@
   --red: #eb6666;
   --orange: #fd0400;
   --green: #6fb18a;
+  --darkblue: #191d62;
+  --lightpurple: #f1defb;
   --step--3: clamp(0.7513rem, 0.5903rem + 0.805vi, 1.3148rem);
   --step--2: clamp(0.8264rem, 0.6494rem + 0.8855vi, 1.4463rem);
   --step--1: clamp(0.9091rem, 0.7143rem + 0.974vi, 1.5909rem);
@@ -242,11 +249,9 @@ hr {
 
 .menu {
   position: absolute;
-  top: 0%;
-  left: 25%;
-  bottom: 0;
-  width: 690px;
-  background: var(--bg);
+  left: 80%;
+  top: -200%;
+  width: 600px;
   padding-top: 100px;
   transform: translateX(100%);
   will-change: transform;
@@ -309,20 +314,45 @@ hr {
 .home-container {
   justify-content: center;
   overflow: hidden;
-  -webkit-text-fill-color: var(--orange);
-  background-color: black;
+  -webkit-text-fill-color: #191d62;
+  background-color: #fcf1ec;
 }
 
 .home {
   max-width: 1200px;
+  /* -webkit-text-fill-color: #191d62; */
+  -webkit-text-fill-color: black;
+}
+.rcii {
+  /* background-color: #f1defb; */
+  /* background-color: #f64b0a opacity(0.5); */
+  background-color: var(--orange);
+  /* background-color: rgba(255, 4, 0, 0.5); */
+  border-radius: 25% 0 0 25%;
+  padding: 0px 0px 0px 40px;
+  width: 75%;
+  left: 10%;
+}
+.rcii-2 {
+  /* background-color: #f1defb; */
+  background-color: var(--orange);
+  border-radius: 0 25% 25% 0;
+  padding: 0px 0px 0px 40px;
+  width: 75%;
+  left: -10%;
 }
 
 .home-grid {
   display: grid;
+  /* gap: 1rem; */
+  --min-column-size: 300px;
   overflow: visible;
   /* grid-template-columns: 8% 36% 8% 8% 7% 7% 16% 6% 4%; */
-  grid-template-columns: 20% 10% 5% 10% 10% 10% 3% 5% 10% 10% minmax(10rem, 1fr);
-  grid-template-rows: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-column-sie), 100%), 1fr)
+  );
+  grid-template-rows: repeat(8, minmax(0, 2fr));
   /* min-width: 100%; */
   max-height: 750px;
   max-width: 1200px;
@@ -334,31 +364,43 @@ hr {
   overflow: hidden;
   /* clip-path: ellipse(50% 50% at 75% 50%); */
   align-self: center;
-  justify-items: center;
-  grid-area: 2 / 4 / 8 / 8;
+  justify-self: center;
+  grid-area: 2 / 3 / 8 / 4;
+  max-width: 350px;
+  min-width: 350px;
+  z-index: 7;
+}
+
+.home-profile #home-pic {
+  justify-self: center;
+  z-index: 7;
+  width: 100%;
 }
 
 .top-profile {
-  grid-area: 7 / 4 / 8 / 8;
+  grid-area: 7 / 4 / 8 / 4;
   top: 0;
-  margin: 0 -20px;
+  margin: 0 -15px;
   z-index: 10;
 }
 
-#home-pic {
-  z-index: 7;
+.top-profile #profile-top {
+  z-index: 10;
+  width: 100%;
 }
 
 #see-work-btn {
   position: relative;
   overflow: hidden;
-  width: 150%;
-  top: 50%;
-  height: 100%;
+  width: 100%;
+  top: 0%;
+  height: 50%;
   /* background-color: var(--orange); */
-  background-color: black;
-  border: 1px solid var(--orange);
+  background-color: transparent;
+  border: 1px solid var(--darkblue);
+  border-radius: 100px;
   z-index: 1;
+  padding: 0.1em 1em;
 }
 
 #see-work-btn span {
@@ -366,31 +408,31 @@ hr {
   font-size: 20px;
   transition: color 0.5s;
   z-index: 2;
-  /* -webkit-text-fill-color: black; */
-  -webkit-text-fill-color: var(--orange);
+  -webkit-text-fill-color: black;
 }
 
 #see-work-btn::after {
   content: "";
   position: absolute;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--orange);
-  border: 1px solid var(--orange);
+  background-color: var(--lightpurple);
   transform: translate(-100%, 0%) skew(0deg);
   transition: transform 0.5s, background-color 0.5s;
 }
 
 #see-work-btn:hover::after {
-  transform: translate(0, 0) skew(0deg);
-  background-color: var(--orange);
-  -webkit-text-fill-color: black;
+  transform: translate(0, 0%) skew(0deg);
+  background-color: var(--lightpurple);
+  -webkit-text-fill-color: var(--darkblue);
   font: "aileronRegular";
   font-size: 20px;
 }
 #see-work-btn:hover span {
-  -webkit-text-fill-color: black;
+  height: 200%;
+  -webkit-text-fill-color: var(--darkblue);
 }
 
 .home-middle {
@@ -488,7 +530,8 @@ hr {
 }
 .record-welcome h1 {
   font-size: var(--step-10);
-  -webkit-text-fill-color: #fd0400;
+  -webkit-text-fill-color: #191d62;
+
   /* -webkit-text-fill-color: #141836; */
   /* -webkit-text-fill-color: #333; */
   /* -webkit-text-fill-color: #f0dba5; */

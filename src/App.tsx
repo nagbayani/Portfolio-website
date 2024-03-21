@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AnimatePresence, useAnimation, useInView } from "framer-motion";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useInView } from "framer-motion";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -31,7 +31,6 @@ const App = () => {
 
   return (
     <div className=''>
-      {/* <div className='bg h-[100vh]'></div> */}
       {/* <button onClick={() => scrollToComponent(aboutRef)}>About</button>
       <button onClick={() => scrollToComponent(contactRef)}>Contact</button> */}
       <div className='relative'>

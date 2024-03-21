@@ -26,13 +26,13 @@ function useMenuAnimation(isOpen: boolean) {
       ? [
           [
             ".menu",
-            { transform: "translateX(75%)" },
-            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 },
+            { transform: "translateY(375%)" },
+            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.3 },
           ],
           [
             ".menu li",
             { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-            { delay: stagger(0.05), at: "-0.1" },
+            { delay: 0.05, at: "-0.1" },
           ],
         ]
       : [
@@ -41,7 +41,7 @@ function useMenuAnimation(isOpen: boolean) {
             { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
             { delay: stagger(0.05, { from: "last" }), at: "<" },
           ],
-          [".menu", { transform: "translateX(300%)" }, { at: "-0.1" }],
+          [".menu", { transform: "translateY(300%)" }, { at: "-0.1" }],
         ];
     if (isInView) {
       animate([...menuAnimations]);
@@ -86,14 +86,13 @@ const Home = () => {
         className='home-container relative flex w-[100vw]  h-[100vh]'
       >
         <div className='bg'></div>
-        <div className='home flex flex-col w-[100vw] relative h-[100vh]'>
-          <div className='flex record-welcome absolute justify-between flex-row w-[100%] font-aileronHeavy h-[10%] relative'>
-            <div className='vinyl align-center'>
+        <div className='home flex flex-col w-[100%] relative h-[100vh]'>
+          <div className='flex record-welcome w-[100%] absolute justify-between flex-row font-aileronRegular h-[30%] relative'>
+            {/* <div className='vinyl align-center'>
               <VinylSvg />
-            </div>
-            <div className='flex flex-row relative h-[100%]'>
-              <h1 className='w-[50%] h-[50%] text-center'>NATHAN</h1>
-              <h1 className='w-[50%] h-[50%] text-center'> AGBAYANI</h1>
+            </div> */}
+            <div className='flex flex-col relative h-[100%]'>
+              <h1 className='w-[100%] h-[50%] text-center'>NATHAN AGBAYANI</h1>
             </div>
             <div ref={scope}>
               <div className='right-btn w-[25%]'>
@@ -103,7 +102,7 @@ const Home = () => {
             </div>
           </div>
           <div className='absolute left-[0%] top-[7%]'>
-            <div className='relative justify-center max-w-[1200px] h-[100%] scale-[.75]'>
+            <div className='relative justify-center max-w-[1200px] h-[100%] '>
               <HomeGrid />
             </div>
           </div>
