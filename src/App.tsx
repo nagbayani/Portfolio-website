@@ -30,10 +30,10 @@ const App = () => {
   }, [isInView, ref]);
 
   return (
-    <div className=''>
+    <div>
       {/* <button onClick={() => scrollToComponent(aboutRef)}>About</button>
       <button onClick={() => scrollToComponent(contactRef)}>Contact</button> */}
-      <div className='relative'>
+      <div className='relative w-[100vw]'>
         <Home />
       </div>
       <div className='relative'>
@@ -45,7 +45,9 @@ const App = () => {
       <div className='relative'>
         <About />
       </div>
-      <div></div>
+      {/* <div className='h-screen'>
+        <div className='bg z-0'></div>
+      </div> */}
     </div>
   );
 };

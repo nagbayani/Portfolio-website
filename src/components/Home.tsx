@@ -16,6 +16,7 @@ import ProfileTopSvg from "../svg/profiletop.svg";
 import Menu from "./Menu";
 import MenuToggle from "./MenuToggle";
 import HomeGrid from "./HomeGrid";
+import Treadmill from "./Treadmill";
 
 const Home = () => {
   const ref = useRef(null);
@@ -44,19 +45,22 @@ const Home = () => {
         className='home-container relative flex w-[100vw]  h-[100vh]'
       >
         <div className='bg'></div>
-        <div className='home flex flex-col w-[100%] relative h-[100vh]'>
+        <div className='fixed z-[20]'>
+          <Treadmill />
+        </div>
+        <div className='home static flex flex-col items-center w-[100vw] relative h-[100vh]'>
           <div className='home-header font-aileronRegular'>
-            {/* <div className='vinyl align-center'>
-              <VinylSvg />
-            </div> */}
-            <h1 className='h-[10%] text-center'>NATHAN AGBAYANI</h1>
-            <ul className='flex flex-row justify-between'>
-              <li> PROJECTS </li>
-              <li> / </li>
-              <li> ABOUT </li>
-              <li> / </li>
-              <li> CONTACT</li>
-            </ul>
+            <div className='flex flex-row'>
+              <h1 className='h-[10%] text-center mr-64'>NATHAN AGBAYANI</h1>
+              <ul className='flex flex-row justify-between'>
+                <li> PROJECTS </li>
+                <li> / </li>
+                <li> ABOUT </li>
+                <li> / </li>
+                <li> CONTACT</li>
+              </ul>
+            </div>
+
             {/* <div ref={scope}>
               <div className='right-btn w-[25%]'>
                 <MenuToggle isOpen={isOpen} toggle={toggleMenu} />
@@ -64,7 +68,7 @@ const Home = () => {
               <Menu />
             </div> */}
           </div>
-          <div className='absolute left-[0%] top-[7%]'>
+          <div className='relative left-[0%] top-[5%]'>
             <div className='relative justify-center max-w-[1200px] h-[100%] '>
               <HomeGrid />
             </div>
