@@ -1,28 +1,41 @@
 import React, { useRef, useEffect } from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useInView } from "framer-motion";
+import {
+  useInView,
+  useAnimation,
+  scroll,
+  useScroll,
+  useSpring,
+  motion,
+} from "framer-motion";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
+import Treadmill from "./components/Treadmill";
+import Layer from "./AppLayer";
+
+const components = [
+  { id: "home", children: <Home /> },
+  { id: "projects", children: <Projects /> },
+  { id: "contact", children: <Contact /> },
+  { id: "about", children: <About /> },
+];
 
 const App = () => {
   // const homeRef = useRef(null);
-  // const aboutRef = useRef(null);
-  // const contactRef = useRef(null);
-  // const projectsRef = useRef(null);
-  // const controls = useAnimation();
-
-  // const scrollToComponent = async (ref) => {
-  //   await controls.start({
-  //     y: ref.current.offsetTop,
-  //     transition: { duration: 0.5 },
-  //   });
-  //   window.scrollTo(0, ref.current.offsetTop);
-  // };
-  // console.log(homeRef, "App homeref");
+  const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  scroll((progress) => console.log(progress));
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   useEffect(() => {
     console.log(ref, "App ref");
@@ -31,25 +44,42 @@ const App = () => {
 
   return (
     <div>
-      {/* <button onClick={() => scrollToComponent(aboutRef)}>About</button>
-      <button onClick={() => scrollToComponent(contactRef)}>Contact</button> */}
-      <div className='relative w-[100vw]'>
-        <Home />
+      <div className='fixed z-20 h-[80px]'>
+        <Treadmill />
+        <div className='nav-header font-aileronThin'>
+          <h1 className='text-center mr-32'>NATHAN AGBAYANI</h1>
+          <ul className='flex flex-row justify-between'>
+            <li> PROJECTS </li>
+            <li> / </li>
+            <li> ABOUT </li>
+            <li> / </li>
+            <li> CONTACT</li>
+          </ul>
+        </div>
       </div>
-      <div className='relative'>
-        <Projects />
-      </div>
-      <div className='relative'>
-        <Contact />
-      </div>
-      <div className='relative'>
-        <About />
-      </div>
-      {/* <div className='h-screen'>
-        <div className='bg z-0'></div>
-      </div> */}
+      <>
+        {components.map((component) => (
+          <Layer id={component.id} children={component.children} />
+        ))}
+        <motion.div className='progress' style={{ scaleX }} />
+      </>
+      <div className='bg'></div>
     </div>
   );
 };
 
 export default App;
+{
+  /* <div className=''>
+          <Home />
+        </div>
+      <div className='relative z-1 mt-[20%]'>
+        <Projects />
+      </div>
+      <div className='relative mt-[20%]'>
+        <Contact />
+      </div>
+      <div className='relative mt-[20%]'>
+        <About />
+      </div> */
+}

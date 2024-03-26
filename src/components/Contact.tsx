@@ -10,7 +10,7 @@ const Contact = () => {
     message: "",
     reply_to: "",
   });
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
 
   const handleDetailsChange = (e) => {
@@ -34,7 +34,11 @@ const Contact = () => {
   }, [isInView, ref]);
 
   return (
-    <div ref={ref} className='flex flex-col w-[100vw] h-[100vh] items-center'>
+    <div
+      ref={ref}
+      id='Contact'
+      className='flex flex-col w-[100vw] h-[100vh] items-center'
+    >
       <h1>Let's Talk.</h1>
       <div className='flex w-[50%] h-[50%] justify-center items-center border-black border-2'>
         <form className='flex flex-col items-center'>
