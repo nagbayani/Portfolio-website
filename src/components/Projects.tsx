@@ -20,11 +20,11 @@ const Projects = ({}) => {
     <div
       ref={ref}
       id='Projects'
-      className='projects-container flex flex-col w-[100vw] h-[100vh] justify-center'
+      className='projects-container flex flex-col mt-[10%] w-[100vw] h-[100vh] justify-center'
     >
       <div
         ref={scrollRef}
-        className='flex flex-col w-[100%] h-[100%] items-center'
+        className='flex flex-col w-[100%] h-[100%] mt-[10%] items-center'
       >
         <h1>PROJECTS CATALOGUE</h1>
         <div className='project-grid w-[75%] h-[100%] mt-[5%] overflow-x-scroll'>

@@ -16,15 +16,27 @@ import Treadmill from "./components/Treadmill";
 import Layer from "./AppLayer";
 
 const components = [
-  { id: "home", children: <Home /> },
+  {
+    id: "home",
+    children: (
+      <Home
+        projectClick={() => scrollComponentIntoView("projects")}
+        contactClick={() => scrollComponentIntoView("contact")}
+      />
+    ),
+  },
   { id: "projects", children: <Projects /> },
   { id: "contact", children: <Contact /> },
   { id: "about", children: <About /> },
 ];
+const scrollComponentIntoView = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 const App = () => {
-  // const homeRef = useRef(null);
-  const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -46,14 +58,16 @@ const App = () => {
     <div>
       <div className='fixed z-20 h-[80px]'>
         <Treadmill />
-        <div className='nav-header font-aileronThin'>
+        <div className='nav-header font-airleron'>
           <h1 className='text-center mr-32'>NATHAN AGBAYANI</h1>
           <ul className='flex flex-row justify-between'>
-            <li> PROJECTS </li>
+            <li onClick={() => scrollComponentIntoView("projects")}>
+              PROJECTS
+            </li>
             <li> / </li>
-            <li> ABOUT </li>
+            <li onClick={() => scrollComponentIntoView("about")}> ABOUT </li>
             <li> / </li>
-            <li> CONTACT</li>
+            <li onClick={() => scrollComponentIntoView("contact")}> CONTACT</li>
           </ul>
         </div>
       </div>
@@ -69,6 +83,7 @@ const App = () => {
 };
 
 export default App;
+
 {
   /* <div className=''>
           <Home />

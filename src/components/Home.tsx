@@ -18,7 +18,7 @@ import MenuToggle from "./MenuToggle";
 import HomeGrid from "./HomeGrid";
 import Treadmill from "./Treadmill";
 
-const Home = () => {
+const Home = ({projectClick, contactClick}) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -51,7 +51,7 @@ const Home = () => {
             </div> */}
         <div className='relative left-[0%] top-[10%]'>
           <div className='relative justify-center max-w-[1200px] h-[100%] '>
-            <HomeGrid />
+            <HomeGrid projectClick={projectClick} contactClick={contactClick}/>
           </div>
         </div>
       </div>
