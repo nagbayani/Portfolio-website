@@ -14,6 +14,7 @@ export default {
       aileronHeavy: ["aileronHeavy", "sans-serif"],
       aileronThin: ["aileronThin", "sans-serif"],
       aileronRegular: ["aileronRegular", "sans-serif"],
+      aileronThinItalic: ["aileronThinItalic", "sans-serif"],
       garamond: ["garamond"],
     },
     fontSize: {

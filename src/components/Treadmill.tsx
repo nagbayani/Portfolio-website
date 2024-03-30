@@ -6,27 +6,31 @@ const Treadmill = () => {
     <div className='h-[100%]'>
       <div className='treadmill w-[100%] h-[100%]'>
         <div className='treadmill-container'>
-          <div className='treadmill-text font-aileronThin'>
+          <div className='treadmill-text font-aileronHeavyItalic'>
             <ul>
-              <li>FRONTEND FOCUSED.</li>
+              <li className='tread-color font-aileronThinItalic'>FRONTEND</li>
+              <li>FOCUSED.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
                 </div>
               </li>
-              <li>FULL STACK DEVELOPER.</li>
+              <li className='tread-color font-aileronThinItalic'>FULL STACK</li>
+              <li>DEVELOPER.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
                 </div>
               </li>
-              <li>FRONTEND FOCUSED.</li>
+              <li className='tread-color font-aileronThinItalic'>FRONTEND</li>
+              <li>FOCUSED.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
                 </div>
               </li>
-              <li>FULL STACK DEVELOPER.</li>
+              <li className='tread-color font-aileronThinItalic'>FULL STACK</li>
+              <li>DEVELOPER.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
@@ -34,25 +38,29 @@ const Treadmill = () => {
               </li>
             </ul>
             <ul>
-              <li>FRONTEND FOCUSED.</li>
+              <li className='tread-color font-aileronThin'>FRONTEND</li>
+              <li>FOCUSED.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
                 </div>
               </li>
-              <li>FULL STACK DEVELOPER.</li>
+              <li className='tread-color font-aileronThin'>FULL STACK</li>
+              <li>DEVELOPER.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
                 </div>
               </li>
-              <li>FRONTEND FOCUSED.</li>
+              <li className='tread-color font-aileronThin'>FRONTEND</li>
+              <li>FOCUSED.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />
                 </div>
               </li>
-              <li>FULL STACK DEVELOPER.</li>
+              <li className='tread-color font-aileronThin'>FULL STACK</li>
+              <li>DEVELOPER.</li>
               <li>
                 <div className='vinyl align-center'>
                   <VinylSvg />

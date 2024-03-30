@@ -56,11 +56,16 @@ const App = () => {
 
   return (
     <div>
-      <div className='fixed z-20 h-[80px]'>
+      <div className='fixed z-20 h-[80px] mb-[20px]'>
         <Treadmill />
-        <div className='nav-header font-airleron'>
-          <h1 className='text-center mr-32'>NATHAN AGBAYANI</h1>
-          <ul className='flex flex-row justify-between'>
+        <div className='nav-header font-aileronHeavy grow-1'>
+          <h1
+          // style={{ WebkitTextFillColor: "var(--orange)" }}
+          >
+            {" "}
+            NATHAN A
+          </h1>
+          <ul className='flex font-aileronRegular flex-row justify-between mr-32'>
             <li onClick={() => scrollComponentIntoView("projects")}>
               PROJECTS
             </li>
@@ -69,6 +74,7 @@ const App = () => {
             <li> / </li>
             <li onClick={() => scrollComponentIntoView("contact")}> CONTACT</li>
           </ul>
+          {/* <hr></hr> */}
         </div>
       </div>
       <>

@@ -18,7 +18,7 @@ import MenuToggle from "./MenuToggle";
 import HomeGrid from "./HomeGrid";
 import Treadmill from "./Treadmill";
 
-const Home = ({projectClick, contactClick}) => {
+const Home = ({ projectClick, contactClick }) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
@@ -40,20 +40,11 @@ const Home = ({projectClick, contactClick}) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       ref={ref}
-      className='home-container relative flex flex-col w-[100vw] h-[100vh]'
+      className='home-container relative flex flex-col w-[100vw] h-[110vh]'
     >
-      <div className='home relative flex flex-col items-center w-[100vw] h-[100vh]'>
-        {/* <div ref={scope}>
-              <div className='right-btn w-[25%]'>
-                <MenuToggle isOpen={isOpen} toggle={toggleMenu} />
-              </div>
-              <Menu />
-            </div> */}
-        <div className='relative left-[0%] top-[10%]'>
-          <div className='relative justify-center max-w-[1200px] h-[100%] '>
-            <HomeGrid projectClick={projectClick} contactClick={contactClick}/>
-          </div>
-        </div>
+      {/* <div className='home relative flex flex-col w-[full] h-[100vh]'> </div> */}
+      <div className='flex-grow flex relative items-center justify-center padding-8 object-contain mt-8'>
+        <HomeGrid projectClick={projectClick} contactClick={contactClick} />
       </div>
     </motion.div>
   );
@@ -61,6 +52,14 @@ const Home = ({projectClick, contactClick}) => {
 
 export default Home;
 
+{
+  /* <div ref={scope}>
+      <div className='right-btn w-[25%]'>
+        <MenuToggle isOpen={isOpen} toggle={toggleMenu} />
+      </div>
+      <Menu />
+    </div> */
+}
 /*
 function useMenuAnimation(isOpen: boolean) {
   const [scope, animate] = useAnimate();

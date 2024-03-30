@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <motion.section ref={ref} id='About'>
-      <motion.div className='flex flex-col w-[100%] h-[100%] items-center'>
+      <motion.div className='flex flex-col w-[100%] h-[100vh] items-center'>
         <h1>ABOUT CATALOGUE</h1>
       </motion.div>
     </motion.section>
