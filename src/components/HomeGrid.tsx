@@ -61,30 +61,17 @@ const HomeGrid = ({ projectClick, contactClick }) => {
         >
           is my
         </h1>
-        <h1
-          // style={{ WebkitTextFillColor: "var(--orange)" }}
-          className='mt-[-.75em]'
-        >
-          passion.
-        </h1>
+        <h1 className='mt-[-.75em]'>passion.</h1>
       </div>
       <div className='relative font-aileronRegular justify-self-end top-[-15%] left-[35%] row-start-8 col-start-1'>
-        <motion.button
-          id='see-work-btn'
-          onClick={projectClick}
-          whileHover={{ scale: 1.05 }}
-        >
+        <motion.button id='see-work-btn' onClick={projectClick}>
           <span className='btn-text' onClick={projectClick}>
             SEE MY WORK
           </span>
         </motion.button>
       </div>
       <div className='relative font-aileronRegular justify-self-start items-end top-[-15%] left-[-35%] row-start-8 col-start-3'>
-        <motion.button
-          id='connect-btn'
-          onClick={contactClick}
-          whileHover={{ scale: 1.05 }}
-        >
+        <motion.button id='connect-btn' onClick={contactClick}>
           <span className='btn-text' onClick={contactClick}>
             LET'S CONNECT
           </span>

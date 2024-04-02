@@ -8,18 +8,26 @@ const projectScreenContent = (project: string) => {
   switch (project) {
     case "Angulens":
       return (
-        <div className='project-screen-content p-8'>
-          <h2>Angulens</h2>
-          <div className='flex flex-row w-[100%]'>
-            <div className='w-[70%]  h-[100%] '>
-              <img src='/modal.gif'></img>
-            </div>
-            <ul className='projects-tech w-[20%] h-[50%]'>
-              <li>Angular</li>
-              <li>TypeScript</li>
-              <li>Webview API</li>
-              <li>Klaw-Sync</li>
-              <li>VS Code Extension API</li>
+        <div className='project-screen-content'>
+          <h2 className='relative h-[50%] px-2 col-start-1 row-start-1 font-aileronHeavy'>
+            ANGULENS
+          </h2>
+          <div className='relative w-[75%] ml-2 justify-self-center'>
+            <h3>OPEN SOURCE PRODUCT</h3>
+            <p>
+              Visual Studio Code Extension built with Angular focused on
+              visualizing component hierarchies, dependencies, and component
+              data flows in selected Angular Projects.
+            </p>
+          </div>
+          <div className='row-span-2 row-start-4'>
+            <h3>TECHNOLOGIES</h3>
+            <ul className='projects-tech row-span-2'>
+              <li className='col-start-1 row-start-1'>Angular</li>
+              <li className='col-start-1 row-start-2'>TypeScript</li>
+              <li className='col-start-1 row-start-3'>Webview API</li>
+              <li className='col-start-2 row-start-1'>Klaw-Sync</li>
+              <li className='col-start-2 row-start-2'>VS Code Extension API</li>
             </ul>
           </div>
         </div>
@@ -27,16 +35,27 @@ const projectScreenContent = (project: string) => {
     case "InterviewPrep":
       return (
         <div className='project-screen-content'>
-          <h2>Interview Prep</h2>
-          <div className='flex flex-row w-[100%]'>
-            <div className='w-[70%]  h-[100%] '>
-              <img src='/modal.gif'></img>
-            </div>
-            <ul className='projects-tech w-[20%] h-[50%]'>
-              <li>React</li>
-              <li>MongoDB</li>
-              <li>Redux/Redux Toolkit</li>
-              <li>Express</li>
+          <h2 className='w-[100%] px-2 row-start-1 font-aileronHeavy'>
+            PREPPER DECK
+          </h2>
+          <div className='w-[75%] ml-2 row-start-2 justify-self-center'>
+            <h3>WEB APPLICATION</h3>
+            <p>
+              Full-stack React web-based application to aid in preparing for
+              software engineering interviews. React’s component-based
+              architecture allowed users to construct thoughtful answers to
+              questions onto card components, which could be contained within
+              Deck Components.
+            </p>
+          </div>
+          <div className='row-span-2 row-start-4'>
+            <h3>TECHNOLOGIES</h3>
+            <ul className='projects-tech row-span-2'>
+              <li className='col-start-1 row-start-1'>React</li>
+              <li className='col-start-1 row-start-2'>Redux</li>
+              <li className='col-start-1 row-start-3'>Express</li>
+              <li className='col-start-2 row-start-1'>PostgreSQL</li>
+              <li className='col-start-2 row-start-2'>OAuth</li>
             </ul>
           </div>
         </div>
@@ -45,19 +64,26 @@ const projectScreenContent = (project: string) => {
     case "LoCoups":
       return (
         <div className='project-screen-content'>
-          <h2>LoCoups</h2>
-
-          <div className='flex flex-row w-[100%]'>
-            <div className='w-[70%]  h-[100%] '>
-              <img src='/modal.gif'></img>
-            </div>
-            <ul className='projects-tech w-[20%] h-[50%]'>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>PostgreSQL</li>
-              <li>GraphQL</li>
-              <li>Prisma</li>
-              <li>Google Maps APIs</li>
+          <h2 className='w-[100%]  px-2 row-start-1 font-aileronHeavy'>
+            LOCOUPS
+          </h2>
+          <div className='w-[75%] ml-2 row-start-2 mt-[-5%]justify-self-center'>
+            <h3>WEB APPLICATION</h3>
+            <p>
+              Yelp inspired, full-stack Next.js application aiming to help local
+              businesses by showcasing possible coupons & deals from those
+              businesses to users.
+            </p>
+          </div>
+          <div className='row-span-2 row-start-4'>
+            <h3>TECHNOLOGIES</h3>
+            <ul className='projects-tech row-span-2'>
+              <li className='col-start-1 row-start-1'>React</li>
+              <li className='col-start-1 row-start-2'>Next.js</li>
+              <li className='col-start-1 row-start-3'>PostgreSQL</li>
+              <li className='col-start-2 row-start-1'>GraphQL</li>
+              <li className='col-start-2 row-start-2'>Prisma</li>
+              <li className='col-start-2 row-start-3'>Google Maps APIs</li>
             </ul>
           </div>
         </div>
@@ -95,7 +121,7 @@ const Projects = ({}) => {
     <div
       ref={ref}
       id='Projects'
-      className='projects-container flex flex-col mt-[10%] w-[100vw] h-[200vh] justify-center'
+      className='projects-container flex flex-col w-screen h-[200vh] justify-center'
     >
       <div
         ref={scrollRef}
@@ -105,7 +131,7 @@ const Projects = ({}) => {
         <div className='project-screen w-[100%] h-[100%] '>
           {selectedProject && projectScreenContent(selectedProject)}
         </div>
-        <div className='project-grid w-[75%] h-[50%] mt-[5%] overflow-x-scroll'>
+        <div className='project-grid w-full mt-[5%] overflow-x-scroll overflow-y-visible'>
           <div
             className='row-start-1 col-start-1 w-[100%]'
             onClick={() => handleProjectClick("Angulens")}
@@ -120,12 +146,6 @@ const Projects = ({}) => {
           </div>
           <div
             className='row-start-1 col-start-3 w-[100%]'
-            onClick={() => handleProjectClick("LoCoups")}
-          >
-            <ProjectCard name={"LoCoups"} />
-          </div>
-          <div
-            className='row-start-1 col-start-4 w-[100%]'
             onClick={() => handleProjectClick("LoCoups")}
           >
             <ProjectCard name={"LoCoups"} />

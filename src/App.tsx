@@ -58,14 +58,9 @@ const App = () => {
     <div>
       <div className='fixed z-20 h-[80px] mb-[20px]'>
         <Treadmill />
-        <div className='nav-header font-aileronHeavy grow-1'>
-          <h1
-          // style={{ WebkitTextFillColor: "var(--orange)" }}
-          >
-            {" "}
-            NATHAN A
-          </h1>
-          <ul className='flex font-aileronRegular flex-row justify-between mr-32'>
+        <div className='nav-header font-aileronRegular grow-1'>
+          <h1>NATHAN A.</h1>
+          <ul className='flex font-aileronThin flex-row justify-between mr-32'>
             <li onClick={() => scrollComponentIntoView("projects")}>
               PROJECTS
             </li>
@@ -83,7 +78,7 @@ const App = () => {
         ))}
         <motion.div className='progress' style={{ scaleX }} />
       </>
-      <div className='bg'></div>
+      {/* <div className='bg'></div> */}
     </div>
   );
 };

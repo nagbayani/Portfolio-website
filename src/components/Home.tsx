@@ -40,7 +40,7 @@ const Home = ({ projectClick, contactClick }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       ref={ref}
-      className='home-container relative flex flex-col w-[100vw] h-[110vh]'
+      className='home-container relative flex flex-col w-[100vw] h-[100vh]'
     >
       {/* <div className='home relative flex flex-col w-[full] h-[100vh]'> </div> */}
       <div className='flex-grow flex relative items-center justify-center padding-8 object-contain mt-8'>
