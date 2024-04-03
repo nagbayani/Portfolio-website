@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useInView } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import Carousel from "./ProjectCarousel";
 
 const projectScreenContent = (project: string) => {
   switch (project) {
@@ -106,14 +107,25 @@ const Projects = ({}) => {
   };
   console.log("Selected project:", selectedProject);
 
+  const cards = [
+    { name: "Angulens" },
+    { name: "InterviewPrep" },
+    { name: "LoCoups" },
+  ];
+
+  const renderedCards = cards.map((cardProps, index) => (
+    // className={`row-start-1 col-start-${index + 1} w-[100%]`}
+    <div onClick={() => handleProjectClick(cardProps.name)} key={index}>
+      <ProjectCard {...cardProps} />
+    </div>
+  ));
+
   useEffect(() => {
     console.log("Project ref", ref);
     console.log("Project in View", isInView);
   }, [isInView, ref]);
 
   useEffect(() => {
-    // Perform any action when selectedProject changes
-    // For example, you can update the content displayed in the project-screen
     console.log("Selected project changed:", selectedProject);
   }, [selectedProject]);
 
@@ -131,25 +143,8 @@ const Projects = ({}) => {
         <div className='project-screen w-[100%] h-[100%] '>
           {selectedProject && projectScreenContent(selectedProject)}
         </div>
-        <div className='project-grid w-full mt-[5%] overflow-x-scroll overflow-y-visible'>
-          <div
-            className='row-start-1 col-start-1 w-[100%]'
-            onClick={() => handleProjectClick("Angulens")}
-          >
-            <ProjectCard name={"Angulens"} />
-          </div>
-          <div
-            className='row-start-1 col-start-2 w-[100%]'
-            onClick={() => handleProjectClick("InterviewPrep")}
-          >
-            <ProjectCard name={"InterviewPrep"} />
-          </div>
-          <div
-            className='row-start-1 col-start-3 w-[100%]'
-            onClick={() => handleProjectClick("LoCoups")}
-          >
-            <ProjectCard name={"LoCoups"} />
-          </div>
+        <div className='w-full'>
+          <Carousel cards={renderedCards} />
         </div>
       </div>
       <hr className='w-[100%]'></hr>
@@ -158,3 +153,26 @@ const Projects = ({}) => {
 };
 
 export default Projects;
+
+{
+  /* <div className='project-grid w-full mt-[5%] overflow-x-scroll overflow-y-visible'>
+  <div
+    className='row-start-1 col-start-1 w-[100%]'
+    onClick={() => handleProjectClick("Angulens")}
+  >
+    <ProjectCard name={"Angulens"} />
+  </div>
+  <div
+    className='row-start-1 col-start-2 w-[100%]'
+    onClick={() => handleProjectClick("InterviewPrep")}
+  >
+    <ProjectCard name={"InterviewPrep"} />
+  </div>
+  <div
+    className='row-start-1 col-start-3 w-[100%]'
+    onClick={() => handleProjectClick("LoCoups")}
+  >
+    <ProjectCard name={"LoCoups"} />
+  </div>
+</div> */
+}
