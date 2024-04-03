@@ -153,26 +153,3 @@ const Projects = ({}) => {
 };
 
 export default Projects;
-
-{
-  /* <div className='project-grid w-full mt-[5%] overflow-x-scroll overflow-y-visible'>
-  <div
-    className='row-start-1 col-start-1 w-[100%]'
-    onClick={() => handleProjectClick("Angulens")}
-  >
-    <ProjectCard name={"Angulens"} />
-  </div>
-  <div
-    className='row-start-1 col-start-2 w-[100%]'
-    onClick={() => handleProjectClick("InterviewPrep")}
-  >
-    <ProjectCard name={"InterviewPrep"} />
-  </div>
-  <div
-    className='row-start-1 col-start-3 w-[100%]'
-    onClick={() => handleProjectClick("LoCoups")}
-  >
-    <ProjectCard name={"LoCoups"} />
-  </div>
-</div> */
-}
