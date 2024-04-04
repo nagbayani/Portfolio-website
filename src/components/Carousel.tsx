@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Card from "./Card";
 import CardInfo from "./CardInfo";
+import VinylSvg from "../svg/vinyl.svg";
 
 const sliderVariants = {
   incoming: (direction) => ({
@@ -112,9 +113,11 @@ const Carousel = () => {
             {project.project}
             <div
               className={`active-indicator ${
-                index === activeCardIndex ? "active" : ""
+                index === activeCardIndex ? "active vinyl" : ""
               }`}
-            ></div>
+            >
+              {<VinylSvg />}
+            </div>
           </div>
         ))}
       </div>

@@ -720,22 +720,22 @@ body {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-359deg);
+    transform: rotate(359deg);
   }
 }
 
 /*========================== Projects Styling ============================*/
 .projects-container {
-  -webkit-text-fill-color: var(--beige);
-  background: var(--brown);
+  -webkit-text-fill-color: var(--brown);
+  background: var(--home-bg);
 }
 
-.project-screen {
+/* .project-screen {
   width: 100%;
   height: 100%;
-  border: 2px solid var(--beige);
+  border: 2px solid var(--orange);
   z-index: 10;
-}
+} */
 
 .project-screen-content {
   display: grid;
@@ -784,26 +784,14 @@ body {
 }
 
 .projects-tech li {
-  list-style-type: upper-roman; /* Set list-style-type to upper-roman */
+  list-style-type: upper-roman;
   font-size: var(--step--5);
   margin-left: 0.225rem;
   margin-right: 0.55rem;
   text-align: center;
 }
 .projects-tech li::marker {
-  color: #000; /* Adjust color as needed */
-}
-
-.project-grid {
-  display: grid;
-  --min-column-size: 450px;
-  overflow: visible;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(var(--min-column-size), 100%), 1fr)
-  );
-  overflow-x: scroll;
-  gap: 1.5rem;
+  color: #000;
 }
 
 .carousel {
@@ -894,6 +882,8 @@ body {
   grid-template-rows: 80%, 20%;
   width: 100%;
   height: 100%;
+  background-color: var(--beige);
+  -webkit-text-fill-color: #101010;
 }
 .card-hover .row-start-1 {
   padding: 1.5rem;
@@ -909,7 +899,7 @@ body {
   width: 400px;
   height: 400px;
   border: 2px solid var(--orange);
-  overflow: visible;
+  overflow: hidden;
 }
 
 .thumbnail-container:hover {
@@ -926,15 +916,18 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
+  transform: translate(-150%, 0%);
+
+  /* transform: scaleX(0); */
   pointer-events: none;
-  transform: scaleX(0);
   transform-origin: left;
   background-color: var(--orange);
   transition: transform 1s cubic-bezier(0.56, 0.03, 0.12, 1.04);
 }
 
 .thumbnails .thumbnail-container .active-indicator.active {
-  transform: scaleX(1);
+  /* transform: scaleX(0); */
+  transform: translate(0, 0%);
   background-color: var(--orange);
 }
 
@@ -975,7 +968,7 @@ body {
   width: 700px;
   height: 500px;
   position: relative;
-  border: 2px solid var(--beige);
+  border: 2px solid var(--orange);
   overflow: hidden;
 }
 

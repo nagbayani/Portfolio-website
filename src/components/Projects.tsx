@@ -19,7 +19,7 @@ const Projects = ({}) => {
     <div
       ref={ref}
       id='Projects'
-      className='projects-container flex flex-col w-screen h-[200vh] justify-center'
+      className='projects-container flex flex-col w-screen h-[120vh] justify-center'
     >
       <div
         ref={scrollRef}
