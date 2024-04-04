@@ -40,7 +40,7 @@ const App = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  scroll((progress) => console.log(progress));
+  // scroll((progress) => console.log(progress));
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {

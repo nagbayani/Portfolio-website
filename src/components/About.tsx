@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
+
 const About = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
