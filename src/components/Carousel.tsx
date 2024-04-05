@@ -35,7 +35,7 @@ const projects = [
 ];
 
 const cards = projects.map((cardProps, index) => (
-  <div key={index} id={cardProps.id}>
+  <div key={index} id={cardProps.id} className='w-full h-full'>
     <CardInfo {...cardProps} />
   </div>
 ));
@@ -97,18 +97,19 @@ const Carousel = () => {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className='buttons'>
+      {/* <div className='buttons'>
         <button onClick={() => swipeToCard(-1)}>PREV</button>
         <button onClick={() => swipeToCard(1)}>NEXT</button>
-      </div>
+      </div> */}
       <div className='thumbnails'>
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             onClick={() => {
               skipToCard(project.id);
             }}
             className='thumbnail-container'
+            whileHover={{ scale: 1.05 }}
           >
             {project.project}
             <div
@@ -118,7 +119,7 @@ const Carousel = () => {
             >
               {<VinylSvg />}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

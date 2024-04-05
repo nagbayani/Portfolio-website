@@ -2,57 +2,85 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const AngulensInfo = () => {
+  const gitClick = () => {
+    console.log("Git got clicked");
+  };
+  const anguClick = () => {
+    console.log("Angu got clicked");
+  };
+
   return (
-    <div className='project-screen-content'>
-      <h2 className='relative h-[50%] px-2 col-start-1 row-start-1 font-aileronHeavy'>
-        ANGULENS
-      </h2>
-      <div className='relative w-[75%] ml-2 justify-self-center'>
-        <h3>OPEN SOURCE PRODUCT</h3>
+    <div className='project-screen-content font-aileronRegular'>
+      <div className='relative col-start-1 row-start-1 self-end'>
+        <h2>Angulens</h2>
+      </div>
+      <div className='col-start-1 row-start-2 items-center'>
+        <h3>Open Source Product</h3>
         <p>
           Visual Studio Code Extension built with Angular focused on visualizing
           component hierarchies, dependencies, and component data flows in
           selected Angular Projects.
         </p>
       </div>
-      <div className='row-span-2 row-start-4'>
-        <h3>TECHNOLOGIES</h3>
-        <ul className='projects-tech row-span-2'>
-          <li className='col-start-1 row-start-1'>Angular</li>
-          <li className='col-start-1 row-start-2'>TypeScript</li>
-          <li className='col-start-1 row-start-3'>Webview API</li>
-          <li className='col-start-2 row-start-1'>Klaw-Sync</li>
-          <li className='col-start-2 row-start-2'>VS Code Extension API</li>
+      <div className='relative col-start-2 pl-[2rem] pt-[0rem] row-start-2 '>
+        <h4>Technologies</h4>
+        <ul className='projects-tech row-span-1'>
+          <li>Angular</li>
+          <li>TypeScript</li>
+          <li>Webview API</li>
+          <li>Klaw-Sync</li>
+          <li>VS Code Extension API</li>
         </ul>
+      </div>
+      <div className='col-start-2 row-start-1 col-span-1 flex flex-row w-[100%] h-[100%]'>
+        <div className='project-link-buttons'>
+          <button onClick={() => anguClick()} className=''>
+            <img src='/Angulens.png' alt='Angulens'></img>
+          </button>
+          <button onClick={gitClick}>
+            <img src='/github-mark.png' className='object-contain'></img>
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 const InterviewPrepInfo = () => {
+  const anguClick = () => {
+    console.log("Angu got clicked");
+  };
+
   return (
     <div className='project-screen-content'>
-      <h2 className='w-[100%] px-2 row-start-1 font-aileronHeavy'>
-        PREPPER DECK
-      </h2>
-      <div className='w-[75%] ml-2 row-start-2 justify-self-center'>
-        <h3>WEB APPLICATION</h3>
+      <div className='relative col-start-1 row-start-1 self-end'>
+        <h2>Interview Prepper</h2>
+      </div>
+
+      <div className='col-start-1 row-start-2 items-center'>
+        <h3>Web Application</h3>
         <p>
-          Full-stack React web-based application to aid in preparing for
-          software engineering interviews. React’s component-based architecture
-          allowed users to construct thoughtful answers to questions onto card
-          components, which could be contained within Deck Components.
+          Fullstack React application to aid in preparing for interviews. Users
+          can construct thoughtful answers to questions onto cards that are
+          contained within customizable decks.
         </p>
       </div>
-      <div className='row-span-2 row-start-4'>
-        <h3>TECHNOLOGIES</h3>
+      <div className='relative col-start-2 pl-[2rem] pt-[0rem] row-start-2 '>
+        <h4>Technologies</h4>
         <ul className='projects-tech row-span-2'>
-          <li className='col-start-1 row-start-1'>React</li>
-          <li className='col-start-1 row-start-2'>Redux</li>
-          <li className='col-start-1 row-start-3'>Express</li>
-          <li className='col-start-2 row-start-1'>PostgreSQL</li>
-          <li className='col-start-2 row-start-2'>OAuth</li>
+          <li>React</li>
+          <li>Redux</li>
+          <li>Express</li>
+          <li>PostgreSQL</li>
+          <li>OAuth</li>
         </ul>
+      </div>
+      <div className='col-start-2 row-start-1 col-span-1 flex flex-row w-[100%] h-[100%]'>
+        <div className='project-link-buttons justify-center'>
+          <button>
+            <img src='/github-mark.png' className='object-contain'></img>
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -61,25 +89,33 @@ const InterviewPrepInfo = () => {
 const LoCoupsInfo = () => {
   return (
     <div className='project-screen-content'>
-      <h2 className='w-[100%]  px-2 row-start-1 font-aileronHeavy'>LOCOUPS</h2>
-      <div className='w-[75%] ml-2 row-start-2 mt-[-5%]justify-self-center'>
-        <h3>WEB APPLICATION</h3>
+      <div className='relative col-start-1 row-start-1 self-end'>
+        <h2>LoCoups</h2>
+      </div>
+      <div className='col-start-1 row-start-2 items-center'>
+        <h3>Web Application</h3>
         <p>
           Yelp inspired, full-stack Next.js application aiming to help local
           businesses by showcasing possible coupons & deals from those
           businesses to users.
         </p>
       </div>
-      <div className='row-span-2 row-start-4'>
-        <h3>TECHNOLOGIES</h3>
+      <div className='relative col-start-2 pl-[2rem] pt-[0rem] row-start-2 '>
+        <h4>Technologies</h4>
         <ul className='projects-tech row-span-2'>
-          <li className='col-start-1 row-start-1'>React</li>
-          <li className='col-start-1 row-start-2'>Next.js</li>
-          <li className='col-start-1 row-start-3'>PostgreSQL</li>
-          <li className='col-start-2 row-start-1'>GraphQL</li>
-          <li className='col-start-2 row-start-2'>Prisma</li>
-          <li className='col-start-2 row-start-3'>Google Maps APIs</li>
+          <li>Next.js</li>
+          <li>PostgreSQL</li>
+          <li>GraphQL</li>
+          <li>Prisma</li>
+          <li>Google Maps APIs</li>
         </ul>
+      </div>
+      <div className='col-start-2 row-start-1 col-span-1 flex flex-row w-[100%] h-[100%]'>
+        <div className='project-link-buttons justify-center'>
+          <button>
+            <img src='/github-mark.png' className='object-contain'></img>
+          </button>
+        </div>
       </div>
     </div>
   );

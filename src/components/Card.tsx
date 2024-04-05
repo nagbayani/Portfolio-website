@@ -2,19 +2,13 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const AngulensCard = ({ isOpen }) => {
-  return (
-    <div className='row-start-1 '>
-      <h2>Angulens</h2>
-      <h3>OPEN SOURCE PRODUCT</h3>
-    </div>
-  );
+  return <h2>[01]</h2>;
 };
 
 const InterviewPrep = ({ isOpen }) => {
   return (
     <div className='row-start-1 '>
-      <h2>Interview Prep</h2>
-      <h3>WEB APPLICATION</h3>
+      <h2>[02]</h2>
     </div>
   );
 };
@@ -22,8 +16,7 @@ const InterviewPrep = ({ isOpen }) => {
 const LoCoups = ({ isOpen }) => {
   return (
     <div className='row-start-1 '>
-      <h2>LoCoups</h2>
-      <h3>WEB APPLICATION</h3>
+      <h2>[03]</h2>
     </div>
   );
 };
@@ -57,6 +50,7 @@ const Card = ({ name }) => {
       }}
       onClick={() => setIsOpen(!isOpen)}
       className='card-hover'
+      whileHover={{ scale: 1.05 }}
       data-isOpen={isOpen}
     >
       {projectComponent}
