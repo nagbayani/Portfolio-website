@@ -14,6 +14,7 @@ import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import Treadmill from "./components/Treadmill";
 import Layer from "./AppLayer";
+import Nav from "./components/Nav";
 
 const components = [
   {
@@ -56,21 +57,9 @@ const App = () => {
 
   return (
     <div>
-      <div className='fixed z-20 h-[80px] mb-[20px]'>
+      <div className='fixed z-20 h-[80px] mb-[50px]'>
         <Treadmill />
-        <div className='nav-header font-aileronRegular grow-1'>
-          <h1>NATHAN A.</h1>
-          <ul className='flex font-aileronThin flex-row justify-between mr-32'>
-            <li onClick={() => scrollComponentIntoView("projects")}>
-              PROJECTS
-            </li>
-            <li> / </li>
-            <li onClick={() => scrollComponentIntoView("about")}> ABOUT </li>
-            <li> / </li>
-            <li onClick={() => scrollComponentIntoView("contact")}> CONTACT</li>
-          </ul>
-          {/* <hr></hr> */}
-        </div>
+        <Nav />
       </div>
       <>
         {components.map((component) => (
@@ -84,18 +73,3 @@ const App = () => {
 };
 
 export default App;
-
-{
-  /* <div className=''>
-          <Home />
-        </div>
-      <div className='relative z-1 mt-[20%]'>
-        <Projects />
-      </div>
-      <div className='relative mt-[20%]'>
-        <Contact />
-      </div>
-      <div className='relative mt-[20%]'>
-        <About />
-      </div> */
-}

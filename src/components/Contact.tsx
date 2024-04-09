@@ -56,7 +56,7 @@ const Contact = () => {
         >
           <div>
             <label htmlFor='email' className='block font-aileronRegular mb-8'>
-              EMAIL<span className='text-red-500'>*</span>:
+              Email<span className='text-red-500'>*</span>:
               <input
                 required
                 name='reply_to'
@@ -76,7 +76,7 @@ const Contact = () => {
           </div>
           <div className='mb-8'>
             <label htmlFor='name' className='block mb-2 font-aileronRegular'>
-              NAME<span className='text-red-500'>*</span>:
+              Name<span className='text-red-500'>*</span>:
               <input
                 required
                 value={details.from_name}
@@ -96,7 +96,7 @@ const Contact = () => {
           </div>
           <div className='mb-8' id='message-label'>
             <label htmlFor='message' className='block mb-2 font-aileronREgular'>
-              MESSAGE<span className='text-red-500'>*</span>:
+              Message<span className='text-red-500'>*</span>:
             </label>
             <textarea
               required

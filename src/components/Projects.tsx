@@ -16,19 +16,19 @@ const Projects = ({}) => {
   }, [isInView, ref]);
 
   return (
-    <div
-      ref={ref}
-      id='Projects'
-      className='projects-container flex flex-col w-screen h-[120vh] justify-center'
-    >
+    <div ref={ref} id='Projects' className='flex flex-col w-screen h-[200vh]'>
       <div
         ref={scrollRef}
-        className='flex flex-col w-[100%] h-[100%] mt-[10%] items-center'
+        className='projects-container flex flex-col w-[100%] h-[100%] mt-[10%]'
       >
-        <h1>PROJECTS CATALOGUE</h1>
-        <div className='w-full h-[100%]'>
-          <Carousel />
-        </div>
+        {/* <hr></hr> */}
+        <h1 id='projects-header' className='font-aileronRegular '>
+          SELECTED WORKS
+        </h1>
+        {/* <hr></hr> */}
+        <Carousel />
+        {/* <div className='w-full h-[100%]'>
+        </div> */}
       </div>
       <hr className='w-[100%]'></hr>
     </div>

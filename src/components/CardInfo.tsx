@@ -10,11 +10,11 @@ const AngulensInfo = () => {
   };
 
   return (
-    <div className='project-screen-content font-aileronRegular'>
-      <div className='relative col-start-1 row-start-1 self-end'>
-        <h2>Angulens</h2>
+    <div className='card-info-content font-aileronRegular'>
+      <div className='relative col-start-1 row-start-1 self-start p-[1rem]'>
+        <h2 className='ml-[1em]'>Angulens</h2>
       </div>
-      <div className='col-start-1 row-start-2 items-center'>
+      <div className='project-description col-start-1 row-start-2 items-center'>
         <h3>Open Source Product</h3>
         <p>
           Visual Studio Code Extension built with Angular focused on visualizing
@@ -23,7 +23,7 @@ const AngulensInfo = () => {
         </p>
       </div>
       <div className='relative col-start-2 pl-[2rem] pt-[0rem] row-start-2 '>
-        <h4>Technologies</h4>
+        <h3>Technologies</h3>
         <ul className='projects-tech row-span-1'>
           <li>Angular</li>
           <li>TypeScript</li>
@@ -52,12 +52,12 @@ const InterviewPrepInfo = () => {
   };
 
   return (
-    <div className='project-screen-content'>
-      <div className='relative col-start-1 row-start-1 self-end'>
-        <h2>Interview Prepper</h2>
+    <div className='card-info-content font-aileronRegular'>
+      <div className='relative col-start-1 row-start-1 self-start p-[1rem]'>
+        <h2 className='ml-[1em]'>Interview Prepper</h2>
       </div>
 
-      <div className='col-start-1 row-start-2 items-center'>
+      <div className='project-description col-start-1 row-start-2 items-center'>
         <h3>Web Application</h3>
         <p>
           Fullstack React application to aid in preparing for interviews. Users
@@ -66,7 +66,7 @@ const InterviewPrepInfo = () => {
         </p>
       </div>
       <div className='relative col-start-2 pl-[2rem] pt-[0rem] row-start-2 '>
-        <h4>Technologies</h4>
+        <h3>Technologies</h3>
         <ul className='projects-tech row-span-2'>
           <li>React</li>
           <li>Redux</li>
@@ -88,11 +88,11 @@ const InterviewPrepInfo = () => {
 
 const LoCoupsInfo = () => {
   return (
-    <div className='project-screen-content'>
-      <div className='relative col-start-1 row-start-1 self-end'>
-        <h2>LoCoups</h2>
+    <div className='card-info-content font-aileronRegular'>
+      <div className='relative col-start-1 row-start-1 self-start p-[1rem]'>
+        <h2 className='ml-[1em]'>LoCoups</h2>
       </div>
-      <div className='col-start-1 row-start-2 items-center'>
+      <div className='project-description col-start-1 row-start-2 items-center'>
         <h3>Web Application</h3>
         <p>
           Yelp inspired, full-stack Next.js application aiming to help local
@@ -101,7 +101,7 @@ const LoCoupsInfo = () => {
         </p>
       </div>
       <div className='relative col-start-2 pl-[2rem] pt-[0rem] row-start-2 '>
-        <h4>Technologies</h4>
+        <h3>Technologies</h3>
         <ul className='projects-tech row-span-2'>
           <li>Next.js</li>
           <li>PostgreSQL</li>

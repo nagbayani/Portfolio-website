@@ -9,10 +9,11 @@ import {
 } from "framer-motion";
 import HomePicSvg from "../svg/homepic.svg";
 import ProfileTopSvg from "../svg/profiletop.svg";
+import Waves from "./Waves";
 
 const HomeGrid = ({ projectClick, contactClick }) => {
   return (
-    <div className='home-grid w-[100vw] h-[100vh] font-garamond relative'>
+    <div className='home-grid w-full font-garamond relative'>
       <div className='home-profile relative translate-y-[-6%] mx-[-1em] z-7 '>
         <HomePicSvg />
         <div className='top-profile w-[100%] overflow-hidden absolute'>
@@ -20,15 +21,10 @@ const HomeGrid = ({ projectClick, contactClick }) => {
         </div>
       </div>
       <div className='grid-left-1'>
-        <h1
-          // style={{ WebkitTextFillColor: "var(--orange)" }}
-          className='relative  justify-self-end self-end row-start-3 col-start-1 left-[.35em]  z-10'
-        >
+        <h1 className='relative  justify-self-end self-end row-start-3 col-start-1 left-[.35em]  z-10'>
           Building
         </h1>
-        {/* <div className='relative rcii-2'>
-          <h1>responsive</h1>
-        </div> */}
+
         <div className='relative rcii'>
           <h1>creative</h1>
         </div>
@@ -42,31 +38,17 @@ const HomeGrid = ({ projectClick, contactClick }) => {
         </div>
       </div>
       <div className='grid-left-2'>
-        <h1
-          // style={{ WebkitTextFillColor: "var(--orange)" }}
-          className='text-end'
-        >
-          web
-        </h1>
-        <h1
-          // style={{ WebkitTextFillColor: "var(--orange)" }}
-          className='text-end mt-[-.75em]'
-        >
-          products
-        </h1>
+        <h1 className='text-end'>web</h1>
+        <h1 className='text-end mt-[-.75em]'>products</h1>
       </div>
       <div className='grid-right-2'>
-        <h1
-        // style={{ WebkitTextFillColor: "var(--orange)" }}
-        >
-          is my
-        </h1>
+        <h1>is my</h1>
         <h1 className='mt-[-.75em]'>passion.</h1>
       </div>
       <div className='relative font-aileronRegular justify-self-end top-[-15%] left-[35%] row-start-8 col-start-1'>
         <motion.button id='see-work-btn' onClick={projectClick}>
           <span className='btn-text' onClick={projectClick}>
-            SEE MY WORK
+            VIEW MY WORK
           </span>
         </motion.button>
       </div>

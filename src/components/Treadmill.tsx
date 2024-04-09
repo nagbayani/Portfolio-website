@@ -8,29 +8,29 @@ const Treadmill = () => {
         <div className='treadmill-container'>
           <div className='treadmill-text font-aileronRegular'>
             <ul>
-              <li className='font-aileronHeavy'>FRONTEND</li>
-              <li>FOCUSED.</li>
+              <li className='ml-[1em] font-aileronHeavy'>FRONTEND</li>
+              <li>FOCUSED. </li>
 
-              <li className='font-aileronHeavy'>FULL STACK</li>
+              <li className='ml-[1em] font-aileronHeavy'>FULL STACK</li>
               <li>DEVELOPER.</li>
 
-              <li className='font-aileronHeavy'>FRONTEND</li>
+              <li className='ml-[1em] font-aileronHeavy'>FRONTEND</li>
               <li>FOCUSED.</li>
 
-              <li className='font-aileronHeavy'>FULL STACK</li>
+              <li className='ml-[1em] font-aileronHeavy'>FULL STACK</li>
               <li>DEVELOPER.</li>
             </ul>
             <ul>
-              <li className='font-aileronHeavy'>FRONTEND</li>
-              <li>FOCUSED.</li>
+              <li className='ml-[1em] font-aileronHeavy'>FRONTEND</li>
+              <li>FOCUSED. </li>
 
-              <li className='font-aileronHeavy'>FULL STACK</li>
+              <li className='ml-[1em] font-aileronHeavy'>FULL STACK</li>
               <li>DEVELOPER.</li>
 
-              <li className='font-aileronHeavy'>FRONTEND</li>
+              <li className='ml-[1em] font-aileronHeavy'>FRONTEND</li>
               <li>FOCUSED.</li>
 
-              <li className='font-aileronHeavy'>FULL STACK</li>
+              <li className='ml-[1em] font-aileronHeavy'>FULL STACK</li>
               <li>DEVELOPER.</li>
             </ul>
           </div>

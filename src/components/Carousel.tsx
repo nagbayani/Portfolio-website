@@ -57,6 +57,7 @@ const Carousel = () => {
   const dragEndHandler = (dragInfo) => {
     const draggedDistance = dragInfo.offset.x;
     const swipeThreshold = 50;
+    console.log("IM MOVING");
     if (draggedDistance > swipeThreshold) {
       swipeToCard(-1);
     } else if (draggedDistance < -swipeThreshold) {
@@ -75,8 +76,33 @@ const Carousel = () => {
     console.log("new cardId=", cardId);
   };
 
+  /*
+    UseEffect that updates
+  */
+
   return (
     <div className='slider-container'>
+      <div className='thumbnails'>
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            onClick={() => {
+              skipToCard(project.id);
+            }}
+            className='thumbnail-container'
+            // whileHover={{ scale: 1.05 }}
+          >
+            {project.project}
+            <div
+              className={`active-indicator ${
+                index === activeCardIndex ? "active vinyl" : ""
+              }`}
+            >
+              {<VinylSvg />}
+            </div>
+          </motion.div>
+        ))}
+      </div>
       <div className='slider'>
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
@@ -91,39 +117,24 @@ const Carousel = () => {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={1}
             onDragEnd={(_, dragInfo) => dragEndHandler(dragInfo)}
-            className='image'
+            className='card-dragger z-[4]'
           >
             {cards[activeCardIndex]}
           </motion.div>
         </AnimatePresence>
       </div>
-      {/* <div className='buttons'>
-        <button onClick={() => swipeToCard(-1)}>PREV</button>
-        <button onClick={() => swipeToCard(1)}>NEXT</button>
+      {/* <div className='vinyl z-[0]'>
+        <VinylSvg />
       </div> */}
-      <div className='thumbnails'>
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            onClick={() => {
-              skipToCard(project.id);
-            }}
-            className='thumbnail-container'
-            whileHover={{ scale: 1.05 }}
-          >
-            {project.project}
-            <div
-              className={`active-indicator ${
-                index === activeCardIndex ? "active vinyl" : ""
-              }`}
-            >
-              {<VinylSvg />}
-            </div>
-          </motion.div>
-        ))}
-      </div>
     </div>
   );
 };
 
 export default Carousel;
+
+{
+  /* <div className='buttons'>
+  <button onClick={() => swipeToCard(-1)}>PREV</button>
+  <button onClick={() => swipeToCard(1)}>NEXT</button>
+</div> */
+}
