@@ -387,7 +387,9 @@ body {
   -webkit-text-fill-color: var(--black);
   /* outline: 3px solid var(--black); */
   border-radius: 25px;
-  background-color: var(--home-bg);
+  /* background-color: var(--home-bg); */
+  background-color: transparent;
+
   /* border: 2px solid var(--darkgreen); */
   /* box-shadow: 0px 0px 20px 20px rgba(0, 0, 255, 0.2); */
   /* box-shadow: 0px 0px 20px 20px var(--brown); */
@@ -580,7 +582,6 @@ body {
   top: 0%;
   height: 50%;
   background-color: var(--black);
-  border: 2px solid var(--darkgreen);
   border-radius: 25px;
   padding: 0.1em 1em;
   z-index: 1;
@@ -601,17 +602,19 @@ body {
   top: 0;
   width: 100%;
   height: 105%;
-  background-color: var(--green);
+  background-color: var(--lightgreen);
+  border: 2px solid var(--lightgreen);
   transform: translate(-102%, 0%) skew(0deg);
   transition: transform 0.5s, background-color 0.5s ease-in-out;
 }
 
 #see-work-btn:hover::after {
   transform: translate(0, 0%) skew(0deg);
-  background-color: var(--green);
+  background-color: var(--lightgreen);
   width: 100%;
   -webkit-text-fill-color: black;
   font-size: 20px;
+  border: 2px solid var(--lightgreen);
   transition: transform 0.5s, background-color 0.5s ease-in-out;
 }
 #see-work-btn:hover span {
@@ -625,9 +628,7 @@ body {
   width: 100%;
   top: 0%;
   height: 50%;
-  background-color: var(--home-bg);
-  border: 2px solid var(--darkgreen);
-
+  background-color: var(--black);
   border-radius: 25px;
   padding: 0.1em 1em;
   z-index: 1;
@@ -636,6 +637,7 @@ body {
 #connect-btn span {
   position: relative;
   font-size: var(--step--1);
+  -webkit-text-fill-color: var(--home-bg);
   transition: color 0.5s;
   z-index: 2;
 }
@@ -647,7 +649,6 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  border-radius: 25px;
   background-color: var(--lightgreen);
   transform: translate(-102%, 0%) skew(0deg);
   transition: transform 0.5s, background-color 0.5s ease-in-out;
@@ -660,7 +661,6 @@ body {
   -webkit-text-fill-color: black;
   font: "aileronRegular";
   font-size: 20px;
-  border-radius: 25px;
   transition: transform 0.5s, background-color 0.5s ease-in-out;
 }
 #connect-btn:hover span {
