@@ -62,7 +62,8 @@
   --lightpurple: #f1defb;
   /*--home-bg: #fcf1ec*/
   /* --home-bg: #fffbff;  */
-  --home-bg: #fbeeec;
+  /* --home-bg: #fbeeec; */
+  --home-bg: #ffffff;
   --step--5: clamp(0.6209rem, 0.4879rem + 0.6653vi, 1.0866rem);
   --step--4: clamp(0.683rem, 0.5367rem + 0.7318vi, 1.1953rem);
   --step--3: clamp(0.7513rem, 0.5903rem + 0.805vi, 1.3148rem);
