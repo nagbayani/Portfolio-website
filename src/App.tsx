@@ -59,7 +59,6 @@ const App = () => {
     <div>
       <div className='fixed z-20 h-[80px] mb-[50px]'>
         <Treadmill />
-        <Nav />
       </div>
       <>
         {components.map((component) => (

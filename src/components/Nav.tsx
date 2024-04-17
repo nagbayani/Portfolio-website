@@ -29,19 +29,11 @@ const Nav = () => {
   return (
     <motion.div
       className='nav-header font-aileronHeavy grow-1'
-      variants={variants}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+      // variants={variants}
+      // animate={hidden ? "hidden" : "visible"}
+      // transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       <h1 className='text-end'>NATHAN A</h1>
-      <ul className='flex font-aileronRegular flex-row justify-between'>
-        <li onClick={() => scrollComponentIntoView("projects")}>PROJECTS</li>
-        {/* <li> / </li> */}
-        <li onClick={() => scrollComponentIntoView("about")}> ABOUT </li>
-        {/* <li> / </li> */}
-        <li onClick={() => scrollComponentIntoView("contact")}> CONTACT</li>
-      </ul>
-      {/* <hr></hr> */}
     </motion.div>
   );
 };

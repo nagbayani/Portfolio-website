@@ -9,6 +9,7 @@ import {
 
 import HomeGrid from "./HomeGrid";
 import Waves from "./Waves";
+import Nav from "./Nav";
 
 const variants = {
   visible: { opacity: 1, y: 0 },
@@ -65,10 +66,10 @@ const Home = ({ projectClick, contactClick }) => {
         transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       >
         <Waves />
-        <hr style={{ background: "transparent" }}></hr>
+        <Nav />
         <Waves />
       </motion.div>
-      <div className='flex relative items-center justify-center padding-8 object-contain mt-[8%]'>
+      <div className='flex relative items-center justify-center padding-8 object-contain mt-48'>
         <HomeGrid projectClick={projectClick} contactClick={contactClick} />
       </div>
       <div className='bottom-0 flex absolute justify-end w-[100%]'>

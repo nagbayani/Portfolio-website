@@ -1,0 +1,35 @@
+  <svg width='100%' height='200px' viewBox='0 0 1098.72 89.55'>
+          <path
+            id='curve'
+            fill='transparent'
+            d='M0 0H524C618.441 0 695 76.5593 695 171V171C695 265.441 618.441 342 524 342H0V0Z'
+          ></path>
+          <text width='100%' style={{ transform: "translate3d(0,0,0)" }}>
+            <textPath
+              id='text-path'
+              style={{ transform: "translate3d(0,0,0)" }}
+              alignment-baseline='top'
+              xlinkHref='#curve'
+            >
+              sample text sample text
+              <animate
+                id='anim1'
+                attributeName='startOffset'
+                from='0'
+                to='600'
+                begin='0s;anim2.end'
+                dur='5s'
+                repeatCount='1'
+              />
+              <animate
+                id='anim2'
+                attributeName='startOffset'
+                from='600'
+                to='0'
+                begin='anim1.end'
+                dur='5s'
+                repeatCount='1'
+              />
+            </textPath>
+          </text>
+        </svg>
