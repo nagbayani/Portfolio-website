@@ -57,7 +57,7 @@ const Home = ({ projectClick, contactClick }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       ref={ref}
-      className='home-container relative flex flex-col items-center  w-[100vw] h-[105vh]'
+      className='home-container relative flex flex-col items-center  w-[100vw] h-full'
     >
       <motion.div
         className='mt-32 flex absolute justify-start w-[100%]'
@@ -69,10 +69,10 @@ const Home = ({ projectClick, contactClick }) => {
         <Nav />
         <Waves />
       </motion.div>
-      <div className='flex relative items-center justify-center padding-8 object-contain mt-48'>
+      <div className='flex relative items-center justify-center padding-8 object-contain mt-32 mb-16'>
         <HomeGrid projectClick={projectClick} contactClick={contactClick} />
       </div>
-      <div className='bottom-0 flex absolute justify-end w-[100%]'>
+      <div className='bottom-0 flex absolute justify-end w-[100%] mt-32'>
         <Waves />
         <hr></hr>
         <Waves />
