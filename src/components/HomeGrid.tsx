@@ -9,16 +9,15 @@ import {
 } from "framer-motion";
 import HomePicSvg from "../svg/homepic.svg";
 import ProfileTopSvg from "../svg/profiletop.svg";
-import Waves from "./Waves";
 
 const HomeGrid = ({ projectClick, contactClick }) => {
   return (
-    <div className='home-grid w-full font-garamond relative'>
+    <div className='home-grid w-auto mx-auto font-garamond relative items-center scale-[.85]  justify-center padding-8 object-contain mb-16 translate-y-[-2em]'>
       <div className='home-profile relative translate-y-[-6%] mx-[-1em] z-7 '>
         <HomePicSvg />
-        <div className='top-profile w-[100%] overflow-hidden absolute'>
+        {/* <div className='top-profile w-[100%] overflow-hidden absolute'>
           <ProfileTopSvg />
-        </div>
+        </div> */}
       </div>
       <div className='grid-left-1'>
         <h1 className='relative  justify-self-end self-end row-start-3 col-start-1 left-[.35em]  z-10'>

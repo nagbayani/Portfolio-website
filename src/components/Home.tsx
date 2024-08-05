@@ -57,28 +57,30 @@ const Home = ({ projectClick, contactClick }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       ref={ref}
-      className='home-container relative flex flex-col items-center  w-[100vw] h-full'
+      className='home-container relative flex flex-col items-center w-auto h-auto'
     >
       <motion.div
-        className='mt-32 flex absolute justify-start w-[100%]'
+        className='mt-24 flex relative justify-start w-auto'
         variants={variants}
         animate={hidden ? "hidden" : "visible"}
         transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       >
-        <Waves />
+        {/* <Waves />
+        <Waves /> */}
         <Nav />
-        <Waves />
       </motion.div>
-      <div className='flex relative items-center justify-center padding-8 object-contain mt-32 mb-16'>
+      {/* <div className='flex relative items-center scale-[1]  justify-center padding-8 object-contain mt-32 mb-16'>
+      </div> */}
+      <div className='w-full h-full'>
         <HomeGrid projectClick={projectClick} contactClick={contactClick} />
       </div>
-      <div className='bottom-0 flex absolute justify-end w-[100%] mt-32'>
+      {/* <div className='bottom-0 flex absolute justify-end w-auto mt-32'>
         <Waves />
         <hr></hr>
         <Waves />
         <hr></hr>
         <Waves />
-      </div>
+      </div> */}
     </motion.div>
   );
 };

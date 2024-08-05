@@ -1,17 +1,15 @@
-// Home.js
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useInView } from "framer-motion";
 import { sendCustomEmail } from "../Email";
-// import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
   const [details, setDetails] = useState({
     from_name: "",
     message: "",
     reply_to: "",
   });
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref);
   const [isTyping, setIsTyping] = useState(false);
 
   const [touched, setTouched] = useState({
@@ -36,68 +34,30 @@ const Contact = () => {
     });
   };
 
-  const handleSendEmail = (e) => {
-    e.preventDefault();
-    sendCustomEmail(details);
-  };
-
-  useEffect(() => {
-    console.log("typing changed", isTyping);
-  }, [isInView, ref, isTyping]);
-
   return (
-    <div ref={ref} className='flex flex-col w-[100vw] h-[100vh] items-center'>
+    <section ref={ref} className='flex flex-col items-center h-full mt-64'>
       <h1 className='mt-16'>CONTACT ME</h1>
-      {/* <hr></hr> */}
-      <div className='flex flex-row w-[100%] h-[100%]'>
-        <form
-          className='contact-form font-aileronRegular w-[100%] h-[100%] '
-          noValidate
-        >
-          <div>
-            <label htmlFor='email' className='block font-aileronRegular mb-8'>
-              Email<span className='text-red-500'>*</span>:
-              <input
-                required
-                name='reply_to'
-                type='email'
-                value={details.reply_to}
-                onChange={handleDetailsChange}
-                onFocus={() => handleInputFocus("reply_to")}
-                id='email'
-                className='peer text-black focus:outline-none focus:ring-black-500 '
-              ></input>
-              {touched.reply_to && !details.reply_to && (
-                <span className='hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block'>
-                  Please enter a valid email address.
-                </span>
-              )}
-            </label>
+      <div className='flex gap-4'>
+        <div className='w-[600px] flex flex-col gap-4 font-aileron '>
+          <div className='entry-area relative h-[80px] leading-[80px] '>
+            <input
+              type='text'
+              required
+              className='contact-input absolute w-full outline-none text-[2.2em] px-[30px] leading-[80px] border-2 border-solid '
+            ></input>
+            <div className='label-line text-gray-50 font-aileronThin'>Name</div>
           </div>
-          <div className='mb-8'>
-            <label htmlFor='name' className='block mb-2 font-aileronRegular'>
-              Name<span className='text-red-500'>*</span>:
-              <input
-                required
-                value={details.from_name}
-                onChange={handleDetailsChange}
-                name='from_name'
-                type='name'
-                id='name'
-                onFocus={() => handleInputFocus("from_name")}
-                className='peer text-black focus:outline-none focus:ring-black-500 '
-              ></input>
-              {touched.from_name && !details.from_name && (
-                <span className='hidden text-sm text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block'>
-                  Please enter a name.
-                </span>
-              )}
-            </label>
+          <div className='entry-area relative h-[80px] leading-[80px] '>
+            <input
+              type='text'
+              required
+              className='contact-input absolute w-full outline-none text-[2.2em] px-[30px] leading-[80px] border-2 border-solid '
+            ></input>
+            <div className='label-line text-gray-50 font-aileronThin'>
+              Email
+            </div>
           </div>
           <div className='mb-8' id='message-label'>
-            <label htmlFor='message' className='block mb-2 font-aileronREgular'>
-              Message<span className='text-red-500'>*</span>:
-            </label>
             <textarea
               required
               value={details.message}
@@ -106,41 +66,31 @@ const Contact = () => {
               id='message'
               onFocus={() => setIsTyping(true)}
               onBlur={() => setIsTyping(false)}
-              placeholder='Type your message...'
-              className={`resize-none focus:outline-none focus:ring-blue-500 focus:border-blue-500   placeholder:text-slate-400  ${
-                isTyping
-                  ? "text-black font-aileronRegular"
-                  : "placeholder:text-slate-400 font-aileronThin "
-              }`}
             ></textarea>
+            <div className='label-line text-gray-50 font-aileronThin'>
+              Your Message
+            </div>
           </div>
-          <button
-            type='submit'
-            onClick={handleSendEmail}
-            className=' border-black border-2 group-invalid:pointer-events-none group-invalid:opacity-30'
-            id='send-btn'
-          >
-            <span onClick={handleSendEmail}>SEND</span>
-          </button>
-        </form>
-
-        <div className='flex flex-col w-[50%] items-center'>
+        </div>
+        <div className='contact-note flex flex-col items-center'>
           <div
-            className='flex flex-col h-[40%] w-[100%] items-center justify-center'
-            style={{ backgroundColor: "var(--orange)" }}
+            className='flex flex-col w-[100%] items-center justify-center text-white'
+            style={{ backgroundColor: "#1a4526" }}
           >
-            <h2 className='font-aileronThin'>I want to make a difference.</h2>
-            <h2 className='font-aileronThin'>Let's get in touch.</h2>
+            <h2 className='font-aileronThin text-white'>
+              I want to make a difference.
+            </h2>
+            <h2 className='font-aileronThin text-white'>Let's get in touch.</h2>
           </div>
           <div
             className='w-[100%] h-[50%] flex flex-col justify-center items-center'
             style={{ backgroundColor: "#f4a75e" }}
           >
-            <img src='/contact-pic.png'></img>
+            {/* <img src='/contact-pic.png'></img> */}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
