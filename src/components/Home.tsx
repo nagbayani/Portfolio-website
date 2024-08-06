@@ -8,6 +8,8 @@ import {
 } from "framer-motion";
 
 import HomeGrid from "./HomeGrid";
+import HomeGridPrac from "./HomeGridPrac";
+
 import Waves from "./Waves";
 import Nav from "./Nav";
 
@@ -71,9 +73,8 @@ const Home = ({ projectClick, contactClick }) => {
       </motion.div>
       {/* <div className='flex relative items-center scale-[1]  justify-center padding-8 object-contain mt-32 mb-16'>
       </div> */}
-      <div className='w-full h-full'>
-        <HomeGrid projectClick={projectClick} contactClick={contactClick} />
-      </div>
+      {/* <HomeGrid projectClick={projectClick} contactClick={contactClick} /> */}
+      <HomeGridPrac projectClick={projectClick} contactClick={contactClick} />
       {/* <div className='bottom-0 flex absolute justify-end w-auto mt-32'>
         <Waves />
         <hr></hr>
