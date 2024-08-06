@@ -5,6 +5,7 @@ const AngulensCard = ({ isOpen }) => {
   return (
     <div className='h-[100%] w-full flex flex-row justify-between'>
       <div className='card-left-round'>
+        <div className='demo absolute  border-2 border-black'>Demo</div>
         <svg
           className='svgwave'
           xmlns='http://www.w3.org/2000/svg'
@@ -31,7 +32,6 @@ const AngulensCard = ({ isOpen }) => {
               fill: "transparent",
             }}
           />
-
           <text
             // textAnchor='left'
             style={{
@@ -120,7 +120,7 @@ const InterviewPrep = ({ isOpen }) => {
   return (
     <div className='h-[100%] w-full flex flex-row'>
       <div className='card-description  w-[50%]'>
-        <h1 className='font-garamond'>Interview Prepper</h1>
+        <h1 className='font-garamond'>InterFluent</h1>
         <h4 className='card-subheader font-aileronRegular'>
           FULLSTACK WEB APPLICATION
         </h4>
@@ -131,6 +131,7 @@ const InterviewPrep = ({ isOpen }) => {
         </p>
       </div>
       <div className='card-right-round  w-[50%]'>
+        <div className='demo absolute  border-2 border-black'>Demo</div>
         <svg
           className='svgwave2'
           xmlns='http://www.w3.org/2000/svg'
@@ -279,6 +280,7 @@ const LoCoups = ({ isOpen }) => {
   return (
     <div className='h-[100%] w-full flex flex-row'>
       <div className='card-left-round '>
+        <div className='demo absolute  border-2 border-black'>Demo</div>
         <svg
           className='svgwave'
           xmlns='http://www.w3.org/2000/svg'

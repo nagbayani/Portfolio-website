@@ -10,4 +10,7 @@ export default defineConfig({
       include: "**/*.svg",
     }),
   ],
+  optimizeDeps: {
+    include: ["react-icons"],
+  },
 });

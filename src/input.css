@@ -323,7 +323,8 @@ body {
   height: 80px;
   /* height: 120%; */
   background-color: transparent;
-  justify-content: center;
+  justify-content: space-between;
+
   overflow: visible;
   flex-wrap: wrap;
   margin-left: 2em;
@@ -462,9 +463,9 @@ body {
 }
 .home-profile {
   overflow: hidden;
-  /* align-self: center; */
+  align-self: center;
   justify-self: center;
-  grid-area: 1 / 2 / 8 / 3;
+  grid-area: 1 / 2 / 6 / 3;
   max-width: 250px;
   min-width: 150px;
   margin: 0px 1.25rem 0px 1.25rem;
@@ -472,7 +473,7 @@ body {
   -webkit-filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.75));
 }
 .home-profile #home-pic {
-  /* justify-self: center; */
+  justify-self: center;
   z-index: 7;
   width: 100%;
   aspect-ratio: 1/1;
@@ -555,10 +556,10 @@ body {
 
 .grid-right-2 {
   position: relative;
-  grid-row-start: 5;
+  grid-row-start: 4;
   grid-column-start: 3;
-  margin-top: -1em;
-  margin-left: -1em;
+  /* margin-top: -1em; */
+  /* margin-left: -0.5em; */
   z-index: 10;
 }
 
@@ -596,6 +597,11 @@ body {
   left: -20%;
 }
 
+.grid-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #see-work-btn {
   position: relative;
   overflow: hidden;
@@ -614,6 +620,7 @@ body {
   font-size: var(--step--1);
   z-index: 2;
   -webkit-text-fill-color: var(--home-bg);
+  white-space: nowrap;
 }
 
 #see-work-btn::after {
@@ -632,7 +639,7 @@ body {
 #see-work-btn:hover::after {
   transform: translate(0, 0%) skew(0deg);
   background-color: var(--lightgreen);
-  width: 100%;
+  /* width: 100%; */
   -webkit-text-fill-color: black;
   font-size: 20px;
   border: 2px solid var(--lightgreen);
@@ -642,52 +649,12 @@ body {
   height: 200%;
   -webkit-text-fill-color: var(--brown);
 }
-
-#connect-btn {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  top: 0%;
-  /* height: 50%; */
-  background-color: var(--black);
-  border-radius: 25px;
-  padding: 0.1em 1em;
-  z-index: 1;
+.grid-icon {
+  color: white;
 }
-
-#connect-btn span {
-  position: relative;
-  font-size: var(--step--1);
-  -webkit-text-fill-color: var(--home-bg);
-  transition: color 0.5s;
-  z-index: 2;
-}
-
-#connect-btn::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--lightgreen);
-  transform: translate(-102%, 0%) skew(0deg);
-  transition: transform 0.5s, background-color 0.5s ease-in-out;
-}
-
-#connect-btn:hover::after {
-  transform: translate(0, 0%) skew(0deg);
-  background-color: var(--lightgreen);
-  width: 100%;
-  -webkit-text-fill-color: black;
-  font: "aileronRegular";
-  font-size: 20px;
-  transition: transform 0.5s, background-color 0.5s ease-in-out;
-}
-#connect-btn:hover span {
-  height: 200%;
-  -webkit-text-fill-color: black;
-  /* -webkit-text-fill-color: var(--lightgreen); */
+#see-work-btn:hover .grid-icon {
+  color: black;
+  z-index: 1111;
 }
 
 .treadmill {
@@ -802,10 +769,15 @@ body {
   margin-bottom: 1rem;
 }
 
+.demo {
+  margin: 0.5rem;
+}
+
 .card-left-round {
   position: relative;
-  align-content: start;
-  justify-content: start;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   /* border-radius: 0px 200px 200px 0px; */
   /* border: 2px solid black; */
   width: 50%;
@@ -824,8 +796,12 @@ body {
 
 .card-right-round {
   border-radius: 200px 0px 0px 200px;
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   /* margin-left: 1rem; */
-  right: 10%;
+  /* right: 10%; */
 }
 
 #projects-header {
@@ -951,8 +927,8 @@ body {
 .label-line {
   position: absolute;
   font-size: var(--step--1);
-  padding: 0px 10px;
-  margin: 0px 20px;
+  padding: 0px 5px;
+  margin: 0px 10px;
   transition: 0.2s ease;
   background-color: var(--home-bg);
 }
@@ -965,7 +941,7 @@ body {
   margin: auto;
   width: 100%;
   height: 100%;
-  padding: 0 10px;
+  padding: 20px;
   background: inherit;
   border: 1px solid black;
   border-radius: 5px;
@@ -976,6 +952,7 @@ body {
 #message-label textarea:valid {
   color: var(--green);
   border: 2px solid black;
+  outline: none;
 }
 
 #message-label textarea:focus + .label-line,

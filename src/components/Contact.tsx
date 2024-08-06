@@ -35,17 +35,17 @@ const Contact = () => {
   };
 
   return (
-    <section ref={ref} className='flex flex-col items-center h-full mt-64'>
-      <h1 className='mt-16'>CONTACT ME</h1>
+    <section ref={ref} className='flex flex-col items-center h-full mt-8'>
+      <h1 className='m-16 font-garamond'>Contact Me</h1>
       <div className='flex gap-4'>
-        <div className='w-[600px] flex flex-col gap-4 font-aileron '>
+        <div className='w-[600px] flex flex-col gap-8 font-aileron '>
           <div className='entry-area relative h-[80px] leading-[80px] '>
             <input
               type='text'
               required
               className='contact-input absolute w-full outline-none text-[2.2em] px-[30px] leading-[80px] border-2 border-solid '
             ></input>
-            <div className='label-line text-gray-50 font-aileronThin'>Name</div>
+            <div className='label-line text-gray-50 font-aileronThin'>NAME</div>
           </div>
           <div className='entry-area relative h-[80px] leading-[80px] '>
             <input
@@ -54,7 +54,7 @@ const Contact = () => {
               className='contact-input absolute w-full outline-none text-[2.2em] px-[30px] leading-[80px] border-2 border-solid '
             ></input>
             <div className='label-line text-gray-50 font-aileronThin'>
-              Email
+              EMAIL
             </div>
           </div>
           <div className='mb-8' id='message-label'>
@@ -68,11 +68,11 @@ const Contact = () => {
               onBlur={() => setIsTyping(false)}
             ></textarea>
             <div className='label-line text-gray-50 font-aileronThin'>
-              Your Message
+              YOUR MESSAGE
             </div>
           </div>
         </div>
-        <div className='contact-note flex flex-col items-center'>
+        {/* <div className='contact-note flex flex-col items-center'>
           <div
             className='flex flex-col w-[100%] items-center justify-center text-white'
             style={{ backgroundColor: "#1a4526" }}
@@ -86,9 +86,8 @@ const Contact = () => {
             className='w-[100%] h-[50%] flex flex-col justify-center items-center'
             style={{ backgroundColor: "#f4a75e" }}
           >
-            {/* <img src='/contact-pic.png'></img> */}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
