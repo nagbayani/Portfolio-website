@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import startAnguLens from "../img/angulens/startAnguLens.gif";
+import modalAngulens from "../img/angulens/modal.gif";
+import collapsingFolders from "../img/angulens/collapsingFolders.gif";
+import Slideshow from "./Slideshow";
 
 const AngulensCard = ({ isOpen }) => {
+  const images = [startAnguLens, modalAngulens, collapsingFolders];
+
   return (
     <div className='h-[100%] w-full flex flex-row justify-between'>
       <div className='card-left-round'>
-        <div className='demo absolute  border-2 border-black'>Demo</div>
+        <div className='flex demo absolute w-[85%] h-[60%]'>
+          <Slideshow images={images} />
+        </div>
         <svg
           className='svgwave'
           xmlns='http://www.w3.org/2000/svg'
@@ -125,9 +133,11 @@ const InterviewPrep = ({ isOpen }) => {
           FULLSTACK WEB APPLICATION
         </h4>
         <p>
-          Fullstack React application to aid in preparing for interviews. Users
-          can construct thoughtful answers to questions onto cards that are
-          contained within customizable decks.
+          Fullstack Next.js Interview Preparation Application allows users to
+          write and organize answers to interview questions on cards within
+          customizable decks, featuring a rich text editor for personalized
+          responses. Users can create mock interviews and import cards or decks
+          for focused practice.
         </p>
       </div>
       <div className='card-right-round  w-[50%]'>
@@ -181,53 +191,18 @@ const InterviewPrep = ({ isOpen }) => {
                 repeatCount='indefinite'
               />
               <tspan style={{ fill: "black" }} dx='20'>
-                React
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                Redux
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                Express
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                PostgreSQL
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                OAuth
+                Next.js
               </tspan>
               <tspan style={{ fill: "black" }} dx='20'>
                 React
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
-                Redux
+                Zustand
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
-                Express
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                PostgreSQL
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                OAuth
-              </tspan>
-              <tspan style={{ fill: "black" }} dx='20'>
-                React
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                Redux
-              </tspan>
-              {"      "}
-              <tspan style={{ fill: "black" }} dx='20'>
-                Express
+                TipTap
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
@@ -239,15 +214,21 @@ const InterviewPrep = ({ isOpen }) => {
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
+                Prisma
+              </tspan>
+              <tspan style={{ fill: "black" }} dx='20'>
+                Next.js
+              </tspan>
+              <tspan style={{ fill: "black" }} dx='20'>
                 React
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
-                Redux
+                Zustand
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
-                Express
+                TipTap
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
@@ -259,15 +240,34 @@ const InterviewPrep = ({ isOpen }) => {
               </tspan>
               {"      "}
               <tspan style={{ fill: "black" }} dx='20'>
-                React
+                Prisma
               </tspan>
               <tspan style={{ fill: "black" }} dx='20'>
-                Redux
+                Next.js
+              </tspan>
+              <tspan style={{ fill: "black" }} dx='20'>
+                React
               </tspan>
               {"      "}
-              {/* <tspan style={{ fill: "black" }} dx='20'>
-                Express
-              </tspan> */}
+              <tspan style={{ fill: "black" }} dx='20'>
+                Zustand
+              </tspan>
+              {"      "}
+              <tspan style={{ fill: "black" }} dx='20'>
+                TipTap
+              </tspan>
+              {"      "}
+              <tspan style={{ fill: "black" }} dx='20'>
+                PostgreSQL
+              </tspan>
+              {"      "}
+              <tspan style={{ fill: "black" }} dx='20'>
+                OAuth
+              </tspan>
+              {"      "}
+              <tspan style={{ fill: "black" }} dx='20'>
+                Prisma
+              </tspan>
             </textPath>
           </text>
         </svg>

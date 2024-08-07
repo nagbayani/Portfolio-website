@@ -17,7 +17,7 @@ const Layer = ({ id, children }: { id: string; children: React.ReactNode }) => {
   const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section ref={ref} id={id} className='relative'>
+    <section ref={ref} id={id} className='relative '>
       <div style={{ transform: `translateY(${y}px)` }}>{children}</div>
     </section>
   );

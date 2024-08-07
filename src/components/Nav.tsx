@@ -34,7 +34,7 @@ const Nav = () => {
       // transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       {/* <h2>I'm Nathan Agbayani</h2> */}
-      <h1 className='font-garamond'> I'm Nathan Agbayani</h1>
+      <h1 className='font-garamond'> I'm Nathan Agbayani...</h1>
     </motion.div>
   );
 };

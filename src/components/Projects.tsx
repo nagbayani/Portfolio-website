@@ -16,11 +16,7 @@ const Projects = ({}) => {
   }, [isInView, ref]);
 
   return (
-    <div
-      ref={ref}
-      id='Projects'
-      className='flex flex-col w-screen my-8 h-[200vh]'
-    >
+    <div ref={ref} id='Projects' className='flex flex-col w-screen  h-full'>
       <div
         ref={scrollRef}
         className='projects-container flex flex-col w-[100%] h-[100%] mt-16 items-center'
