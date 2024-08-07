@@ -28,13 +28,13 @@ const Nav = () => {
 
   return (
     <motion.div
-      className='nav-header font-aileron  gap-4 grow-1'
+      className='nav-header font-aileron   gap-4 grow-1'
       // variants={variants}
       // animate={hidden ? "hidden" : "visible"}
       // transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       {/* <h2>I'm Nathan Agbayani</h2> */}
-      <h1 className='font-garamond'> I'm Nathan Agbayani...</h1>
+      <h1 className='font-garamond'>Nathan Agbayani</h1>
     </motion.div>
   );
 };
