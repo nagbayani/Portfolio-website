@@ -26,9 +26,9 @@ const components = [
       />
     ),
   },
+  { id: "about", children: <About /> },
   { id: "projects", children: <Projects /> },
   { id: "contact", children: <Contact /> },
-  { id: "about", children: <About /> },
 ];
 const scrollComponentIntoView = (id) => {
   const element = document.getElementById(id);

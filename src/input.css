@@ -334,6 +334,7 @@ body {
   -webkit-text-fill-color: var(--brown); */
   background-color: var(--home-bg);
   -webkit-text-fill-color: var(--black);
+  z-index: 20000;
   /* box-shadow: 0px 0px 10px 0px #101010; */
 }
 
