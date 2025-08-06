@@ -20,28 +20,24 @@ const About = () => {
       className='flex flex-col items-center h-[100vh] mt-8'
     >
       <h1 className='m-16 font-garamond'>About Me</h1>
-      <div className='flex flex-col gap-4 text-start p-4'>
-        <h3 className='font-aileron'>
+      <div className='flex flex-col gap-4 text-start p-4 rounded-lg border-2 border-black mx-[25%]'>
+        <p className='font-aileron'>
           Hey there! You can call me Nathan or Nate, not Nathaniel though.
-        </h3>
-        <h3 className='font-aileron text-start'>
+        </p>
+        <p className='font-aileron text-start'>
           I'm a software engineer based in Los Angeles, California.
-        </h3>
-        <h3 className='font-aileron text-start'>
+        </p>
+        <p className='font-aileron text-start'>
           As an engineer, I'm driven by the idea of innovation, and how it is
           the driving force in progressing systems, strengthening
           infrastructures, and empowering communities. With an educational and
           professional background in healthcare, I've seen firsthand the impact
-          that technology can have on the lives of others. Growing up in Hawaii,
-          I was instilled with the value of responsibility, or "Kuleana", and it
-          is my responsibilty to write code that nurtures technological systems
-          and translates into innovative solutions.
-        </h3>
-        <h3 className='font-aileron text-start'>
+          that technology can have on the lives of others.
+        </p>
+        <p className='font-aileron text-start'>
           My passions include singing, hitting licks on the guitar, playing
-          volleyball, reading manga and science fiction, and keeping up with
-          social activism.
-        </h3>
+          volleyball, reading manga and science fiction.
+        </p>
       </div>
       {/* <MdOutlineFaceRetouchingNatural /> */}
     </div>

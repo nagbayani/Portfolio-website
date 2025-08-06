@@ -665,7 +665,7 @@ body {
 }
 
 .treadmill-container {
-  overflow: hidden;
+  /* overflow: hidden; */
   /* justify-items: center; */
   /* align-items: start; */
   width: 100%;
@@ -681,7 +681,7 @@ body {
   flex-direction: row;
   white-space: nowrap;
   align-self: center;
-  width: 50%;
+  /* width: 1%; */
   /* align-items: flex-start; */
   animation: treadmill-animation 32s linear infinite;
   -webkit-text-fill-color: var(--home-bg);

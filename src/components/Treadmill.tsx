@@ -1,12 +1,12 @@
 import React from "react";
-import VinylSvg from "../svg/vinyl.svg";
+// import VinylSvg from "../svg/vinyl.svg";
 
 const Treadmill = () => {
   return (
-    <div className='h-[100%]'>
-      <div className='treadmill w-[100%] h-[100%]'>
+    <div className='h-full w-full'>
+      <div className='treadmill w-full h-full'>
         <div className='treadmill-container'>
-          <div className='treadmill-text font-aileronRegular'>
+          <div className='treadmill-text font-aileronRegular w-full'>
             <ul>
               <li className='ml-[1em] font-aileronHeavy'>FRONTEND</li>
               <li>FOCUSED. </li>
