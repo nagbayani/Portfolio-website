@@ -35,7 +35,7 @@ const Slideshow = ({ images }) => {
   };
 
   return (
-    <div className='slideshow-container '>
+    <div className='relative w-full h-full flex items-center '>
       <div className='prev' onClick={() => paginate(-1)}>
         <FaArrowLeft color='white' />
       </div>

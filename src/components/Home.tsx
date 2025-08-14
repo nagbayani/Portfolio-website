@@ -67,9 +67,9 @@ const Home = ({ projectClick, contactClick }) => {
         animate={hidden ? "hidden" : "visible"}
         transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       >
-        {/* <Waves />
-        <Waves /> */}
-        <Nav />
+        {/* <Waves /> */}
+        {/* <Waves /> */}
+        {/* <Nav /> */}
       </motion.div>
       {/* <div className='flex relative items-center scale-[1]  justify-center padding-8 object-contain mt-32 mb-16'>
       </div> */}

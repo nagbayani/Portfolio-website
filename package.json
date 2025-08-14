@@ -14,6 +14,7 @@
     "@heroicons/react": "^2.1.1",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.0.5",
+    "lucide-react": "^0.539.0",
     "popmotion": "^11.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
