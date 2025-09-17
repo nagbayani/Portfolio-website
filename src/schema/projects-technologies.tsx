@@ -37,7 +37,7 @@ const technologies = {
 const projects = [
   {
     id: 1,
-    name: "Angulens",
+    name: "ANGULENS",
     description:
       "Visual Studio Code Extension built with Angular focused on visualizing component hierarchies, dependencies, and component data flows in selected Angular Projects.",
     technologies: [

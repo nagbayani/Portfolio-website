@@ -21,9 +21,9 @@ const Projects = ({}) => {
     <div ref={ref} id='projects' className='flex flex-col w-screen  h-full'>
       <div
         // ref={scrollRef}
-        className='projects-container flex flex-col w-[100%] h-[100%] mt-16 items-center '
+        className='projects-container flex flex-col w-[100%] h-[100%] items-center '
       >
-        <h1 id='projects-header' className='font-garamond '>
+        <h1 id='projects-header' className='font-aileronHeavy '>
           Featured Projects
         </h1>
         {/* Map out Project Cards */}

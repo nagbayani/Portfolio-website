@@ -64,6 +64,8 @@ const App = () => {
         {components.map((component) => (
           <Layer id={component.id} children={component.children} />
         ))}
+        {/* <div className='flex flex-col mx-12'>
+        </div> */}
         {/* <motion.div className='progress' style={{ scaleX }} /> */}
       </>
       {/* <div className='bg'></div> */}

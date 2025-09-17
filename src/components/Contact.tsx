@@ -36,7 +36,7 @@ const Contact = () => {
 
   return (
     <section ref={ref} className='flex flex-col items-center h-full mt-8'>
-      <h1 className='m-16 font-garamond'>Contact Me</h1>
+      <h1 className='m-16 font-aileronHeavy'>Contact Me</h1>
       <div className='flex gap-4'>
         <div className='w-[600px] flex flex-col gap-8 font-aileron '>
           <div className='entry-area relative h-[80px] leading-[80px] '>

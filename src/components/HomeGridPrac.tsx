@@ -68,7 +68,7 @@ const HomeGridPrac = ({ projectClick, contactClick }) => {
             </span>
           </motion.button>
         </div> */}
-        <div className='grid-buttons row-start-6 row-span-1 col-start-1 col-span-3 flex justify-center items-center  font-aileronRegular'>
+        {/* <div className='grid-buttons row-start-6 row-span-1 col-start-1 col-span-3 flex justify-center items-center  font-aileronRegular'>
           <motion.button
             id='see-work-btn'
             onClick={projectClick}
@@ -115,7 +115,7 @@ const HomeGridPrac = ({ projectClick, contactClick }) => {
             <AiOutlineLinkedin size={24} className=' grid-icon' />
             <span>LinkedIn</span>
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

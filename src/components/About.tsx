@@ -19,7 +19,7 @@ const About = () => {
     <div ref={ref} id='about' className='flex items-center h-[100vh] mt-8'>
       <div className='container mx-auto px-6 py-20'>
         <div className='text-center mb-16'>
-          <h1 className='m-16 font-garamond'>About Me</h1>
+          <h1 className='m-16 font-aileronHeavy'>About Me</h1>
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>

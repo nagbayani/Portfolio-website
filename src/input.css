@@ -58,7 +58,7 @@
   --darkblue: #191d62;
   --beige: #fee1b2;
   --brown: #261a00;
-  --black: #101010;
+  --black: #332e2e;
   --lightpurple: #f1defb;
   /*--home-bg: #fcf1ec*/
   /* --home-bg: #fffbff;  */
@@ -378,7 +378,7 @@ body {
 
 .square {
   position: relative;
-  width: 75%;
+  width: 100%;
   /* border: 2px solid var(--black); */
   max-width: 800px;
 }
@@ -818,7 +818,7 @@ body {
 
 .card-subheader {
   background-color: var(--darkgreen);
-  padding: 0.25rem;
+  padding: 0.5rem;
   /* padding-right: 1rem;
   padding-left: 1rem; */
   -webkit-text-fill-color: var(--home-bg);

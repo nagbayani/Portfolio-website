@@ -1,7 +1,5 @@
 import { useState, useLayoutEffect, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { projects, technologies } from "../schema/projects-technologies";
-import Slideshow from "./Slideshow";
 
 import {
   Github,
@@ -22,7 +20,7 @@ const AnimatedCard = ({ project }) => {
   const [expanded, setIsExpanded] = useState(false);
 
   return (
-    <div className='mx-auto my-12 max-w-4xl border-black border-2 p-4'>
+    <div className='bg-white/80 mx-auto my-6 w-[55%] min-w-[400px] shadow-lg  backdrop-blur-sm rounded-2xl border border-gray-200/50 p-4'>
       {/* Header & Overview Descriptor */}
       <Content {...{ project, expanded, setIsExpanded }} />
       <ExpandedCard {...{ project, expanded, setIsExpanded }} />
@@ -33,19 +31,66 @@ const AnimatedCard = ({ project }) => {
 const Content = ({ project, expanded, setIsExpanded }) => {
   return (
     <div
-      className={`relative flex flex-col `}
+      className={`relative flex flex-col w-full mx-auto`}
       onClick={() => setIsExpanded(() => !expanded)}
     >
-      <div className='flex'>
+      <div className='flex '>
         {/* Title + Subtitle */}
         <div
-          className={`flex flex-grow w-3/4 h-fit mx-auto ${
+          className={`flex flex-grow w-fit h-fit mx-auto ${
             expanded ? "justify-start" : "justify-center"
           }`}
         >
-          <motion.div layout className='mr-4 flex flex-col w-fit h-auto '>
-            <h2 className=' w-fit'>{project.name}</h2>
+          <motion.div
+            layout
+            className={`flex flex-col h-auto 
+            ${expanded ? "w-full" : "w-3/4 max-w-[3/4]"}
+            `}
+          >
+            <div className='w-full justify-between flex'>
+              <h2 className='w-fit'>{project.name}</h2>
+              <div className={`flex flex-grow-0`}>
+                <motion.div
+                  layout
+                  className='flex w-fit gap-3 py-2 group-hover:opacity-100 transition-opacity duration-300 h-fit'
+                >
+                  <button
+                    onClick={() => setIsExpanded(() => !expanded)}
+                    className='p-2 bg-purple-100 hover:bg-purple-200 rounded-lg transition-colors duration-200 h-fit'
+                  >
+                    <Maximize2 className='w-3 h-3 text-purple-700' />
+                  </button>
+                  <a
+                    href={project.github}
+                    className='p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 h-fit'
+                  >
+                    <ChevronDown className='w-3 h-3 text-gray-700' />
+                  </a>
+                  <a
+                    href={project.link}
+                    className='p-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors duration-200 h-fit'
+                  >
+                    <ExternalLink className='w-3 h-3 text-blue-700' />
+                  </a>
+                </motion.div>
+              </div>
+            </div>
             <motion.p
+              layout
+              initial={false}
+              // animate={{
+              //   opacity: expanded ? 0 : 1,
+              //   height: expanded ? 0 : "auto",
+              // }}
+              transition={{
+                opacity: { duration: 0 },
+                height: { duration: 0.3 },
+              }}
+              className='card-subheader overflow-hidden will-change-[opacity,height]  font-aileronRegular w-fit '
+            >
+              OPEN SOURCE PRODUCT
+            </motion.p>
+            <motion.div
               layout
               initial={false}
               animate={{
@@ -56,60 +101,13 @@ const Content = ({ project, expanded, setIsExpanded }) => {
                 opacity: { duration: 0.2 },
                 height: { duration: 0.3 },
               }}
-              className='card-subheader overflow-hidden will-change-[opacity,height]  font-aileronRegular w-fit mx-auto'
+              className='overflow-hidden will-change-[opacity,height] w-fit mx-auto pt-2'
             >
-              OPEN SOURCE PRODUCT
-            </motion.p>
-          </motion.div>
-        </div>
-
-        {/* Expand & Github Buttons */}
-        <div
-          className={`flex flex-grow-0 ml-4 w-1/4 ${
-            expanded ? "justify-end" : "justify-start"
-          } `}
-        >
-          <motion.div
-            layout
-            className='flex w-fit gap-3 p-2 group-hover:opacity-100 transition-opacity duration-300 h-fit'
-          >
-            <button
-              onClick={() => setIsExpanded(() => !expanded)}
-              className='p-2 bg-purple-100 hover:bg-purple-200 rounded-lg transition-colors duration-200'
-            >
-              <Maximize2 className='w-3 h-3 text-purple-700' />
-            </button>
-            <a
-              href={project.github}
-              className='p-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200'
-            >
-              <ChevronDown className='w-3 h-3 text-gray-700' />
-            </a>
-            <a
-              href={project.link}
-              className='p-2 bg-blue-100 hover:bg-blue-200 rounded-lg transition-colors duration-200'
-            >
-              <ExternalLink className='w-3 h-3 text-blue-700' />
-            </a>
+              <p>{project.description}</p>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-
-      <motion.div
-        layout
-        initial={false}
-        animate={{
-          opacity: expanded ? 0 : 1,
-          height: expanded ? 0 : "auto",
-        }}
-        transition={{
-          opacity: { duration: 0.2 },
-          height: { duration: 0.3 },
-        }}
-        className='overflow-hidden will-change-[opacity,height] w-1/2 pt-2 mx-auto'
-      >
-        <p>{project.description}</p>
-      </motion.div>
     </div>
   );
 };
@@ -145,7 +143,7 @@ const ExpandedCard = ({ project, expanded, setIsExpanded }) => {
             opacity: 0,
           }}
           transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-          className=' z-10 bg-indigo-600 h-auto w-full rounded text-white'
+          className=' z-10 bg-indigo-600 h-auto mx-auto rounded text-white'
         >
           <ExpandedContent {...{ project }} />
         </motion.div>
@@ -178,7 +176,7 @@ const ExpandedContent = ({ project }) => {
   };
 
   return (
-    <div className='flex relative items-center justify-center  font-aileron w-full'>
+    <div className='flex flex-col lg:flex-row  relative justify-center font-aileron'>
       {/* Slideshow */}
       <div className='relative bg-gray-50'>
         <div className='relative h-full min-h-[400px]'>
@@ -193,13 +191,13 @@ const ExpandedContent = ({ project }) => {
             onClick={prevSlide}
             className='absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110'
           >
-            <ChevronLeft className='w-6 h-6 text-gray-700' />
+            <ChevronLeft className='w-4 h-4 text-gray-700' />
           </button>
           <button
             onClick={nextSlide}
             className='absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110'
           >
-            <ChevronRight className='w-6 h-6 text-gray-700' />
+            <ChevronRight className='w-4 h-4 text-gray-700' />
           </button>
 
           {/* Slide indicators */}
