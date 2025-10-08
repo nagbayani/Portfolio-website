@@ -50,11 +50,7 @@ const About = () => {
                 I'm a software engineer based in Los Angeles, California.
               </p>
               <p className='text-gray-600 leading-relaxed mb-6 font-aileron'>
-                As an engineer, I'm driven by the idea of innovation — how it's
-                the driving force behind progressing systems, strengthening
-                infrastructures, and empowering communities. With an educational
-                and professional background in healthcare, I've seen firsthand
-                the impact that technology can have on people’s lives.
+                I specialize in 
               </p>
               <p className='text-gray-600 leading-relaxed mb-6 font-aileron'>
                 My passions include singing, hitting licks on the guitar,

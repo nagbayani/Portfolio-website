@@ -72,7 +72,29 @@ const Home = ({ projectClick, contactClick }) => {
         {/* <Nav /> */}
       </motion.div>
       <HomeGridPrac projectClick={projectClick} contactClick={contactClick} />
-      {/* <div className='h-[50%]'> What is this area</div> */}
+      <div className='translate-y-[-250%] flex justify-between w-auto'>
+        <div className='relative font-aileronRegular justify-self-center self-center mx-2'>
+          <motion.button id='see-work-btn' onClick={projectClick}>
+            <span className='btn-text' onClick={projectClick}>
+              PROJECTS
+            </span>
+          </motion.button>
+        </div>
+        <div className='relative font-aileronRegular justify-self-center self-center mx-2'>
+          <motion.button id='see-work-btn' onClick={projectClick}>
+            <span className='btn-text' onClick={projectClick}>
+              RESUME
+            </span>
+          </motion.button>
+        </div>
+        <div className='relative font-aileronRegular justify-self-center self-center mx-2'>
+          <motion.button id='see-work-btn' onClick={contactClick}>
+            <span className='btn-text' onClick={contactClick}>
+              CONTACT
+            </span>
+          </motion.button>
+        </div>
+      </div>
     </motion.div>
   );
 };

@@ -20,7 +20,8 @@ const AnimatedCard = ({ project }) => {
   const [expanded, setIsExpanded] = useState(false);
 
   return (
-    <div className='bg-white/80 mx-auto my-6 w-[55%] min-w-[400px] shadow-lg  backdrop-blur-sm rounded-2xl border border-gray-200/50 p-4'>
+    // border-gray-200/50
+    <div className='bg-white/80 mx-auto my-6 w-[55%] min-w-[400px] shadow-lg  backdrop-blur-sm rounded-md border  border-[--black] p-8'>
       {/* Header & Overview Descriptor */}
       <Content {...{ project, expanded, setIsExpanded }} />
       <ExpandedCard {...{ project, expanded, setIsExpanded }} />
@@ -77,15 +78,15 @@ const Content = ({ project, expanded, setIsExpanded }) => {
             </div>
             <motion.p
               layout
-              initial={false}
+              // initial={false}
               // animate={{
               //   opacity: expanded ? 0 : 1,
               //   height: expanded ? 0 : "auto",
               // }}
-              transition={{
-                opacity: { duration: 0 },
-                height: { duration: 0.3 },
-              }}
+              // transition={{
+              //   opacity: { duration: 0 },
+              //   height: { duration: 0.3 },
+              // }}
               className='card-subheader overflow-hidden will-change-[opacity,height]  font-aileronRegular w-fit '
             >
               OPEN SOURCE PRODUCT
@@ -94,8 +95,8 @@ const Content = ({ project, expanded, setIsExpanded }) => {
               layout
               initial={false}
               animate={{
-                opacity: expanded ? 0 : 1,
-                height: expanded ? 0 : "auto",
+                opacity: expanded === true ? 0 : 1,
+                height: expanded === true ? 0 : "auto",
               }}
               transition={{
                 opacity: { duration: 0.2 },

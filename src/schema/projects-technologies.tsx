@@ -37,7 +37,7 @@ const technologies = {
 const projects = [
   {
     id: 1,
-    name: "ANGULENS",
+    name: "Angulens",
     description:
       "Visual Studio Code Extension built with Angular focused on visualizing component hierarchies, dependencies, and component data flows in selected Angular Projects.",
     technologies: [
@@ -83,19 +83,25 @@ const projects = [
     github: "#",
     features: [
       {
-        title: "Kanban Board Interface",
+        title: "Generate interview questions",
         description:
-          "Drag-and-drop task management with customizable columns, priority levels, and real-time collaboration features.",
+          "Generate interview questions to match job description, behavioral ",
         gif: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpg?auto=compress&cs=tinysrgb&w=800",
       },
       {
-        title: "Team Collaboration",
+        title: "Rich Text Editor",
         description:
           "Real-time chat, file sharing, and comment system with @mentions and notification management for seamless team communication.",
         gif: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpg?auto=compress&cs=tinysrgb&w=800",
       },
       {
-        title: "Time Tracking & Reports",
+        title: "Generate sample answers and feedback",
+        description:
+          "Real-time chat, file sharing, and comment system with @mentions and notification management for seamless team communication.",
+        gif: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpg?auto=compress&cs=tinysrgb&w=800",
+      },
+      {
+        title: "Stripe payment & Subscription tiers",
         description:
           "Automated time tracking with detailed reporting, productivity analytics, and project timeline visualization.",
         gif: "https://images.pexels.com/photos/590020/pexels-photo-590020.jpg?auto=compress&cs=tinysrgb&w=800",
