@@ -38,6 +38,7 @@ const projects = [
   {
     id: 1,
     name: "Angulens",
+    subheader: "OPEN SOURCE PRODUCT",
     description:
       "Visual Studio Code Extension built with Angular focused on visualizing component hierarchies, dependencies, and component data flows in selected Angular Projects.",
     technologies: [
@@ -75,6 +76,7 @@ const projects = [
   {
     id: 2,
     name: "InterFluent",
+    subheader: "WEB APPLICATION",
     description:
       "A collaborative project management tool with real-time updates, team collaboration features, and advanced reporting. Includes drag-and-drop functionality, time tracking, and integration with popular development tools.",
     technologies: ["React", "Node.js", "MongoDB", "GraphQL", "Redis", "Docker"],
@@ -111,6 +113,7 @@ const projects = [
   {
     id: 3,
     name: "Scrum Board Demo",
+    subheader: "WEB DEMO",
     description:
       "A comprehensive business intelligence dashboard with interactive data visualizations, real-time metrics, and automated report generation. Features custom chart components and advanced filtering capabilities.",
     technologies: ["JavaScript", "React", "SQL", "AWS", "Tailwind CSS"],

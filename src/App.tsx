@@ -57,7 +57,7 @@ const App = () => {
 
   return (
     <div>
-      <div className='fixed z-20 h-[80px] mb-[50px] w-full'>
+      <div className='absolute z-20 h-[80px] mb-[50px] w-full'>
         <Treadmill />
       </div>
       <>

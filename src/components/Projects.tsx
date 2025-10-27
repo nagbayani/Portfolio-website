@@ -18,19 +18,19 @@ const Projects = ({}) => {
   }, [isInView, ref]);
 
   return (
-    <div ref={ref} id='projects' className='flex flex-col w-screen  h-full'>
+    <div ref={ref} id='projects' className='flex flex-col w-screen h-full'>
       <div
         // ref={scrollRef}
-        className='projects-container flex flex-col w-[100%] h-[100%] items-center '
+        className='projects-container flex flex-col w-full h-full items-center '
       >
-        <h1 id='projects-header' className='font-aileronHeavy '>
+        <h1 id='projects-header' className='font-aileron '>
           Featured Projects
         </h1>
         {/* Map out Project Cards */}
         {projects.map((project) => (
           <AnimatedCard key={project.id} project={project} />
         ))}
-        <hr className='w-[100%]'></hr>
+        {/* <hr className='w-[100%]'></hr> */}
       </div>
     </div>
   );

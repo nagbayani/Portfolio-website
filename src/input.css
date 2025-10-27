@@ -63,7 +63,7 @@
   /*--home-bg: #fcf1ec*/
   /* --home-bg: #fffbff;  */
   /* --home-bg: #fbeeec; */
-  --home-bg: #ffffff;
+  --home-bg: #fafafa;
   --step--5: clamp(0.6209rem, 0.4879rem + 0.6653vi, 1.0866rem);
   --step--4: clamp(0.683rem, 0.5367rem + 0.7318vi, 1.1953rem);
   --step--3: clamp(0.7513rem, 0.5903rem + 0.805vi, 1.3148rem);
@@ -108,7 +108,7 @@ body {
   height: 100%;
   margin: auto;
   font-size: var(--step--1);
-  -webkit-text-fill-color: black;
+  /* -webkit-text-fill-color: black; */
   overflow-x: hidden;
 }
 
@@ -176,7 +176,7 @@ body {
 /*======================== HEADER ===================================*/
 
 .welcome {
-  -webkit-text-fill-color: #523ccf;
+  /* -webkit-text-fill-color: #523ccf; */
   z-index: 10;
   font-size: var(--step-10);
   margin-top: 50px;
@@ -523,7 +523,8 @@ body {
 }
 
 .rcii {
-  background-color: var(--lightpurple);
+  /* background-color: var(--lightpurple); */
+  background-color: #ea5038;
   border-radius: 100px;
   padding-right: 50px;
   padding-left: 20px;
@@ -540,7 +541,8 @@ body {
 }
 
 .rcii-2 {
-  background-color: var(--lightpurple);
+  /* background-color: var(--lightpurple); */
+  background-color: #ea5038;
   border-radius: 100px;
   padding-right: 50px;
   padding-left: 20px;
@@ -572,7 +574,9 @@ body {
 }
 
 .rcii-3 {
-  background-color: var(--lightpurple);
+  /* background-color: var(--lightpurple); */
+  background-color: #ea5038;
+
   border-radius: 100px;
   padding-left: 100px;
   padding-right: 25px;
@@ -594,7 +598,9 @@ body {
 }
 
 .rcii-4 {
-  background-color: var(--lightpurple);
+  /* background-color: var(--lightpurple); */
+  background-color: #ea5038;
+
   border-radius: 100px;
   text-align: center;
   padding-left: 90px;
@@ -617,7 +623,7 @@ body {
   top: 0%;
   /* height: 50%; */
   background-color: var(--black);
-  border-radius: 25px;
+  border-radius: 50px;
   padding: 0.5em 1em;
   z-index: 1;
 }
@@ -625,7 +631,7 @@ body {
 #see-work-btn span {
   position: relative;
   transition: color 0.5s;
-  font-size: var(--step--1);
+  font-size: var(--step--4);
   z-index: 2;
   -webkit-text-fill-color: var(--home-bg);
   white-space: nowrap;
@@ -638,26 +644,30 @@ body {
   top: 0;
   width: 100%;
   height: 105%;
-  background-color: var(--lightpurple);
-  border: 2px solid var(--lightpurple);
-  border-radius: 15px;
-
+  /* background-color: var(--lightpurple); */
+  /* border: 2px solid var(--lightpurple); */
+  background-color: #736c64;
+  border: 2px solid #736c64;
+  border-radius: 0px 20px 20px 0px;
   transform: translate(-102%, 0%) skew(0deg);
   transition: transform 0.5s, background-color 0.5s ease-in-out;
 }
 
 #see-work-btn:hover::after {
   transform: translate(0, 0%) skew(0deg);
-  background-color: var(--lightpurple);
   /* width: 100%; */
-  -webkit-text-fill-color: black;
-  font-size: 20px;
+  /* background-color: var(--lightpurple);
   border: 2px solid var(--lightpurple);
+  -webkit-text-fill-color: black; */
+  background-color: #736c64;
+  border: 2px solid #736c64;
+  -webkit-text-fill-color: var(--home-bg);
+  font-size: 20px;
   transition: transform 0.5s, background-color 0.5s ease-in-out;
 }
 #see-work-btn:hover span {
   height: 200%;
-  -webkit-text-fill-color: var(--brown);
+  -webkit-text-fill-color: var(--home-bg);
 }
 .grid-icon {
   color: white;
@@ -868,7 +878,6 @@ body {
 #projects-header {
   background: var(--home-bg);
   border-radius: 0px 0px 25px 25px;
-  text-align: center;
   z-index: 1;
 }
 
@@ -955,13 +964,13 @@ body {
 
 .contact-input:focus,
 .contact-input:valid {
-  color: var(--green);
+  /* color: var(--green); */
   border: 2px solid black;
 }
 
 .contact-input:focus + .label-line,
 .contact-input:valid + .label-line {
-  color: var(--green);
+  /* color: var(--green); */
   height: 30px;
   line-height: 30px;
   padding: 0 12px;
@@ -995,14 +1004,14 @@ body {
 
 #message-label textarea:focus,
 #message-label textarea:valid {
-  color: var(--green);
+  /* color: var(--green); */
   border: 2px solid black;
   outline: none;
 }
 
 #message-label textarea:focus + .label-line,
 #message-label textarea:valid + .label-line {
-  color: var(--green);
+  /* color: var(--green); */
   height: 30px;
   line-height: 30px;
   padding: 0 12px;

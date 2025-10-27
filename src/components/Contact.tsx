@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <section ref={ref} className='flex flex-col items-center h-full mt-8'>
+    <section ref={ref} className='flex flex-col items-center h-full mt-8 '>
       <h1 className='m-16 font-aileronHeavy'>Contact Me</h1>
       <div className='flex gap-4'>
         <div className='w-[600px] flex flex-col gap-8 font-aileron '>
@@ -45,7 +45,7 @@ const Contact = () => {
               required
               className='contact-input absolute w-full outline-none text-[2.2em] px-[30px] leading-[80px] border-2 border-solid '
             ></input>
-            <div className='label-line text-gray-50 font-aileronThin'>NAME</div>
+            <div className='label-line text-black font-aileronThin'>NAME</div>
           </div>
           <div className='entry-area relative h-[80px] leading-[80px] '>
             <input
@@ -53,9 +53,7 @@ const Contact = () => {
               required
               className='contact-input absolute w-full outline-none text-[2.2em] px-[30px] leading-[80px] border-2 border-solid '
             ></input>
-            <div className='label-line text-gray-50 font-aileronThin'>
-              EMAIL
-            </div>
+            <div className='label-line text-black font-aileronThin'>EMAIL</div>
           </div>
           <div className='mb-8' id='message-label'>
             <textarea
@@ -67,7 +65,7 @@ const Contact = () => {
               onFocus={() => setIsTyping(true)}
               onBlur={() => setIsTyping(false)}
             ></textarea>
-            <div className='label-line text-gray-50 font-aileronThin'>
+            <div className='label-line text-black font-aileronThin'>
               YOUR MESSAGE
             </div>
           </div>

@@ -33,7 +33,7 @@ const Content = ({ project, expanded, setIsExpanded }) => {
   return (
     <div
       className={`relative flex flex-col w-full mx-auto`}
-      onClick={() => setIsExpanded(() => !expanded)}
+      // onClick={() => setIsExpanded(() => !expanded)}
     >
       <div className='flex '>
         {/* Title + Subtitle */}
@@ -89,7 +89,7 @@ const Content = ({ project, expanded, setIsExpanded }) => {
               // }}
               className='card-subheader overflow-hidden will-change-[opacity,height]  font-aileronRegular w-fit '
             >
-              OPEN SOURCE PRODUCT
+              {project.subheader}
             </motion.p>
             <motion.div
               layout
@@ -224,7 +224,7 @@ const ExpandedContent = ({ project }) => {
         </div>
 
         {/* Feature list */}
-        <div className='flex flex-col mt-6 lg:w-60'>
+        {/* <div className='flex flex-col mt-6 lg:w-60'>
           <h4 className='font-semibold text-gray-900 mb-3'>Key Features</h4>
           <div className='space-y-2'>
             {project.features.map((feature, index) => (
@@ -241,7 +241,7 @@ const ExpandedContent = ({ project }) => {
               </button>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

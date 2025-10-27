@@ -89,9 +89,7 @@ const Home = ({ projectClick, contactClick }) => {
         </div>
         <div className='relative font-aileronRegular justify-self-center self-center mx-2'>
           <motion.button id='see-work-btn' onClick={contactClick}>
-            <span className='btn-text' onClick={contactClick}>
-              CONTACT
-            </span>
+            <span onClick={contactClick}>CONTACT</span>
           </motion.button>
         </div>
       </div>
