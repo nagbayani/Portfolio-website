@@ -760,9 +760,10 @@ body {
 /*========================== Projects Styling ============================*/
 .projects-container {
   -webkit-text-fill-color: var(--brown);
-  background-color: var(--red);
+  /* background-color: var(--red); */
+  border-radius: 20px;
   /* background-color: var(--home-bg); */
-  background-color: var(--home-bg);
+  /* background-color: var(--home-bg); */
 }
 .img-responsive {
   max-width: 100%;
@@ -829,7 +830,7 @@ body {
 }
 
 .card-subheader {
-  background-color: var(--darkgreen);
+  background-color: var(--black);
   padding: 0.5rem;
   /* padding-right: 1rem;
   padding-left: 1rem; */
@@ -876,9 +877,12 @@ body {
 }
 
 #projects-header {
-  background: var(--home-bg);
-  border-radius: 0px 0px 25px 25px;
-  z-index: 1;
+  background-color: #ffffff;
+  border-radius: 50px;
+  transform: translateY(-55%);
+  padding-left: 4rem;
+  padding-right: 4rem;
+  z-index: 2;
 }
 
 .vinyl {

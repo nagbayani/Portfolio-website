@@ -24,19 +24,6 @@ const About = () => {
         </div> */}
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
-          <div className='relative w-full max-w-md mx-auto'>
-            <div
-              className='absolute inset-0 
-            bg-gradient-to-br from-gray-900 via-[#ea5038] to-[#ea5038]
-            rounded-3xl transform rotate-6'
-            ></div>
-            <div className='relative bg-white p-2 rounded-3xl shadow-2xl'>
-              {/* <div className='w-full h-48 rounded-2xl overflow-hidden'>
-                <ProfilePic className='w-full h-full object-cover ' />
-              </div> */}
-            </div>
-          </div>
-
           <div className='space-y-6'>
             <div>
               <p className='font-aileronThin'>MORE ABOUT ME</p>
@@ -61,6 +48,18 @@ const About = () => {
                 My passions include singing, hitting licks on the guitar,
                 playing volleyball, and reading manga and science fiction.
               </p>
+            </div>
+          </div>
+          <div className='relative w-full max-w-md mx-auto'>
+            <div
+              className='absolute inset-0 
+            bg-gradient-to-br from-gray-900 via-[#ea5038] to-[#ea5038]
+            rounded-3xl transform rotate-6'
+            ></div>
+            <div className='relative bg-white p-2 rounded-3xl shadow-2xl'>
+              {/* <div className='w-full h-48 rounded-2xl overflow-hidden'>
+                <ProfilePic className='w-full h-full object-cover ' />
+              </div> */}
             </div>
           </div>
         </div>

@@ -12,15 +12,15 @@ const Skills = () => {
     { label: "Certifications", data: Certifications },
   ];
   return (
-    <div>
-      <div className='tabs-component mt-8'>
-        <ul className='mx-16 flex px-8' role='tablist'>
-          {tabs.map((tab, i) => (
-            <motion.li
-              key={i}
-              role='tab'
-              onClick={() => setCurrentIndex(i)}
-              className={`
+    // <div className='container'>
+    <div className='container mt-8 mx-auto'>
+      <ul className='flex px-8' role='tablist'>
+        {tabs.map((tab, i) => (
+          <motion.li
+            key={i}
+            role='tab'
+            onClick={() => setCurrentIndex(i)}
+            className={`
                 cursor-pointer px-4 py-2 rounded-xl border text-sm font-medium
                 transition-all duration-200 mr-2 my-2
                 ${
@@ -29,15 +29,15 @@ const Skills = () => {
                     : "bg-white text-black border-slate-300 hover:bg-slate-100"
                 }
               `}
-              aria-selected={currentIndex === i}
-            >
-              <h3>{tab.label}</h3>
-            </motion.li>
-          ))}
-        </ul>
-        <TabContent data={tabs[currentIndex].data} />
-      </div>
+            aria-selected={currentIndex === i}
+          >
+            <h3>{tab.label}</h3>
+          </motion.li>
+        ))}
+      </ul>
+      <TabContent data={tabs[currentIndex].data} />
     </div>
+    // </div>
   );
 };
 
@@ -49,7 +49,7 @@ interface Category {
 // Pass in TabContent Index
 const TabContent = ({ data }: { data: Category[] }) => {
   return (
-    <motion.div className='flex mx-16 p-4 rounded-md'>
+    <motion.div className='flex p-4 rounded-md'>
       {data.map((category, index) => (
         <div
           key={index}
@@ -96,7 +96,6 @@ const TechStack = [
     technologies: [
       "Docker",
       "AWS",
-      "Git/GitHub",
       "Redux",
       "Zustand",
       "Postman",
